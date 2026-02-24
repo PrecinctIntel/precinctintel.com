@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precinct Intelligence</title>
+<meta name="description" content="Neutral weekly political intelligence briefings for Illinois political races. Local through state legislative.">
+<meta property="og:title" content="Precinct Intelligence">
+<meta property="og:description" content="Neutral weekly political intelligence briefings for Illinois political races.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://precinctintel.com">
+<link rel="canonical" href="https://precinctintel.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=geist-mono@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg-deep: #0c0f14;
+    --bg-surface: #131720;
+    --bg-card: #1a1f2a;
+    --border: #222838;
+    --green: #4ee69a;
+    --green-dim: #2a5e42;
+    --green-bg: #122a1e;
+    --text-primary: #ededeb;
+    --text-secondary: #a8a49c;
+    --text-muted: #706c64;
+    --text-dim: #4a4640;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --font-mono: 'Geist Mono', 'SF Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    max-width: 520px;
+    width: 100%;
+    padding: 48px 32px;
+    text-align: center;
+  }
+
+  .logo-mark {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 40px;
+  }
+
+  .brand {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  .headline {
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.5;
+    margin-bottom: 16px;
+    letter-spacing: -0.2px;
+  }
+
+  .subline {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .status-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+
+  .status-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .status-text {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .contact {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  .contact a {
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid var(--green-dim);
+    padding-bottom: 1px;
+  }
+
+  .contact a:hover {
+    border-bottom-color: var(--green);
+  }
+
+  .footer {
+    margin-top: 64px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 32px 24px; }
+    .headline { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="logo-mark">
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="22" height="22" rx="3" fill="#4ee69a" opacity="1"/>
+      <rect x="26" y="0" width="22" height="22" rx="3" fill="#4ee69a" opacity="0.45"/>
+      <rect x="0" y="26" width="22" height="22" rx="3" fill="#4ee69a" opacity="0.45"/>
+      <rect x="26" y="26" width="22" height="22" rx="3" fill="#4ee69a" opacity="0.15"/>
+    </svg>
+  </div>
+
+  <div class="brand">Precinct Intelligence</div>
+
+  <div class="headline">Neutral political intelligence<br>for Illinois races.</div>
+
+  <div class="subline">Weekly briefings covering local through state legislative races. Every candidate in a race receives the same base intelligence. No strategic advice. Just verified, cited, actionable data.</div>
+
+  <div class="status-card">
+    <div class="status-label">Status</div>
+    <div class="status-text">Precinct is in early access for the March 2026 Illinois primary cycle. Briefings are currently available for select districts.</div>
+  </div>
+
+  <div class="contact">Interested? Reach us at <a href="mailto:hello@precinctintel.com">hello@precinctintel.com</a></div>
+
+  <div class="footer">© 2026 Precinct</div>
+
+</div>
+
+</body>
+</html>
