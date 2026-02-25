@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing — Precinct Intelligence</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=geist-mono@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg-deep:#0c0f14;--bg-surface:#131720;--bg-card:#1a1f2a;--border:#222838;--border-subtle:#1c2130;--green:#4ee69a;--green-dim:#2a5e42;--green-bg:#122a1e;--amber:#f0a050;--text-primary:#ededeb;--text-secondary:#a8a49c;--text-muted:#706c64;--text-dim:#4a4640;--font-body:'DM Sans',-apple-system,sans-serif;--font-display:'Instrument Serif',Georgia,serif;--font-mono:'Geist Mono','SF Mono',monospace}
+  body{font-family:var(--font-body);background:var(--bg-deep);color:var(--text-primary);-webkit-font-smoothing:antialiased;line-height:1.6}
+  nav{position:sticky;top:0;z-index:100;background:rgba(12,15,20,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 48px;height:56px;display:flex;align-items:center;justify-content:space-between}
+  .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .nav-name{font-family:var(--font-mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);font-weight:500}
+  .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+  .nav-links a{font-family:var(--font-mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color .2s}
+  .nav-links a:hover{color:var(--text-primary)}
+  .nav-cta{color:var(--bg-deep)!important;background:var(--green);padding:7px 16px;border-radius:3px}
+  main{max-width:760px;margin:0 auto;padding:72px 48px}
+  .page-label{font-family:var(--font-mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+  .page-headline{font-family:var(--font-display);font-size:clamp(32px,4vw,44px);font-weight:400;letter-spacing:-.3px;margin-bottom:20px;line-height:1.15}
+  .page-sub{font-size:15px;font-weight:300;color:var(--text-secondary);line-height:1.8;max-width:540px;margin-bottom:64px}
+  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:64px}
+  .pricing-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:32px 28px;position:relative}
+  .pricing-card.featured{border-color:var(--green-dim);background:linear-gradient(135deg,var(--green-bg) 0%,var(--bg-card) 100%)}
+  .pricing-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-family:var(--font-mono);font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--bg-deep);background:var(--green);padding:3px 10px;border-radius:100px;white-space:nowrap}
+  .pricing-tier{font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px}
+  .pricing-amount{font-family:var(--font-display);font-size:44px;font-weight:400;color:var(--text-primary);line-height:1;margin-bottom:4px}
+  .pricing-cadence{font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-bottom:24px}
+  .pricing-desc{font-size:13px;color:var(--text-secondary);font-weight:300;line-height:1.65;margin-bottom:28px}
+  .pricing-features{list-style:none;margin-bottom:28px}
+  .pricing-features li{font-size:12.5px;color:var(--text-secondary);font-weight:300;padding:5px 0;display:flex;gap:8px;align-items:baseline}
+  .pricing-features li::before{content:'→';font-family:var(--font-mono);font-size:10px;color:var(--green);opacity:.7;flex-shrink:0}
+  .btn{display:block;text-align:center;font-family:var(--font-mono);font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:12px;border-radius:4px;text-decoration:none;transition:opacity .2s}
+  .btn-green{color:var(--bg-deep);background:var(--green)}
+  .btn-green:hover{opacity:.85}
+  .btn-outline{color:var(--text-muted);border:1px solid var(--border)}
+  .btn-outline:hover{border-color:var(--text-muted);color:var(--text-primary)}
+  .ghost-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:32px 28px;margin-top:12px;display:grid;grid-template-columns:1fr 2fr;gap:28px;align-items:start}
+  .ghost-label{font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+  .ghost-amount{font-family:var(--font-display);font-size:36px;font-weight:400;color:var(--text-primary);line-height:1;margin-bottom:4px}
+  .ghost-cadence{font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-bottom:8px}
+  .ghost-desc{font-size:13px;color:var(--text-secondary);font-weight:300;line-height:1.65}
+  .ghost-right p{font-size:13.5px;color:var(--text-secondary);font-weight:300;line-height:1.8;margin-bottom:16px}
+  .ghost-right p:last-child{margin-bottom:0}
+  .ghost-note{font-family:var(--font-mono);font-size:10px;color:var(--amber);opacity:.7}
+  .faq{margin-top:64px}
+  .faq-title{font-family:var(--font-mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:28px}
+  .faq-item{border-bottom:1px solid var(--border-subtle);padding:20px 0}
+  .faq-item:first-of-type{border-top:1px solid var(--border-subtle)}
+  .faq-q{font-size:14px;font-weight:500;color:var(--text-primary);margin-bottom:10px}
+  .faq-a{font-size:13.5px;color:var(--text-secondary);font-weight:300;line-height:1.7}
+  footer{max-width:760px;margin:0 auto;padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid var(--border)}
+  .footer-brand{font-family:var(--font-mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);display:flex;align-items:center;gap:8px}
+  .footer-links{display:flex;gap:24px;list-style:none}
+  .footer-links a{font-family:var(--font-mono);font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--text-dim);text-decoration:none}
+  .footer-links a:hover{color:var(--text-muted)}
+  @media(max-width:640px){nav{padding:0 20px}.nav-links{display:none}main{padding:48px 20px}.ghost-card{grid-template-columns:1fr}footer{padding:32px 20px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="0" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="1"/><rect x="13" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.45"/><rect x="0" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.45"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.15"/></svg>
+    <span class="nav-name">Precinct</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/sample">Sample Briefing</a></li>
+    <li><a href="/pricing">Pricing</a></li>
+    <li><a href="/subscribe" class="nav-cta">Subscribe</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="page-label">Pricing</div>
+  <h1 class="page-headline">Simple, transparent pricing.</h1>
+  <p class="page-sub">No contracts. No setup fees. No strategic advice bundled in to justify a higher price. Just the intelligence.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-tier">Single Briefing</div>
+      <div class="pricing-amount">$49</div>
+      <div class="pricing-cadence">one time</div>
+      <p class="pricing-desc">One briefing for your race. Delivered within 48 hours of purchase.</p>
+      <ul class="pricing-features">
+        <li>Full briefing, all sections</li>
+        <li>Verified citations throughout</li>
+        <li>Candidate profiles + race overview</li>
+        <li>No subscription required</li>
+      </ul>
+      <a href="/subscribe?plan=single" class="btn btn-outline">Get a Single Briefing</a>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="pricing-badge">Recommended</div>
+      <div class="pricing-tier">Weekly Subscription</div>
+      <div class="pricing-amount">$99</div>
+      <div class="pricing-cadence">per month · cancel anytime</div>
+      <p class="pricing-desc">Every Monday. The intelligence compounds — entity tracking, deltas, and finance cross-referencing build week over week.</p>
+      <ul class="pricing-features">
+        <li>New briefing every Monday at 7AM CT</li>
+        <li>Week-over-week delta tracking</li>
+        <li>Entity network builds over time</li>
+        <li>Campaign finance cross-referencing</li>
+        <li>Social media activity tracking</li>
+        <li>All Intelligence Gap items filled as data arrives</li>
+      </ul>
+      <a href="/subscribe?plan=monthly" class="btn btn-green">Subscribe — $99/mo</a>
+    </div>
+  </div>
+
+  <div class="ghost-card">
+    <div>
+      <div class="ghost-label">Premium Tier</div>
+      <div class="ghost-amount">$2,500</div>
+      <div class="ghost-cadence">per cycle</div>
+      <p class="ghost-note">Not currently accepting applications.</p>
+    </div>
+    <div class="ghost-right">
+      <p>The premium tier is for candidates who want deeper research on a specific district — historical precinct-level analysis, donor network mapping, and prior cycle comparisons. It is not a subscription. It is a one-time engagement per election cycle.</p>
+      <p>We are not currently accepting applications. When available, access is limited to one candidate per race.</p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <div class="faq-title">Common Questions</div>
+
+    <div class="faq-item">
+      <div class="faq-q">Does my opponent get the same briefing?</div>
+      <div class="faq-a">Yes. Every subscriber in the same race receives identical base intelligence. Precinct is a neutral vendor — we don't provide different data to different candidates in the same race. This is a core product policy, not a disclaimer.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What races do you cover?</div>
+      <div class="faq-a">Illinois political races from local (school board, county board, city council, village trustees) through state legislative (state senate, state house). We are currently in the 2026 cycle covering the March primary and November general.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What if there's no data in my race?</div>
+      <div class="faq-a">Some local races are genuinely data-sparse. If a briefing for your district would be too thin to be useful, we'll tell you before charging you. Intelligence Gaps are documented honestly in every briefing.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How do I access my briefing?</div>
+      <div class="faq-a">Each briefing is delivered via email with a secure link to the briefing page. No app, no dashboard — just a link that works on any device.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Can I cancel?</div>
+      <div class="faq-a">Yes, anytime. No questions, no lock-in. Cancel through the link in any briefing email.</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="0" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.6"/><rect x="13" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.3"/><rect x="0" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.2"/><rect x="13" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.1"/></svg>
+    Precinct Intelligence
+  </div>
+  <ul class="footer-links">
+    <li><a href="/sample">Sample</a></li>
+    <li><a href="/">Home</a></li>
+    <li><a href="mailto:hello@precinctintel.com">Contact</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>

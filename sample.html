@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precinct Intelligence — Illinois Senate District 33 Week 9</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=geist-mono@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --bg-deep: #0c0f14;
+    --bg-surface: #131720;
+    --bg-card: #1a1f2a;
+    --border: #222838;
+    --border-subtle: #1c2130;
+    --green: #4ee69a;
+    --green-dim: #2a5e42;
+    --green-bg: #122a1e;
+    --amber: #f0a050;
+    --red: #f06050;
+    --blue: #50a0f0;
+    --purple: #a78bfa;
+    --text-primary: #ededeb;
+    --text-secondary: #a8a49c;
+    --text-muted: #706c64;
+    --text-dim: #4a4640;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-mono: 'Geist Mono', 'SF Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .briefing-container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--bg-surface);
+    min-height: 100vh;
+  }
+
+  .header {
+    background: var(--bg-deep);
+    padding: 44px 48px 40px;
+  }
+
+  .header-accent { height: 2px; background: var(--green); opacity: 0.5; }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .logo-mark { width: 20px; height: 20px; flex-shrink: 0; }
+  .logo-mark svg { width: 20px; height: 20px; }
+
+  .header-brand {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .header-district {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .header-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  .meta-pill .label {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .coverage-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 4px;
+    padding: 5px 12px 5px 6px;
+  }
+
+  .coverage-grade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    color: var(--bg-deep);
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: var(--font-mono);
+  }
+
+  .coverage-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .content { padding: 8px 48px 0; }
+
+  .section {
+    padding: 28px 0 32px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .section-emoji { font-size: 15px; line-height: 1; width: 20px; text-align: center; }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 6px; }
+
+  .item {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+  }
+  .item:last-child { margin-bottom: 0; }
+
+  .item-headline {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+
+  .item-body {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .citation {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--green);
+    font-weight: 400;
+    opacity: 0.8;
+  }
+
+  .heat-high { color: var(--red); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
+  .heat-emerging { color: var(--amber); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
+  .heat-steady { color: var(--blue); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
+
+  .candidate-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+  }
+  .candidate-card:last-child { margin-bottom: 0; }
+
+  .candidate-name {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--green);
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+
+  .candidate-detail {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0 8px;
+    flex-wrap: wrap;
+  }
+
+  .stat-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    text-align: center;
+    min-width: 80px;
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .stat-delta {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 500;
+  }
+  .delta-up { color: var(--green); }
+  .delta-down { color: var(--red); }
+  .delta-neutral { color: var(--text-muted); }
+
+  .countdown-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .countdown-number {
+    font-family: var(--font-mono);
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--amber);
+    line-height: 1;
+  }
+
+  .countdown-detail {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .countdown-detail strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .milestone-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .milestone {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+  }
+
+  .milestone.done { color: var(--green); border-color: var(--green-dim); }
+  .milestone.current { color: var(--amber); border-color: var(--amber); background: rgba(240,160,80,0.08); }
+  .milestone-arrow { color: var(--text-dim); font-size: 10px; padding: 0 4px; }
+
+  .poll-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 13px;
+  }
+  .poll-row:last-child { border-bottom: none; }
+
+  .poll-metric { color: var(--text-secondary); font-weight: 400; }
+  .poll-value { font-family: var(--font-mono); font-size: 13px; color: var(--text-primary); font-weight: 500; }
+
+  .events-container {
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .event-row {
+    display: flex;
+    gap: 20px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: baseline;
+  }
+  .event-row:last-child { border-bottom: none; }
+
+  .event-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--green);
+    white-space: nowrap;
+    min-width: 105px;
+    font-weight: 500;
+  }
+
+  .event-desc {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .event-urgent {
+    color: var(--amber);
+    font-weight: 500;
+  }
+
+  .dive-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .dive-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: top;
+  }
+
+  .dive-table td:first-child {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    width: 140px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .dive-table td:last-child { color: var(--text-secondary); font-weight: 300; }
+  .dive-table tr:last-child td { border-bottom: none; }
+
+  .intel-gaps {
+    background: rgba(78, 230, 154, 0.03);
+    border: 1px solid var(--green-dim);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .intel-gaps-intro {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .gap-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .gap-item:last-child { margin-bottom: 0; }
+
+  .gap-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+    margin-top: 7px;
+    opacity: 0.4;
+  }
+
+  .gap-text strong {
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .subscribe-cta {
+    text-align: center;
+    padding: 32px 24px;
+    margin: 8px 0 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .subscribe-text {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+
+  .subscribe-price {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+
+  .subscribe-preview {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .subscribe-btn {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--green);
+    padding: 14px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .subscribe-btn:hover { opacity: 0.85; }
+
+  .next-briefing {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 14px 16px;
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    background: var(--bg-deep);
+    padding: 36px 48px 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .precision-policy {
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 24px;
+    line-height: 1.65;
+  }
+
+  .precision-policy em {
+    font-style: normal;
+    color: var(--green);
+    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .footer-disclaimer {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-brand a { color: var(--text-muted); text-decoration: none; }
+  .footer-logo { width: 14px; height: 14px; flex-shrink: 0; }
+
+  /* Gated depth indicator */
+  .gated-depth {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-subtle);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .header { padding: 28px 24px 28px; }
+    .content { padding: 8px 24px 0; }
+    .footer { padding: 28px 24px 32px; }
+    .header-district { font-size: 24px; }
+    .event-row { flex-direction: column; gap: 4px; }
+    .event-date { min-width: auto; display: inline-block; }
+    .header-meta { gap: 8px; }
+    .countdown-banner { flex-direction: column; gap: 12px; }
+    .stat-row { gap: 6px; }
+    .stat-box { min-width: 70px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="briefing-container">
+
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="1"/>
+          <rect x="13" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.45"/>
+          <rect x="0" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.45"/>
+          <rect x="13" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.15"/>
+        </svg>
+      </div>
+      <div class="header-brand">Precinct Intelligence</div>
+    </div>
+    <div class="header-district">Illinois Senate District 33</div>
+    <div class="header-subtitle">Weekly Political Intelligence Briefing</div>
+    <div class="header-meta">
+      <div class="meta-pill"><span class="label">Week</span> 9</div>
+      <div class="meta-pill"><span class="label">Period</span> Feb 17 – Feb 24, 2026</div>
+      <div class="coverage-badge">
+        <span class="coverage-grade">C</span>
+        <span class="coverage-label">Sources: 5</span>
+      </div>
+    </div>
+  </div>
+  <div class="header-accent"></div>
+
+  <div class="content">
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- WHAT TO WATCH — Connection insights lead    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">👁</span>
+        <span class="section-label">What to Watch</span>
+        <span class="section-line"></span>
+      </div>
+
+      <div class="item">
+        <div class="item-headline">Domain Squatting Attack Signals Organized Opposition</div>
+        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — Someone has registered <strong>jessicabreugelmans.com</strong> — a domain using Breugelmans' full name — and populated it with a parody attack page. Her actual campaign site is jessicaforillinois.com. Domain squatting on a candidate's personal name in a state senate primary is unusual and suggests either an organized opposition effort or outside interest group involvement. The registrant information is shielded by privacy protection. This is worth monitoring: if the domain starts running paid traffic or appears in search results, it becomes a campaign integrity issue. <span class="citation">(jessicabreugelmans.com, direct observation; jessicaforillinois.com, campaign site)</span></div>
+      </div>
+
+      <div class="item">
+        <div class="item-headline">Endorsement Ecosystem Split: Media vs. Labor in a Republican Primary</div>
+        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — Breugelmans holds the Chicago Tribune editorial board endorsement (Feb 12). Penman holds four institutional endorsements: IL Fraternal Order of Police, IUOE Local 150 (operating engineers), Bricklayers &amp; Allied Craftworkers DC1, and the Nurses PAC. In a Republican primary, labor union endorsements are uncommon — they typically signal a candidate positioning as pragmatic or center-right rather than movement conservative. The Tribune endorsing one Republican while labor backs the other suggests these candidates are competing for different coalitions within the same primary electorate. Which coalition turns out on March 17 may determine the outcome. <span class="citation">(Chicago Tribune, Feb 12, 2026; daniellepenman.com/endorsements)</span></div>
+      </div>
+
+      <div class="item">
+        <div class="item-headline">Breugelmans: Professional Campaign Infrastructure, Zero Financial Disclosure</div>
+        <div class="item-body"><span class="heat-emerging">📊 EMERGING</span> — Breugelmans operates a polished campaign website with WinRed donation integration, volunteer signup, and yard sign requests — infrastructure that typically follows or accompanies campaign finance committee registration. As of this briefing, no campaign finance filings are on record with the Illinois State Board of Elections for her committee. Illinois law requires a D-1 filing within 2 business days of reaching $5,000 in contributions or expenditures. The gap between visible infrastructure and financial disclosure is worth tracking: either the campaign is operating under the $5K threshold, filings are delayed, or there's a compliance question. <span class="citation">(jessicaforillinois.com; IL SBE campaign disclosure search, accessed Feb 24, 2026)</span></div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- LOCAL ISSUE PULSE                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📍</span>
+        <span class="section-label">Local Issue Pulse</span>
+        <span class="section-line"></span>
+      </div>
+
+      <div class="item">
+        <div class="item-headline">Tax Policy</div>
+        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — Both Republican candidates have centered anti-tax messaging, but with different specificity. Breugelmans names individual proposals: a $1.50 delivery tax, service taxes on haircuts, car repairs, and home maintenance. Penman frames broader: eliminate gas tax surcharges, reduce property tax burden. The specificity gap matters — Breugelmans is running against named legislation, Penman against a condition. <span class="citation">(jessicaforillinois.com/issues; daniellepenman.com/key-issues)</span></div>
+      </div>
+
+      <div class="item">
+        <div class="item-headline">Public Safety &amp; Safe-T Act</div>
+        <div class="item-body"><span class="heat-emerging">📊 EMERGING</span> — Penman explicitly calls for repealing the Safe-T Act, restoring cash bail, and expanding fentanyl enforcement. Breugelmans has not published a public safety position. Penman's FOP endorsement reinforces her ownership of this lane. In a primary where both candidates agree on taxes, the public safety differentiation may be decisive. <span class="citation">(daniellepenman.com/key-issues; daniellepenman.com/endorsements)</span></div>
+      </div>
+
+      <div class="item">
+        <div class="item-headline">Education &amp; Girls' Sports</div>
+        <div class="item-body"><span class="heat-emerging">📊 EMERGING</span> — Breugelmans has made "protect girls' sports" a top-three issue — supporting policies requiring biological females compete against biological females. Penman emphasizes school board accountability and fiscal responsibility in education but has not taken a position on transgender athletics. This is a clean differentiation point that may activate different voter segments. <span class="citation">(jessicaforillinois.com/issues; daniellepenman.com)</span></div>
+      </div>
+
+      <div class="gated-depth">Subscriber briefing: Issue heat tracking with week-over-week trend deltas, candidate social media sentiment analysis, and local media coverage frequency by topic.</div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- CANDIDATE ACTIVITY LOG — Compressed          -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">👤</span>
+        <span class="section-label">Candidate Activity Log</span>
+        <span class="section-line"></span>
+      </div>
+
+      <div class="candidate-card">
+        <div class="candidate-name">Jessica Breugelmans (R) — Geneva</div>
+        <div class="candidate-detail">Former teacher and small business owner, Fox Valley. Platform centers on opposing new taxes, education transparency/parental rights, and girls' sports fairness. Chicago Tribune endorsement (Feb 12). Professional campaign site with WinRed integration.</div>
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-value">1</div>
+            <div class="stat-label">Endorsements</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Media Mentions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">—</div>
+            <div class="stat-label">Finance Filed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="candidate-card">
+        <div class="candidate-name">Danielle Penman (R) — St. Charles</div>
+        <div class="candidate-detail">Labor &amp; delivery nurse, 20+ years. Kane County Republican fundraising committee member, 2024 RNC attendee. Platform: fiscal responsibility, Safe-T Act repeal, immigration reform. Endorsed by IL FOP, IUOE Local 150, Bricklayers DC1, Nurses PAC.</div>
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Endorsements</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">2</div>
+            <div class="stat-label">Media Mentions</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">—</div>
+            <div class="stat-label">Finance Filed</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="candidate-card">
+        <div class="candidate-name">Michele Clark (D) — Algonquin</div>
+        <div class="candidate-detail">Uncontested Democratic primary. No campaign website, donation platform, or public platform identified. Referenced only in county clerk filings and Shaw Local candidate guides.</div>
+        <div class="stat-row">
+          <div class="stat-box">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Endorsements</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-value">1</div>
+            <div class="stat-label">Media Mentions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gated-depth">Subscriber briefing: Full candidate dossiers, campaign finance cross-referencing, social media tracking, and donor network analysis.</div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NATIONAL CLIMATE                             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">🌐</span>
+        <span class="section-label">National Political Climate</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="item">
+        <div class="item-body">
+          <div class="poll-row">
+            <span class="poll-metric">Presidential Approval (RCP avg)</span>
+            <span class="poll-value">47.2% <span class="stat-delta delta-down">▼ 0.8</span></span>
+          </div>
+          <div class="poll-row">
+            <span class="poll-metric">Generic Congressional Ballot (R/D)</span>
+            <span class="poll-value">R+1.4 <span class="stat-delta delta-up">▲ 0.3</span></span>
+          </div>
+          <div class="poll-row">
+            <span class="poll-metric">Right Track / Wrong Track</span>
+            <span class="poll-value">32/61 <span class="stat-delta delta-neutral">—</span></span>
+          </div>
+          <div class="poll-row">
+            <span class="poll-metric">IL Consumer Confidence Index</span>
+            <span class="poll-value">67.3 <span class="stat-delta delta-down">▼ 1.2</span></span>
+          </div>
+        </div>
+
+        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+          <div style="font-family: var(--font-mono); font-size: 9px; color: var(--amber); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Local Connection</div>
+          <div class="item-body">SD33 is an open-seat suburban collar-county district — the category most sensitive to national mood swings. In the 2022 cycle, DeWitte held this seat with a narrower margin than his 2018 performance, consistent with the statewide pattern of suburban Republican erosion. The Illinoize has listed SD33 among the top ten legislative seats most likely to flip in 2026. With presidential approval at 47% and right-track/wrong-track at 32/61, the November general environment currently favors the challenger — but March 17 is a primary, where turnout composition matters more than national sentiment. <span class="citation">(The Illinoize; RCP aggregates; IL SBE historical results)</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- DISTRICT DEEP DIVE                           -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📊</span>
+        <span class="section-label">District Deep Dive</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="item">
+        <div style="font-family: var(--font-mono); font-size: 9px; color: var(--purple); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;">Week 1 — District Profile</div>
+        <div class="item-body">
+          <table class="dive-table">
+            <tr><td>District</td><td>Illinois Senate District 33 — spans parts of McHenry and Kane counties. Includes Crystal Lake, Lake in the Hills, Algonquin, portions of St. Charles and Geneva.</td></tr>
+            <tr><td>Incumbent</td><td>Sen. Don DeWitte (R) — not seeking reelection. Held seat since 2019. Won 2022 general with reduced margin vs. 2018.</td></tr>
+            <tr><td>Race Type</td><td>Open seat. Contested R primary (Mar 17), uncontested D primary. General election Nov 3.</td></tr>
+            <tr><td>Trend</td><td>Historically safe Republican. Suburban collar counties have trended toward increased competitiveness since 2018. The Illinoize rates SD33 among top-10 flip targets statewide.</td></tr>
+            <tr><td>Registration</td><td>Illinois does not register voters by party. Primary ballot pull history is used as partisan proxy. District-level pull data not yet compiled.</td></tr>
+          </table>
+        </div>
+
+        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+          <div style="font-family: var(--font-mono); font-size: 9px; color: var(--purple); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Why This Matters This Week</div>
+          <div class="item-body">The March 17 Republican primary is the first competitive test for this seat since DeWitte's initial 2019 appointment. Competitive open-seat primaries in collar counties historically draw 15-25% higher turnout than uncontested cycles. Early voting begins March 2. <span class="citation">(IL SBE voter data; historical election records)</span></div>
+        </div>
+
+        <div class="gated-depth">Week 2: Precinct-level turnout history and prior election margin analysis.</div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- COUNTDOWN                                    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">⏱</span>
+        <span class="section-label">Countdown Intelligence</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="countdown-banner">
+        <div class="countdown-number">21</div>
+        <div class="countdown-detail"><strong>Days until Republican Primary</strong> (March 17, 2026). Early voting begins in 6 days (March 2).</div>
+      </div>
+
+      <div class="milestone-track">
+        <span class="milestone done">Filing ✓</span>
+        <span class="milestone-arrow">→</span>
+        <span class="milestone done">Petition Period ✓</span>
+        <span class="milestone-arrow">→</span>
+        <span class="milestone current">Early Voting Mar 2</span>
+        <span class="milestone-arrow">→</span>
+        <span class="milestone">Primary Mar 17</span>
+        <span class="milestone-arrow">→</span>
+        <span class="milestone">General Nov 3</span>
+      </div>
+
+      <div class="gated-depth" style="margin-top: 16px;">Subscriber briefings: Historical milestone comparisons from prior cycles and early vote tracking.</div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- EVENTS                                       -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📅</span>
+        <span class="section-label">Upcoming Events &amp; Deadlines</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="events-container">
+        <div class="event-row">
+          <div class="event-date">Mar 2, 2026</div>
+          <div class="event-desc event-urgent">Early voting begins — Kane and McHenry counties <span class="citation">(IL SBE)</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">Mar 10, 2026</div>
+          <div class="event-desc">Last day for online voter registration <span class="citation">(IL SBE)</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">Mar 12, 2026</div>
+          <div class="event-desc">Last day for mail ballot applications <span class="citation">(IL SBE)</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">Mar 17, 2026</div>
+          <div class="event-desc event-urgent">⚡ GENERAL PRIMARY — Breugelmans vs Penman (R); Clark uncontested (D) <span class="citation">(IL SBE)</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">Nov 3, 2026</div>
+          <div class="event-desc">General Election — R primary winner vs Michele Clark (D) <span class="citation">(IL SBE)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- INTELLIGENCE GAPS — Trimmed to 2             -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">🔍</span>
+        <span class="section-label">Intelligence Gaps</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="intel-gaps">
+        <div class="intel-gaps-intro">Areas with insufficient public data this week</div>
+
+        <div class="gap-item">
+          <div class="gap-dot"></div>
+          <div class="gap-text"><strong>Campaign Finance:</strong> IL SBE campaign disclosure filings not yet retrieved for any candidate. Contribution amounts, spending patterns, and donor networks will be cross-referenced in next week's briefing.</div>
+        </div>
+
+        <div class="gap-item">
+          <div class="gap-dot"></div>
+          <div class="gap-text"><strong>Michele Clark (D):</strong> No campaign website, social media, or public platform identified. Only confirmed via filing records. This gap will be monitored weekly through the general election.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SUBSCRIBE CTA — Enhanced                     -->
+    <!-- ═══════════════════════════════════════════ -->
+    <div class="subscribe-cta">
+      <div class="subscribe-text">Get this every Monday.</div>
+      <div class="subscribe-price">$99/month · cancel anytime</div>
+      <div class="subscribe-preview">Next week: campaign finance cross-referencing, social media tracking, and cumulative trend analysis begin.</div>
+      <a href="https://precinctintel.com/subscribe?district=IL-SD33" class="subscribe-btn">Subscribe Now</a>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="next-briefing">Next Briefing: Monday, March 2, 2026</div>
+    <div class="precision-policy">
+      <em>Precision Policy</em><br>
+      Every claim is cited. Every inference is labeled. If we can't verify it, we label it as a gap.
+    </div>
+    <div class="footer-disclaimer">
+      All candidates in this race receive identical base intelligence. This briefing contains
+      publicly available information only. Precinct does not provide strategic, campaign, or messaging advice.
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <svg class="footer-logo" viewBox="0 0 24 24" fill="none">
+          <rect x="0" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.6"/>
+          <rect x="13" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.3"/>
+          <rect x="0" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.2"/>
+          <rect x="13" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.1"/>
+        </svg>
+        Precinct · <a href="https://precinctintel.com">precinctintel.com</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
