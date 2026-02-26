@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're In — Precinct Intelligence</title>
+<link rel="canonical" href="https://precinctintel.com/confirm">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg:          #0c0f14;
+    --surface:     #131720;
+    --card:        #1a1f2a;
+    --border:      #222838;
+    --green:       #4ee69a;
+    --green-dim:   #2a5e42;
+    --green-bg:    #0e1f18;
+    --text:        #e8eaf0;
+    --text-muted:  #606880;
+    --text-mid:    #9ba3b8;
+    --mono:        'Geist Mono', 'IBM Plex Mono', monospace;
+  }
+
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Layout ── */
+  .page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    max-width: 560px;
+    width: 100%;
+    padding: 48px 44px;
+  }
+
+  /* ── Header ── */
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .logo-mark {
+    width: 28px;
+    height: 28px;
+    background: var(--green-dim);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-mark svg {
+    width: 14px;
+    height: 14px;
+    fill: var(--green);
+  }
+
+  .logo-text {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  /* ── Status badge ── */
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin-bottom: 28px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+  }
+
+  .status-text {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  /* ── Headline ── */
+  h1 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+
+  .sub {
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 1.65;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  /* ── Delivery details ── */
+  .detail-list {
+    list-style: none;
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .detail-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .detail-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+
+  .detail-body {
+    padding-top: 4px;
+  }
+
+  .detail-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  .detail-value {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* ── Support link ── */
+  .support-row {
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    text-align: center;
+  }
+
+  .support-row p {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .support-row a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .support-row a:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Footer ── */
+  .page-footer {
+    margin-top: 32px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  .page-footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+
+  .page-footer a:hover {
+    color: var(--text-mid);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .card { padding: 36px 28px; }
+    h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<main class="page">
+  <div class="card">
+
+    <!-- Logo -->
+    <div class="logo-row">
+      <div class="logo-mark">
+        <svg viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="0" y="0" width="6" height="6" rx="1"/>
+          <rect x="8" y="0" width="6" height="6" rx="1" opacity="0.5"/>
+          <rect x="0" y="8" width="6" height="6" rx="1" opacity="0.5"/>
+          <rect x="8" y="8" width="6" height="6" rx="1"/>
+        </svg>
+      </div>
+      <span class="logo-text">Precinct Intelligence</span>
+    </div>
+
+    <!-- Status -->
+    <div class="status-badge">
+      <div class="status-dot"></div>
+      <span class="status-text">Subscription Active</span>
+    </div>
+
+    <!-- Headline -->
+    <h1>Your first briefing is on the way.</h1>
+
+    <p class="sub">
+      Precinct tracks local political races so candidates have the same intelligence
+      their opponents have — delivered before Monday morning, every week.
+    </p>
+
+    <!-- Delivery details -->
+    <ul class="detail-list">
+      <li class="detail-item">
+        <div class="detail-icon">📬</div>
+        <div class="detail-body">
+          <div class="detail-label">Delivery</div>
+          <div class="detail-value">Monday at 7:00 AM CT, every week</div>
+        </div>
+      </li>
+      <li class="detail-item">
+        <div class="detail-icon">🗓</div>
+        <div class="detail-body">
+          <div class="detail-label">Coverage window</div>
+          <div class="detail-value">The prior 7 days — news, finance activity, social signals, and endorsement patterns in your district</div>
+        </div>
+      </li>
+      <li class="detail-item">
+        <div class="detail-icon">🔒</div>
+        <div class="detail-body">
+          <div class="detail-label">Format</div>
+          <div class="detail-value">Private link, unique to your subscription — no login required</div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Support -->
+    <div class="support-row">
+      <p>
+        Questions about your subscription?<br>
+        Email us at <a href="mailto:hello@precinctintel.com">hello@precinctintel.com</a> — we respond within one business day.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <a href="https://precinctintel.com">precinctintel.com</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:hello@precinctintel.com">hello@precinctintel.com</a>
+  </footer>
+</main>
+
+</body>
+</html>
