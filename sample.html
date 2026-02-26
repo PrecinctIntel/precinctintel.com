@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precinct Intelligence — Illinois Senate District 33 Week 9</title>
+<title>Precinct Intelligence — Illinois Senate District 33 · Sample Briefing</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=geist-mono@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -586,6 +586,103 @@
     line-height: 1.6;
   }
 
+  /* ── Gated blocks ── */
+  .gate-block {
+    background: linear-gradient(135deg, #0d1a12 0%, #141c24 100%);
+    border: 1px solid var(--green-dim);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .gate-block-content { flex: 1; min-width: 200px; }
+  .gate-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .gate-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .gate-cta {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--green);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .gate-cta:hover { opacity: 0.85; }
+  .gate-more {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--green);
+    margin-top: 10px;
+    padding: 7px 12px;
+    border: 1px dashed var(--green-dim);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .gate-more a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* ── Sample banner ── */
+  .sample-banner {
+    background: var(--green-bg);
+    border-bottom: 1px solid var(--green-dim);
+    padding: 10px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sample-banner-text {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  .sample-banner-cta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--green);
+    padding: 5px 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
   @media (max-width: 600px) {
     .header { padding: 28px 24px 28px; }
     .content { padding: 8px 24px 0; }
@@ -603,6 +700,12 @@
 <body>
 
 <div class="briefing-container">
+
+  <!-- ══ SAMPLE BANNER ════════════════════════════════════════════════════ -->
+  <div class="sample-banner">
+    <span class="sample-banner-text">Sample Briefing — Sections marked 🔒 are subscriber-only</span>
+    <a href="https://precinctintel.com/#pricing" class="sample-banner-cta">Subscribe to Unlock</a>
+  </div>
 
   <div class="header">
     <div class="header-top">
@@ -683,7 +786,13 @@
         <div class="item-body"><span class="heat-emerging">📊 EMERGING</span> — Breugelmans has made "protect girls' sports" a top-three issue — supporting policies requiring biological females compete against biological females. Penman emphasizes school board accountability and fiscal responsibility in education but has not taken a position on transgender athletics. This is a clean differentiation point that may activate different voter segments. <span class="citation">(jessicaforillinois.com/issues; daniellepenman.com)</span></div>
       </div>
 
-      <div class="gated-depth">Subscriber briefing: Issue heat tracking with week-over-week trend deltas, candidate social media sentiment analysis, and local media coverage frequency by topic.</div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Week-over-week issue heat deltas, candidate social media sentiment tracking, and local media coverage frequency by topic — so you see which issues are gaining or losing momentum, not just where they stand today.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
     </div>
 
     <!-- ═══════════════════════════════════════════ -->
@@ -698,7 +807,7 @@
 
       <div class="candidate-card">
         <div class="candidate-name">Jessica Breugelmans (R) — Geneva</div>
-        <div class="candidate-detail">Former teacher and small business owner, Fox Valley. Platform centers on opposing new taxes, education transparency/parental rights, and girls' sports fairness. Chicago Tribune endorsement (Feb 12). Professional campaign site with WinRed integration.</div>
+        <div class="candidate-detail">Former teacher and small business owner, Fox Valley. Chicago Tribune endorsement (Feb 12).</div>
         <div class="stat-row">
           <div class="stat-box">
             <div class="stat-value">1</div>
@@ -713,11 +822,15 @@
             <div class="stat-label">Finance Filed</div>
           </div>
         </div>
+        <div class="gate-more">
+          <span>+ Platform analysis, social media activity &amp; donor network in subscriber briefing</span>
+          <a href="https://precinctintel.com/#pricing">Unlock →</a>
+        </div>
       </div>
 
       <div class="candidate-card">
         <div class="candidate-name">Danielle Penman (R) — St. Charles</div>
-        <div class="candidate-detail">Labor &amp; delivery nurse, 20+ years. Kane County Republican fundraising committee member, 2024 RNC attendee. Platform: fiscal responsibility, Safe-T Act repeal, immigration reform. Endorsed by IL FOP, IUOE Local 150, Bricklayers DC1, Nurses PAC.</div>
+        <div class="candidate-detail">Labor &amp; delivery nurse, 20+ years. Endorsed by IL FOP, IUOE Local 150, Bricklayers DC1, Nurses PAC.</div>
         <div class="stat-row">
           <div class="stat-box">
             <div class="stat-value">4</div>
@@ -731,6 +844,10 @@
             <div class="stat-value">—</div>
             <div class="stat-label">Finance Filed</div>
           </div>
+        </div>
+        <div class="gate-more">
+          <span>+ Platform analysis, social media activity &amp; donor network in subscriber briefing</span>
+          <a href="https://precinctintel.com/#pricing">Unlock →</a>
         </div>
       </div>
 
@@ -749,7 +866,13 @@
         </div>
       </div>
 
-      <div class="gated-depth">Subscriber briefing: Full candidate dossiers, campaign finance cross-referencing, social media tracking, and donor network analysis.</div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Full campaign finance breakdown — receipts, cash on hand, expenditures, and race-tier benchmarking. Plus: complete candidate dossiers, week-over-week activity tracking, social media monitoring, and donor network analysis.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
     </div>
 
     <!-- ═══════════════════════════════════════════ -->
@@ -781,9 +904,12 @@
           </div>
         </div>
 
-        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
-          <div style="font-family: var(--font-mono); font-size: 9px; color: var(--amber); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Local Connection</div>
-          <div class="item-body">SD33 is an open-seat suburban collar-county district — the category most sensitive to national mood swings. In the 2022 cycle, DeWitte held this seat with a narrower margin than his 2018 performance, consistent with the statewide pattern of suburban Republican erosion. The Illinoize has listed SD33 among the top ten legislative seats most likely to flip in 2026. With presidential approval at 47% and right-track/wrong-track at 32/61, the November general environment currently favors the challenger — but March 17 is a primary, where turnout composition matters more than national sentiment. <span class="citation">(The Illinoize; RCP aggregates; IL SBE historical results)</span></div>
+        <div class="gate-block" style="margin-top: 16px;">
+          <div class="gate-block-content">
+            <div class="gate-label">🔒 Subscriber Briefing</div>
+            <div class="gate-text">How these national numbers connect to SD33 specifically — historical margin analysis, suburban trend modeling, and which primary coalition the current environment favors on March 17.</div>
+          </div>
+          <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
         </div>
 
       </div>
@@ -810,12 +936,13 @@
           </table>
         </div>
 
-        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
-          <div style="font-family: var(--font-mono); font-size: 9px; color: var(--purple); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Why This Matters This Week</div>
-          <div class="item-body">The March 17 Republican primary is the first competitive test for this seat since DeWitte's initial 2019 appointment. Competitive open-seat primaries in collar counties historically draw 15-25% higher turnout than uncontested cycles. Early voting begins March 2. <span class="citation">(IL SBE voter data; historical election records)</span></div>
+        <div class="gate-block" style="margin-top: 16px;">
+          <div class="gate-block-content">
+            <div class="gate-label">🔒 Subscriber Briefing</div>
+            <div class="gate-text">Turnout modeling and vote-threshold analysis — how many votes win this primary, which precincts are highest-leverage, and precinct-level margin history from comparable cycles. Includes the strategic implication of early voting composition for each candidate's coalition.</div>
+          </div>
+          <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
         </div>
-
-        <div class="gated-depth">Week 2: Precinct-level turnout history and prior election margin analysis.</div>
       </div>
     </div>
 
@@ -845,7 +972,13 @@
         <span class="milestone">General Nov 3</span>
       </div>
 
-      <div class="gated-depth" style="margin-top: 16px;">Subscriber briefings: Historical milestone comparisons from prior cycles and early vote tracking.</div>
+      <div class="gate-block" style="margin-top: 16px;">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Week-over-week early vote tracking, historical milestone comparisons from 2022 and 2018 cycles, and analysis of which candidate's coalition benefits most from each remaining window.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
     </div>
 
     <!-- ═══════════════════════════════════════════ -->
@@ -910,10 +1043,13 @@
     <!-- SUBSCRIBE CTA — Enhanced                     -->
     <!-- ═══════════════════════════════════════════ -->
     <div class="subscribe-cta">
-      <div class="subscribe-text">Get this every Monday.</div>
-      <div class="subscribe-price">$99/month · cancel anytime</div>
-      <div class="subscribe-preview">Next week: campaign finance cross-referencing, social media tracking, and cumulative trend analysis begin.</div>
-      <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="subscribe-btn">Subscribe Now</a>
+      <div class="subscribe-text">Want the full briefing?</div>
+      <div class="subscribe-price">Finance numbers. Turnout math. Full candidate dossiers.</div>
+      <div class="subscribe-preview">Every Monday. Delivered before your week starts.</div>
+      <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="subscribe-btn">Subscribe — $99/mo</a>
+      <div style="margin-top: 14px;">
+        <a href="https://buy.stripe.com/28EaEQ28rcwd7IiaGJdIA01" style="font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); padding: 11px 24px; border-radius: 4px; text-decoration: none;">Get a Single Briefing — $49</a>
+      </div>
     </div>
 
   </div>
