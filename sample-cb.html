@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precinct Intelligence — Kane County Board District 13 Week 10</title>
+<title>Precinct Intelligence — Kane County Board District 13 · Sample Briefing</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=geist-mono@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -85,11 +85,6 @@
   .section-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); font-weight: 500; }
   .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 6px; }
 
-  /* NOTE: County board briefings include a data-weight tag on each section.
-     weight="primary" = core section, always populated.
-     weight="secondary" = populated when coverage exists.
-     weight="tertiary" = best-effort, flag when empty rather than omit. */
-
   /* ── Items ── */
   .item { background: var(--bg-card); border-radius: 8px; padding: 20px 24px; margin-bottom: 10px; border: 1px solid var(--border); }
   .item:last-child { margin-bottom: 0; }
@@ -111,35 +106,7 @@
   .heat-emerging{ color: var(--amber); }
   .heat-monitor { color: var(--blue); }
 
-  /* ── Board Dynamics Table (new for county board) ── */
-  .board-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
-  .board-table th { font-family: var(--font-mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border); }
-  .board-table td { font-size: 13px; color: var(--text-secondary); padding: 9px 10px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
-  .board-table tr:last-child td { border-bottom: none; }
-  .board-table .member-name { color: var(--text-primary); font-weight: 500; }
-  .vote-yes { color: var(--green); font-family: var(--font-mono); font-size: 11px; }
-  .vote-no  { color: var(--red);   font-family: var(--font-mono); font-size: 11px; }
-  .vote-abs { color: var(--text-muted); font-family: var(--font-mono); font-size: 11px; }
-
-  /* ── Finance section (rescaled for county board) ── */
-  .finance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .finance-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; }
-  .candidate-name { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
-  .finance-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
-  .finance-label { font-size: 12px; color: var(--text-muted); }
-  .finance-value { font-family: var(--font-mono); font-size: 14px; color: var(--text-primary); font-weight: 500; }
-
-  /* County board thresholds:
-     <$5K = low (flag)
-     $5K-$15K = typical
-     $15K-$35K = well-funded
-     >$35K = outlier (flag) */
-  .finance-low     { color: var(--red); }
-  .finance-typical { color: var(--text-primary); }
-  .finance-strong  { color: var(--green); }
-  .finance-flag { margin-top: 8px; font-size: 11px; color: var(--amber); font-family: var(--font-mono); }
-
-  /* ── Community Pulse (new section — no equivalent in SD template) ── */
+  /* ── Community Pulse ── */
   .community-source { display: flex; gap: 12px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle); }
   .community-source:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
   .source-icon { width: 32px; height: 32px; border-radius: 6px; background: var(--bg-deep); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
@@ -167,6 +134,103 @@
   .gap-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); margin-top: 6px; flex-shrink: 0; }
   .gap-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
 
+  /* ── Gated blocks ── */
+  .gate-block {
+    background: linear-gradient(135deg, #0d1a12 0%, #141c24 100%);
+    border: 1px solid var(--green-dim);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .gate-block-content { flex: 1; min-width: 200px; }
+  .gate-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .gate-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .gate-cta {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--green);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .gate-cta:hover { opacity: 0.85; }
+  .gate-more {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--green);
+    margin-top: 10px;
+    padding: 7px 12px;
+    border: 1px dashed var(--green-dim);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .gate-more a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* ── Sample banner ── */
+  .sample-banner {
+    background: var(--green-bg);
+    border-bottom: 1px solid var(--green-dim);
+    padding: 10px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .sample-banner-text {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--green);
+  }
+  .sample-banner-cta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--green);
+    padding: 5px 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
   /* ── Footer ── */
   .footer { background: var(--bg-deep); padding: 32px 48px 40px; margin-top: 8px; }
   .footer-brand { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
@@ -174,10 +238,24 @@
   .footer-note a { color: var(--text-muted); text-decoration: none; }
   .footer-divider { height: 1px; background: var(--border); margin: 16px 0; }
   .footer-legal { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
+
+  @media (max-width: 600px) {
+    .header { padding: 32px 24px 28px; }
+    .content { padding: 8px 24px 0; }
+    .sample-banner { padding: 10px 24px; }
+    .footer { padding: 24px 24px 32px; }
+    .gate-block { flex-direction: column; align-items: flex-start; }
+  }
 </style>
 </head>
 <body>
 <div class="briefing-container">
+
+  <!-- ══ SAMPLE BANNER ════════════════════════════════════════════════════ -->
+  <div class="sample-banner">
+    <span class="sample-banner-text">Sample Briefing — Sections marked 🔒 are subscriber-only</span>
+    <a href="https://precinctintel.com/#pricing" class="sample-banner-cta">Subscribe to Unlock</a>
+  </div>
 
   <!-- ══ HEADER ══════════════════════════════════════════════════════════════ -->
   <header class="header">
@@ -222,7 +300,7 @@
   <!-- ══ CONTENT ════════════════════════════════════════════════════════════ -->
   <div class="content">
 
-    <!-- ── 1. What to Watch ─────────────────────────────────── [weight=primary] -->
+    <!-- ── 1. What to Watch ─────────────────────────────────── [VISIBLE] -->
     <section class="section" data-weight="primary">
       <div class="section-header">
         <span class="section-emoji">👁</span>
@@ -230,7 +308,6 @@
         <div class="section-line"></div>
       </div>
 
-      
       <div class="item">
         <div class="item-meta">
           <span class="item-tag tag-local">SHAW LOCAL</span>
@@ -241,7 +318,7 @@
           <span class="citation">(Shaw Local / Kane County Chronicle, 2026-02-25)</span>
         </div>
       </div>
-      
+
       <div class="item">
         <div class="item-meta">
           <span class="item-tag tag-finance">R PRIMARY</span>
@@ -252,13 +329,9 @@
           <span class="citation">(denizforkanecounty.com; ballotready.org/anthony-catella; Shaw Local 2026-02-07)</span>
         </div>
       </div>
-      
     </section>
 
-    <!-- ── 2. Ward / District Issue Pulse ──────────────────── [weight=primary] -->
-    <!-- NOTE: County board version. Weights: zoning > property tax > local budget >
-         village board minutes > school district overlap > infrastructure.
-         De-weight state/national issues unless directly tied to local board vote. -->
+    <!-- ── 2. Ward / District Issue Pulse ──────────────────── [VISIBLE] -->
     <section class="section" data-weight="primary">
       <div class="section-header">
         <span class="section-emoji">📍</span>
@@ -266,7 +339,6 @@
         <div class="section-line"></div>
       </div>
 
-      
       <div class="item">
         <div class="item-meta">
           <span class="item-tag tag-local">KANE COUNTY CHRONICLE</span>
@@ -277,7 +349,7 @@
           <span class="citation">(Kane County Chronicle, 2026-02-25)</span>
         </div>
       </div>
-      
+
       <div class="item">
         <div class="item-meta">
           <span class="item-tag tag-board">COUNTY BUDGET</span>
@@ -288,13 +360,9 @@
           <span class="citation">(Kane County Board FY2026 budget documents; candidate platforms)</span>
         </div>
       </div>
-      
     </section>
 
-    <!-- ── 3. Board Dynamics ────────────────────────────────── [weight=primary] -->
-    <!-- NEW SECTION: No equivalent in SD template.
-         Tracks: voting blocs, committee assignments, resolution patterns, party-line splits.
-         Source priority: county board minutes, local news, candidate websites, county clerk records. -->
+    <!-- ── 3. Board Dynamics ────────────────────────────────── [GATED] -->
     <section class="section" data-weight="primary">
       <div class="section-header">
         <span class="section-emoji">🏛</span>
@@ -302,84 +370,16 @@
         <div class="section-line"></div>
       </div>
 
-      
-      <div class="item">
-        <div class="item-meta"><span class="item-tag tag-board">Recent Votes</span></div>
-        <div class="item-headline">Recent Board Activity — Kane County Board District 13 Seat</div>
-        <table class="board-table">
-          <thead>
-            <tr>
-              <th>Member</th>
-              <th>District</th>
-              <th>Feb Vote</th>
-              <th>Party</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-            <tr>
-              <td class="member-name">Mike Linder</td>
-              <td>D13</td>
-              <td>
-                <span class="vote-yes">YES</span>
-                
-              </td>
-              <td>D</td>
-            </tr>
-            
-            <tr>
-              <td class="member-name">Myrna Molina</td>
-              <td>D1</td>
-              <td>
-                <span class="vote-yes">YES</span>
-                
-              </td>
-              <td>D</td>
-            </tr>
-            
-            <tr>
-              <td class="member-name">Anita Lewis</td>
-              <td>D3</td>
-              <td>
-                <span class="vote-no">NO</span>
-                
-              </td>
-              <td>D</td>
-            </tr>
-            
-            <tr>
-              <td class="member-name">Phil Silagi</td>
-              <td>D5</td>
-              <td>
-                <span class="vote-yes">YES</span>
-                
-              </td>
-              <td>D</td>
-            </tr>
-            
-          </tbody>
-        </table>
-        <div class="item-body" style="margin-top:12px;">Linder voted with the majority bloc on recent procedural motions. His voting record is consistent with the board's D-majority position on budget and infrastructure items. No party-line breaks identified in the last 90 days — relevant for primary voters who reward or punish incumbents based on bloc loyalty.</div>
-      </div>
-      
-
-      
-      <div class="item">
-        <div class="item-meta"><span class="item-tag tag-board">Committee Activity</span></div>
-        <div class="item-headline">Committee Assignment: Linder on Finance & Budget</div>
-        <div class="item-body">Mike Linder serves on the Finance & Budget Committee — a high-visibility assignment that gives him direct input on the property tax levy and county spending priorities his opponents are criticizing. Challengers targeting fiscal issues are effectively attacking a committee member who has a credible counter-narrative: 'I'm in the room where these decisions are made.'
-          <span class="citation">(countyofkane.org/Pages/county-board.aspx)</span>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Board voting patterns, committee assignments, and bloc loyalty analysis for District 13 and adjacent seats. Includes: recent vote table, Finance &amp; Budget Committee activity, and party-line break history — the record your opponents are running against.</div>
         </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
-      
-
-      
     </section>
 
-    <!-- ── 4. Candidate Activity Log ───────────────────────── [weight=primary] -->
-    <!-- NOTE: County board candidates rarely generate press coverage.
-         Weight: door-knocking reports, yard sign deployment, event appearances,
-         endorsement announcements, social media post volume. -->
+    <!-- ── 4. Candidate Activity Log ───────────────────────── [PARTIAL — 1 entry each, rest gated] -->
     <section class="section" data-weight="primary">
       <div class="section-header">
         <span class="section-emoji">👤</span>
@@ -387,135 +387,88 @@
         <div class="section-line"></div>
       </div>
 
-      
+      <!-- Mike Linder -->
       <div class="item">
         <div class="item-meta">
-          <span class="item-tag tag-local">
-            Mike Linder · D · INC
-          </span>
+          <span class="item-tag tag-local">Mike Linder · D · INC</span>
         </div>
-        <div class="item-headline">Week 10: Incumbent holding traditional campaign cadence</div>
+        <div class="item-headline">Incumbent · Democratic Primary</div>
         <div class="item-body">
-          
           <ul style="list-style:none; padding:0; margin:0;">
-            
             <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
               <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-25</span>
               &nbsp;&nbsp;Shaw Local story — quoted on Fabyan jail site position
             </li>
-            
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-21</span>
-              &nbsp;&nbsp;Board Finance & Budget Committee meeting (standing)
-            </li>
-            
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-14</span>
-              &nbsp;&nbsp;votelinder.com yard sign request form active — signals active ground game
-            </li>
-            
           </ul>
-          
-          
-          <span class="citation">Social: MLinder@KaneCoBoard.org active; votelinder.com updated within last 30 days</span>
-          
+        </div>
+        <div class="gate-more">
+          <span>+ 2 more entries in subscriber briefing</span>
+          <a href="https://precinctintel.com/#pricing">Unlock →</a>
         </div>
       </div>
-      
+
+      <!-- Nicolas Jimenez -->
       <div class="item">
         <div class="item-meta">
-          <span class="item-tag tag-local">
-            Nicolas Jimenez · D
-          </span>
+          <span class="item-tag tag-local">Nicolas Jimenez · D</span>
         </div>
-        <div class="item-headline">Week 10: Challenger with minimal digital presence — ground campaign focus</div>
+        <div class="item-headline">Challenger · Democratic Primary</div>
         <div class="item-body">
-          
           <ul style="list-style:none; padding:0; margin:0;">
-            
             <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
               <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-25</span>
               &nbsp;&nbsp;Shaw Local story published — no Jimenez quote captured
             </li>
-            
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-10</span>
-              &nbsp;&nbsp;No public events or press mentions detected this week
-            </li>
-            
           </ul>
-          
-          
-          <span class="citation">Social: Gmail-only contact (nicojimenez1@gmail.com) — no campaign site detected. Last known web presence: 2016 campaign (Facebook).</span>
-          
+        </div>
+        <div class="gate-more">
+          <span>+ 1 more entry + digital footprint analysis in subscriber briefing</span>
+          <a href="https://precinctintel.com/#pricing">Unlock →</a>
         </div>
       </div>
-      
+
+      <!-- Ryan Deniz -->
       <div class="item">
         <div class="item-meta">
-          <span class="item-tag tag-finance">
-            Ryan Deniz · R
-          </span>
+          <span class="item-tag tag-finance">Ryan Deniz · R</span>
         </div>
-        <div class="item-headline">Week 10: R Primary frontrunner on digital presence</div>
+        <div class="item-headline">Challenger · Republican Primary</div>
         <div class="item-body">
-          
           <ul style="list-style:none; padding:0; margin:0;">
-            
             <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
               <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-20</span>
               &nbsp;&nbsp;Campaign site (denizforkanecounty.com) confirms 2-office practice in Geneva/Elburn — strong local business identity
             </li>
-            
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-07</span>
-              &nbsp;&nbsp;Shaw Local questionnaire response published
-            </li>
-            
           </ul>
-          
-          
-          <span class="citation">Social: denizforkanecounty.com active. No social media accounts detected.</span>
-          
+        </div>
+        <div class="gate-more">
+          <span>+ 1 more entry + digital footprint analysis in subscriber briefing</span>
+          <a href="https://precinctintel.com/#pricing">Unlock →</a>
         </div>
       </div>
-      
+
+      <!-- Anthony Catella -->
       <div class="item">
         <div class="item-meta">
-          <span class="item-tag tag-finance">
-            Anthony Catella · R
-          </span>
+          <span class="item-tag tag-finance">Anthony Catella · R</span>
         </div>
-        <div class="item-headline">Week 10: Name recognition candidate — low new campaign activity</div>
+        <div class="item-headline">Challenger · Republican Primary</div>
         <div class="item-body">
-          
           <ul style="list-style:none; padding:0; margin:0;">
-            
             <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
               <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-07</span>
               &nbsp;&nbsp;Shaw Local election questionnaire published
             </li>
-            
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2025-11-01</span>
-              &nbsp;&nbsp;Filed as candidate for Kane County Board D13
-            </li>
-            
           </ul>
-          
-          
-          <span class="citation">Social: No 2026 campaign site detected. Name recognition from 2024 Circuit Clerk race (Kane County-wide).</span>
-          
+        </div>
+        <div class="gate-more">
+          <span>+ 1 more entry + digital footprint analysis in subscriber briefing</span>
+          <a href="https://precinctintel.com/#pricing">Unlock →</a>
         </div>
       </div>
-      
     </section>
 
-    <!-- ── 5. Local Coverage ───────────────────────────────── [weight=secondary] -->
-    <!-- NOTE: County board version of "Media Mentions."
-         Source priority (descending): Shaw Local / Kane County Chronicle, Patch,
-         Daily Herald, village board newsletters, community Facebook groups.
-         State/national outlets: only if directly covering this district/race. -->
+    <!-- ── 5. Local Coverage ───────────────────────────────── [VISIBLE] -->
     <section class="section" data-weight="secondary">
       <div class="section-header">
         <span class="section-emoji">📰</span>
@@ -523,7 +476,6 @@
         <div class="section-line"></div>
       </div>
 
-      
       <div class="item">
         <div class="item-meta">
           <span class="item-tag tag-local">SHAW LOCAL</span>
@@ -533,15 +485,9 @@
           <span class="citation">(Kane County Chronicle, 2026-02-25)</span>
         </div>
       </div>
-      
     </section>
 
-    <!-- ── 6. Community Pulse ──────────────────────────────── [weight=secondary] -->
-    <!-- NEW SECTION: No equivalent in SD template.
-         Tracks local Facebook groups, NextDoor, village board meeting minutes,
-         community newsletters. These are the primary information channels for
-         county board races where press coverage is sparse.
-         Source priority: local FB group posts, NextDoor threads, village board minutes. -->
+    <!-- ── 6. Community Pulse ──────────────────────────────── [VISIBLE] -->
     <section class="section" data-weight="secondary">
       <div class="section-header">
         <span class="section-emoji">💬</span>
@@ -549,7 +495,6 @@
         <div class="section-line"></div>
       </div>
 
-      
       <div class="community-source">
         <div class="source-icon">🏛</div>
         <div class="source-body">
@@ -557,7 +502,7 @@
           <div class="source-text">February board meeting minutes pending publication. Last published minutes (January) show Finance Committee activity on FY2026 levy discussion. Linder listed as committee member present.</div>
         </div>
       </div>
-      
+
       <div class="community-source">
         <div class="source-icon">📍</div>
         <div class="source-body">
@@ -565,14 +510,9 @@
           <div class="source-text">Property tax and Fabyan jail site discussions active in St. Charles/Geneva community groups. No candidate-specific posts detected this week, but issue-level engagement is high — candidates who post on the jail site topic are likely to receive organic engagement.</div>
         </div>
       </div>
-      
     </section>
 
-    <!-- ── 7. Campaign Finance ─────────────────────────────── [weight=primary] -->
-    <!-- NOTE: County board scale. Filing thresholds are different.
-         IL county board committees file D-1 (organizational) and quarterly reports.
-         Typical range: $1K–$50K total. Flag: <$5K (low), >$35K (outlier/well-funded).
-         Do NOT compare to state senate finance numbers — different universe entirely. -->
+    <!-- ── 7. Campaign Finance ─────────────────────────────── [GATED] -->
     <section class="section" data-weight="primary">
       <div class="section-header">
         <span class="section-emoji">💰</span>
@@ -580,105 +520,16 @@
         <div class="section-line"></div>
       </div>
 
-      <div class="finance-grid">
-        
-        <div class="finance-card">
-          <div class="candidate-name">Mike Linder</div>
-          <div class="finance-row">
-            <span class="finance-label">Q4 Receipts</span>
-            <span class="finance-value finance-typical">
-              $8,200
-            </span>
-          </div>
-          <div class="finance-row">
-            <span class="finance-label">Cash on Hand</span>
-            <span class="finance-value">$6,100</span>
-          </div>
-          <div class="finance-row">
-            <span class="finance-label">Q4 Expenditures</span>
-            <span class="finance-value">2,100</span>
-          </div>
-          
-          <div class="finance-flag">⚠ Typical for county board incumbent. Finance committee role may attract PAC attention in final 2 weeks.</div>
-          
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Full campaign finance breakdown for all 4 candidates — Q4 receipts, cash on hand, expenditures, and race-tier benchmarking. Flags low fundraising, outlier cash positions, and late-cycle PAC signals. This week: one candidate's cash position is low enough to flag a structural campaign risk.</div>
         </div>
-        
-        <div class="finance-card">
-          <div class="candidate-name">Nicolas Jimenez</div>
-          <div class="finance-row">
-            <span class="finance-label">Q4 Receipts</span>
-            <span class="finance-value finance-low">
-              $1,200
-            </span>
-          </div>
-          <div class="finance-row">
-            <span class="finance-label">Cash on Hand</span>
-            <span class="finance-value">$900</span>
-          </div>
-          <div class="finance-row">
-            <span class="finance-label">Q4 Expenditures</span>
-            <span class="finance-value">300</span>
-          </div>
-          
-          <div class="finance-flag">⚠ ⚠ Low fundraising — likely running a door-knocking operation. Watch for late cash infusion or party support.</div>
-          
-        </div>
-        
-        <div class="finance-card">
-          <div class="candidate-name">Ryan Deniz</div>
-          <div class="finance-row">
-            <span class="finance-label">Q4 Receipts</span>
-            <span class="finance-value finance-typical">
-              $5,500
-            </span>
-          </div>
-          <div class="finance-row">
-            <span class="finance-label">Cash on Hand</span>
-            <span class="finance-value">$4,800</span>
-          </div>
-          <div class="finance-row">
-            <span class="finance-label">Q4 Expenditures</span>
-            <span class="finance-value">700</span>
-          </div>
-          
-          <div class="finance-flag">⚠ Typical for R challenger with business network. Two Geneva/Elburn offices = built-in donor base.</div>
-          
-        </div>
-        
-        <div class="finance-card">
-          <div class="candidate-name">Anthony Catella</div>
-          <div class="finance-row">
-            <span class="finance-label">Q4 Receipts</span>
-            <span class="finance-value finance-low">
-              $2,100
-            </span>
-          </div>
-          <div class="finance-row">
-            <span class="finance-label">Cash on Hand</span>
-            <span class="finance-value">$1,800</span>
-          </div>
-          <div class="finance-row">
-            <span class="finance-label">Q4 Expenditures</span>
-            <span class="finance-value">300</span>
-          </div>
-          
-        </div>
-        
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
-      
-      <div class="item" style="margin-top:12px;">
-        <div class="item-body">IL SBE campaign disclosure site currently returning server errors. Finance data below reflects Q4 2025 public filings where available. Linder committee (Friends of Mike Linder) confirmed active. Jimenez committee registration pending confirmation.
-          <span class="citation">Source: IL SBE Campaign Disclosure, Q4 2025 (SBE site outage — data may be incomplete)</span>
-        </div>
-      </div>
-      
     </section>
 
-    <!-- ── 8. District Profile ─────────────────────────────── [weight=secondary] -->
-    <!-- NOTE: County board version of "District Deep Dive."
-         Focus: ward-level demographics, property tax rates (critical for CB races),
-         recent development activity (TIF districts, annexations), voter turnout
-         by precinct in last comparable election (not statewide). -->
+    <!-- ── 8. District Profile ─────────────────────────────── [PARTIAL — demographics visible, rest gated] -->
     <section class="section" data-weight="secondary">
       <div class="section-header">
         <span class="section-emoji">📊</span>
@@ -686,36 +537,24 @@
         <div class="section-line"></div>
       </div>
 
-      
       <div class="item">
         <div class="item-meta"><span class="item-tag tag-local">Demographics</span></div>
         <div class="item-headline">District 13 Overview — Geneva / St. Charles / Elburn Corridor</div>
-        <div class="item-body">Kane County Board District 13 covers portions of Geneva, St. Charles, and Elburn — a predominantly suburban/exurban corridor. Median household income ~$92K (above Kane County average of $83K). Owner-occupied housing rate ~78%. Property tax is structurally the dominant voter issue. Registered voters: approximately 18,000. Comparable primary (2022): 14% turnout — means ~2,500 votes decide this race.
+        <div class="item-body">Kane County Board District 13 covers portions of Geneva, St. Charles, and Elburn — a predominantly suburban/exurban corridor. Median household income ~$92K (above Kane County average of $83K). Owner-occupied housing rate ~78%. Property tax is structurally the dominant voter issue. Registered voters: approximately 18,000.
           <span class="citation">(U.S. Census ACS 2020; Kane County Clerk voter registration data)</span>
         </div>
       </div>
-      
 
-      
-      <div class="item">
-        <div class="item-meta"><span class="item-tag tag-board">Property Tax Context</span></div>
-        <div class="item-headline">Property Tax — The Defining Issue in D13</div>
-        <div class="item-body">All four candidates in District 13 are running explicit anti-tax-increase platforms. The differentiation isn't position — it's credibility. Linder's Finance Committee seat gives him institutional standing. Deniz's business ownership gives him economic credibility. Jimenez and Catella are running on challenger narratives without comparable institutional backing. In a race where everyone agrees on the issue, the candidate who can best credibly claim they'll actually act on it wins the tax-voter.</div>
-      </div>
-      
-
-      
-      <div class="item">
-        <div class="item-meta"><span class="item-tag tag-local">Turnout Pattern</span></div>
-        <div class="item-headline">Low-Turnout Primary — ~2,500 Votes Decides This Race</div>
-        <div class="item-body">Based on 2022 comparable primary turnout (~14%), approximately 2,500 total votes will be cast across both primaries in D13. D-side: Linder vs. Jimenez will likely split ~1,400 votes. R-side: Deniz vs. Catella will split ~1,100 votes. Door-knocking and targeted voter contact have outsized impact in races this small. A candidate who moves 200 persuadable voters wins.
-          <span class="citation">(Kane County Clerk; 2022 primary turnout analysis)</span>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Turnout modeling, vote thresholds, and issue-credibility analysis — including the exact number of votes likely to decide this race, precinct-level turnout patterns from comparable primaries, and which candidate positioning is most credible to the D13 tax-voter.</div>
         </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
-      
     </section>
 
-    <!-- ── 9. Countdown Intelligence ──────────────────────── [weight=primary] -->
+    <!-- ── 9. Countdown Intelligence ──────────────────────── [VISIBLE] -->
     <section class="section" data-weight="primary">
       <div class="section-header">
         <span class="section-emoji">⏱</span>
@@ -731,24 +570,21 @@
         </div>
       </div>
 
-      
       <div class="item">
         <div class="item-body">
           <span class="heat-signal heat-hot">🔴 19 DAYS</span> — Final 3-week window opens. The Fabyan jail site story is this week's catalyst — candidates who respond publicly this week can set the final narrative. Linder's incumbency advantage peaks in the next 10 days; after that, late undecideds typically break toward change.
-          <span class="citation"></span>
         </div>
       </div>
-      
+
       <div class="item">
         <div class="item-body">
           <span class="heat-signal heat-emerging">📊 WATCH</span> — Kane County early voting is open through March 16. Early voting patterns in suburban IL tend to favor incumbents and organized campaigns. Jimenez's door-knocking operation, if active, should be generating early votes now.
           <span class="citation">(Kane County Clerk early voting schedule)</span>
         </div>
       </div>
-      
     </section>
 
-    <!-- ── 10. Upcoming Events & Deadlines ─────────────────── [weight=secondary] -->
+    <!-- ── 10. Upcoming Events & Deadlines ─────────────────── [VISIBLE] -->
     <section class="section" data-weight="secondary">
       <div class="section-header">
         <span class="section-emoji">📅</span>
@@ -756,15 +592,6 @@
         <div class="section-line"></div>
       </div>
 
-      
-      <div class="event-row">
-        <div class="event-date">Mar 2, 2026</div>
-        <div class="event-body">
-          <div class="event-title">Wave 1 Outreach Emails — Precinct sends to Jimenez, Linder</div>
-          <div class="event-detail">Linder + Jimenez both in Wave 1 send list</div>
-        </div>
-      </div>
-      
       <div class="event-row">
         <div class="event-date">Mar 11, 2026</div>
         <div class="event-body">
@@ -772,7 +599,7 @@
           <div class="event-detail">Next scheduled full board meeting — potential Fabyan jail site agenda item</div>
         </div>
       </div>
-      
+
       <div class="event-row">
         <div class="event-date">Mar 16, 2026</div>
         <div class="event-body">
@@ -780,7 +607,7 @@
           <div class="event-detail">All Kane County early voting sites</div>
         </div>
       </div>
-      
+
       <div class="event-row">
         <div class="event-date">Mar 17, 2026</div>
         <div class="event-body">
@@ -788,15 +615,9 @@
           <div class="event-detail">Kane County Board District 13 — all 4 candidates on ballot</div>
         </div>
       </div>
-      
     </section>
 
-    <!-- ── 11. Intelligence Gaps ───────────────────────────── [weight=tertiary] -->
-    <!-- NOTE: County board briefings will have more gaps than senate briefings.
-         This is expected — document them rather than papering over them.
-         Subscribers appreciate transparency about data limitations.
-         Common gaps: candidate finance pre-Q4, village board minutes not digitized,
-         no candidate social media presence. -->
+    <!-- ── 11. Intelligence Gaps ───────────────────────────── [VISIBLE] -->
     <section class="section" data-weight="tertiary">
       <div class="section-header">
         <span class="section-emoji">🔍</span>
@@ -804,47 +625,53 @@
         <div class="section-line"></div>
       </div>
 
-      
       <div class="gap-item">
         <div class="gap-dot"></div>
-        <div class="gap-text">IL SBE campaign finance site is returning server errors — finance data above is estimated from committee registration records and partial Q4 filings only. Full finance picture unavailable until site restores.</div>
+        <div class="gap-text">IL SBE campaign finance site is returning server errors — finance data is estimated from committee registration records and partial Q4 filings only. Full finance picture unavailable until site restores.</div>
       </div>
-      
+
       <div class="gap-item">
         <div class="gap-dot"></div>
         <div class="gap-text">No Jimenez campaign website or social media detected. His ground campaign operation and volunteer base are unknown — cannot assess GOTV strength.</div>
       </div>
-      
+
       <div class="gap-item">
         <div class="gap-dot"></div>
         <div class="gap-text">Anthony Catella's finance committee data not confirmed — SBE outage prevents full lookup.</div>
       </div>
-      
+
       <div class="gap-item">
         <div class="gap-dot"></div>
-        <div class="gap-text">Kane County GOP endorsement status unknown. A ward committee endorsement for Deniz or Catella would be significant signal.</div>
+        <div class="gap-text">Kane County GOP endorsement status unknown. A ward committee endorsement for Deniz or Catella would be a significant signal.</div>
       </div>
-      
+
       <div class="gap-item">
         <div class="gap-dot"></div>
         <div class="gap-text">Village board meeting minutes for Geneva and St. Charles not yet digitized for current cycle — community issue temperature estimated from news coverage only.</div>
       </div>
-      
     </section>
 
   </div><!-- /content -->
+
+  <!-- ══ SUBSCRIBE CTA ════════════════════════════════════════════════════ -->
+  <div style="background: var(--green-bg); border-top: 1px solid var(--green-dim); border-bottom: 1px solid var(--green-dim); padding: 32px 48px; text-align: center; margin-top: 8px;">
+    <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 10px;">Want the full briefing?</div>
+    <div style="font-family: var(--font-display); font-size: 22px; color: var(--text-primary); margin-bottom: 8px;">Board dynamics. Finance numbers. Turnout math.</div>
+    <div style="font-size: 13px; color: var(--text-secondary); font-weight: 300; margin-bottom: 20px;">Every Monday. Delivered before your week starts. $99/mo — cancel anytime.</div>
+    <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" style="display: inline-flex; align-items: center; font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--bg-deep); background: var(--green); padding: 14px 32px; border-radius: 4px; text-decoration: none; margin-right: 12px;">Subscribe — $99/mo</a>
+    <a href="https://buy.stripe.com/28EaEQ28rcwd7IiaGJdIA01" style="display: inline-flex; align-items: center; font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-secondary); border: 1px solid var(--border); padding: 13px 24px; border-radius: 4px; text-decoration: none;">Get a Single Briefing — $49</a>
+  </div>
 
   <!-- ══ FOOTER ════════════════════════════════════════════════════════════ -->
   <footer class="footer">
     <div class="footer-brand">Precinct Intelligence</div>
     <div class="footer-note">
-      This briefing is prepared exclusively for your subscription and delivered weekly every Monday at 7:00 AM CT.
-      Coverage is neutral — the same intelligence framework is applied to all candidates in this district.
+      This is a sample briefing. Subscriber briefings include full campaign finance breakdowns, board voting analysis, turnout modeling, and complete candidate activity logs — delivered every Monday at 7:00 AM CT.
       Questions? <a href="mailto:hello@precinctintel.com">hello@precinctintel.com</a>
     </div>
     <div class="footer-divider"></div>
     <div class="footer-legal">
-      This is a private research briefing. Do not forward or republish. Token: SAMPLE-KANE-CB13-2026
+      Token: SAMPLE-KANE-CB13-GATED-2026
       <br>© 2026 Precinct Intelligence · precinctintel.com
     </div>
   </footer>
@@ -852,4 +679,3 @@
 </div><!-- /briefing-container -->
 </body>
 </html>
-
