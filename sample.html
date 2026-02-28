@@ -708,12 +708,35 @@
     .stat-box { min-width: 70px; }
   }
 </style>
+<style>
+  /* Executive summary — new section, minimal addition */
+  .exec-summary {
+    background: rgba(78,230,154,0.04);
+    border: 1px solid var(--green-dim);
+    border-radius: 8px;
+    padding: 20px 24px;
+  }
+  .exec-summary-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .exec-summary-body {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+</style>
 </head>
 <body>
 
 <div class="briefing-container">
 
-  <!-- ══ SAMPLE BANNER ════════════════════════════════════════════════════ -->
   <div class="sample-banner">
     <span class="sample-banner-text">Sample Briefing — Sections marked 🔒 are subscriber-only</span>
     <a href="https://precinctintel.com/#pricing" class="sample-banner-cta">Subscribe to Unlock</a>
@@ -735,10 +758,12 @@
     <div class="header-subtitle">Weekly Political Intelligence Briefing</div>
     <div class="header-meta">
       <div class="meta-pill"><span class="label">Week</span> 9</div>
-      <div class="meta-pill"><span class="label">Period</span> Feb 17 – Feb 24, 2026</div>
+      <div class="meta-pill"><span class="label">Period</span> Feb 23 – Mar 1, 2026</div>
+      <div class="meta-pill"><span class="label">Scanned</span> 188 articles</div>
+      <div class="meta-pill"><span class="label">Signals</span> 5</div>
       <div class="coverage-badge">
         <span class="coverage-grade">C</span>
-        <span class="coverage-label">Sources: 5</span>
+        <span class="coverage-label">Coverage</span>
       </div>
     </div>
   </div>
@@ -746,60 +771,59 @@
 
   <div class="content">
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- WHAT TO WATCH — Connection insights lead    -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- EXECUTIVE SUMMARY -->
     <div class="section">
       <div class="section-header">
-        <span class="section-emoji">👁</span>
-        <span class="section-label">What to Watch</span>
+        <span class="section-emoji">⚡</span>
+        <span class="section-label">Executive Summary</span>
         <span class="section-line"></span>
       </div>
-
-      <div class="item">
-        <div class="item-headline">Domain Squatting Attack Signals Organized Opposition</div>
-        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — Someone has registered <strong>jessicabreugelmans.com</strong> — a domain using Breugelmans' full name — and populated it with a parody attack page. Her actual campaign site is jessicaforillinois.com. Domain squatting on a candidate's personal name in a state senate primary is unusual and suggests either an organized opposition effort or outside interest group involvement. The registrant information is shielded by privacy protection. This is worth monitoring: if the domain starts running paid traffic or appears in search results, it becomes a campaign integrity issue. <span class="citation">(jessicabreugelmans.com, direct observation; jessicaforillinois.com, campaign site)</span></div>
+      <div class="exec-summary">
+        <div class="exec-summary-label">This week at a glance</div>
+        <div class="exec-summary-body">Jessica Breugelmans locked down a second major newspaper endorsement from the Daily Herald, adding to the Chicago Tribune nod from two weeks prior, while Danielle Penman continued aggressive bilingual voter-contact operations and Michele Clark remained focused on education messaging with no traditional media coverage. A tax-policy exchange between Breugelmans and Penman intensified on social media and Facebook. Early voting opens March 2 — three days from the end of this reporting period — making this the last full week before ballots are actively cast at expanded locations.</div>
       </div>
-
-      <div class="item">
-        <div class="item-headline">Endorsement Ecosystem Split: Media vs. Labor in a Republican Primary</div>
-        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — Breugelmans holds the Chicago Tribune editorial board endorsement (Feb 12). Penman holds four institutional endorsements: IL Fraternal Order of Police, IUOE Local 150 (operating engineers), Bricklayers &amp; Allied Craftworkers DC1, and the Nurses PAC. In a Republican primary, labor union endorsements are uncommon — they typically signal a candidate positioning as pragmatic or center-right rather than movement conservative. The Tribune endorsing one Republican while labor backs the other suggests these candidates are competing for different coalitions within the same primary electorate. Which coalition turns out on March 17 may determine the outcome. <span class="citation">(Chicago Tribune, Feb 12, 2026; daniellepenman.com/endorsements)</span></div>
-      </div>
-
-      <div class="item">
-        <div class="item-headline">Breugelmans: Professional Campaign Infrastructure, Zero Financial Disclosure</div>
-        <div class="item-body"><span class="heat-emerging">📊 EMERGING</span> — Breugelmans operates a polished campaign website with WinRed donation integration, volunteer signup, and yard sign requests — infrastructure that typically follows or accompanies campaign finance committee registration. As of this briefing, no campaign finance filings are on record with the Illinois State Board of Elections for her committee. The gap between visible infrastructure and missing financial disclosure is worth tracking: either the campaign is operating under the disclosure threshold, filings are delayed, or there's a compliance question. <span class="citation">(jessicaforillinois.com; IL SBE campaign disclosure search, accessed Feb 24, 2026)</span></div>
-      </div>
-
-      <div class="section-hint">📎 Subscriber briefings include expanded analysis, additional sources, and week-over-week context for this section.</div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- LOCAL ISSUE PULSE                            -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- SIGNAL DETECTION -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">🔬</span>
+        <span class="section-label">Signal Detection</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="item">
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--green);background:rgba(78,230,154,0.08);border:1px solid rgba(78,230,154,0.25);border-radius:3px;padding:2px 8px;display:inline-block;margin-bottom:8px;letter-spacing:0.5px;">Four independent sources converged</div>
+        <div class="item-headline">Breugelmans consolidates editorial endorsement lane; Penman counters with labor and institutional endorsements</div>
+        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — Four independent source types — <strong>newspaper endorsement editorials</strong>, <strong>Facebook campaign posts</strong>, <strong>Twitter/X intel</strong>, and <strong>campaign finance filings</strong> — converge on a structural split in coalition-building strategy. Jessica Breugelmans now holds endorsements from both the Daily Herald (Feb 25) and the Chicago Tribune (Feb 12), plus a local business coalition (Feb 23) and ABATE of Illinois. Danielle Penman holds endorsements from the International Union of Operating Engineers Local 150, Bricklayers & Allied Craftworkers District Council 1 Illinois, the Illinois Fraternal Order of Police, ANA-Illinois, and the United for Freedom Coalition PAC. Breugelmans leads in Q4 fundraising ($28,645 vs. $12,011) but Penman's labor endorsements typically carry independent expenditure capacity that does not appear in candidate committee filings. Breugelmans' Facebook post on Feb 6 explicitly alleged that 'Democrat Unions' are bankrolling Penman — a framing that signals this endorsement divide will be the central contrast argument of the final 18 days. <span class="citation">(Daily Herald; Chicago Tribune; Facebook — Jessica Breugelmans; Facebook — Danielle Penman; IL SBE CampaignDisclosure; X/Twitter Intel)</span></div>
+      </div>
+      <div class="item">
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--green);background:rgba(78,230,154,0.08);border:1px solid rgba(78,230,154,0.25);border-radius:3px;padding:2px 8px;display:inline-block;margin-bottom:8px;letter-spacing:0.5px;">Three independent sources converged</div>
+        <div class="item-headline">Tax policy emerges as primary battleground with real-time candidate-to-candidate exchanges</div>
+        <div class="gate-more" style="margin-top:10px;">
+          <span>Analysis locked — subscriber briefing includes full source convergence breakdown</span>
+          <a href="https://precinctintel.com/#pricing">Unlock →</a>
+        </div>
+      </div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">4 more Signal Detection items with source convergence analysis and cross-referenced citations — tax policy battleground, education funding, bilingual outreach intelligence, and digital footprint gap assessment.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
+    </div>
+
+    <!-- LOCAL ISSUE PULSE -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">📍</span>
         <span class="section-label">Local Issue Pulse</span>
         <span class="section-line"></span>
       </div>
-
       <div class="item">
-        <div class="item-headline">Tax Policy</div>
-        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — Both Republican candidates have centered anti-tax messaging, but with different specificity. Breugelmans names individual proposals: a $1.50 delivery tax, service taxes on haircuts, car repairs, and home maintenance. Penman frames broader: eliminate gas tax surcharges, reduce property tax burden. The specificity gap matters — Breugelmans is running against named legislation, Penman against a condition. <span class="citation">(jessicaforillinois.com/issues; daniellepenman.com/key-issues)</span></div>
+        <div class="item-headline">Property Taxes and State Spending</div>
+        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — This is the dominant issue of the primary. Breugelmans has made an explicit 'never vote for a tax hike' pledge and frames the race around suburban taxpayers subsidizing Chicago (Facebook, Feb 23 ad). She attacked Penman by name on Feb 6, alleging union-backed support signals future tax increases. Penman has pledged to 'lower taxes, rein in wasteful spending' (Facebook, Jan 13) and made a 'direct promise on tax reduction policy' on Twitter. Clark has not made specific tax pledges in available data, though her general platform references 'responsible leadership and practical solutions.' ANALYSIS: Breugelmans occupies the most aggressive anti-tax position and has made it a contrast weapon; Penman is competing on the same ground but with less specificity; Clark's silence on tax specifics is itself a data point for general election positioning. <span class="citation">(Facebook — Jessica Breugelmans; Facebook — Danielle Penman; X/Twitter Intel — Breugelmans; X/Twitter Intel — Penman; micheleforilsenate.com)</span></div>
       </div>
-
-      <div class="item">
-        <div class="item-headline">Public Safety &amp; Safe-T Act</div>
-        <div class="item-body"><span class="heat-emerging">📊 EMERGING</span> — Penman explicitly calls for repealing the Safe-T Act, restoring cash bail, and expanding fentanyl enforcement. Breugelmans has not published a public safety position. Penman's FOP endorsement reinforces her ownership of this lane. In a primary where both candidates agree on taxes, the public safety differentiation may be decisive. <span class="citation">(daniellepenman.com/key-issues; daniellepenman.com/endorsements)</span></div>
-      </div>
-
-      <div class="item">
-        <div class="item-headline">Education &amp; Girls' Sports</div>
-        <div class="item-body"><span class="heat-emerging">📊 EMERGING</span> — Breugelmans has made "protect girls' sports" a top-three issue — supporting policies requiring biological females compete against biological females. Penman emphasizes school board accountability and fiscal responsibility in education but has not taken a position on transgender athletics. This is a clean differentiation point that may activate different voter segments. <span class="citation">(jessicaforillinois.com/issues; daniellepenman.com)</span></div>
-      </div>
-
-      <div class="section-hint">📎 Subscriber briefings include expanded analysis, additional sources, and week-over-week context for this section.</div>
       <div class="gate-block">
         <div class="gate-block-content">
           <div class="gate-label">🔒 Subscriber Briefing</div>
@@ -809,89 +833,51 @@
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- CANDIDATE ACTIVITY LOG — Compressed          -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- CANDIDATE ACTIVITY LOG -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">👤</span>
         <span class="section-label">Candidate Activity Log</span>
         <span class="section-line"></span>
       </div>
-
       <div class="candidate-card">
         <div class="candidate-name">Jessica Breugelmans (R) — Geneva</div>
-        <div class="candidate-detail">Former teacher and small business owner, Fox Valley. Chicago Tribune endorsement (Feb 12).</div>
-        <div class="stat-row">
-          <div class="stat-box">
-            <div class="stat-value">1</div>
-            <div class="stat-label">Endorsements</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-value">3</div>
-            <div class="stat-label">Media Mentions</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-value">—</div>
-            <div class="stat-label">Finance Filed</div>
-          </div>
-        </div>
+        <div class="candidate-detail">Lifelong Fox Valley resident, mother, homeschool parent, and self-described 'Mom on a Mission.</div>
+        <div class="stat-row"><div class="stat-box"><div class="stat-value">6</div><div class="stat-label">Endorsements</div><div class="stat-delta delta-up">▲</div></div><div class="stat-box"><div class="stat-value">2</div><div class="stat-label">Media Mentions</div><div class="stat-delta delta-up">▲</div></div><div class="stat-box"><div class="stat-value">$28.6K</div><div class="stat-label">Q4 Raised</div><div class="stat-delta delta-neutral">—</div></div><div class="stat-box"><div class="stat-value">5</div><div class="stat-label">Posts / 7d</div><div class="stat-delta delta-neutral">—</div></div></div>
         <div class="gate-more">
-          <span>+ Platform analysis, social media activity &amp; donor network in subscriber briefing</span>
+          <span>+ Full dossier, platform analysis, social media activity &amp; endorsement tracking in subscriber briefing</span>
           <a href="https://precinctintel.com/#pricing">Unlock →</a>
         </div>
       </div>
-
       <div class="candidate-card">
-        <div class="candidate-name">Danielle Penman (R) — St. Charles</div>
-        <div class="candidate-detail">Labor &amp; delivery nurse, 20+ years. Endorsed by IL FOP, IUOE Local 150, Bricklayers DC1, Nurses PAC.</div>
-        <div class="stat-row">
-          <div class="stat-box">
-            <div class="stat-value">4</div>
-            <div class="stat-label">Endorsements</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-value">2</div>
-            <div class="stat-label">Media Mentions</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-value">—</div>
-            <div class="stat-label">Finance Filed</div>
-          </div>
-        </div>
+        <div class="candidate-name">Danielle Penman (R) — </div>
+        <div class="candidate-detail">Describes herself as a dedicated Republican, community volunteer, and advocate for families.</div>
+        <div class="stat-row"><div class="stat-box"><div class="stat-value">5</div><div class="stat-label">Endorsements</div><div class="stat-delta delta-neutral">—</div></div><div class="stat-box"><div class="stat-value">0</div><div class="stat-label">Media Mentions</div><div class="stat-delta delta-neutral">—</div></div><div class="stat-box"><div class="stat-value">$12.0K</div><div class="stat-label">Q4 Raised</div><div class="stat-delta delta-neutral">—</div></div><div class="stat-box"><div class="stat-value">3</div><div class="stat-label">Posts / 7d</div><div class="stat-delta delta-neutral">—</div></div></div>
         <div class="gate-more">
-          <span>+ Platform analysis, social media activity &amp; donor network in subscriber briefing</span>
+          <span>+ Full dossier, platform analysis, social media activity &amp; endorsement tracking in subscriber briefing</span>
           <a href="https://precinctintel.com/#pricing">Unlock →</a>
         </div>
       </div>
-
       <div class="candidate-card">
         <div class="candidate-name">Michele Clark (D) — Algonquin</div>
-        <div class="candidate-detail">Uncontested Democratic primary. No campaign website, donation platform, or public platform identified. Referenced only in county clerk filings and Shaw Local candidate guides.</div>
-        <div class="stat-row">
-          <div class="stat-box">
-            <div class="stat-value">0</div>
-            <div class="stat-label">Endorsements</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-value">1</div>
-            <div class="stat-label">Media Mentions</div>
-          </div>
+        <div class="candidate-detail">Grew up in Kildeer, now lives in Algonquin with husband Daryl, a commercial airline pilot.</div>
+        <div class="stat-row"><div class="stat-box"><div class="stat-value">0</div><div class="stat-label">Endorsements</div><div class="stat-delta delta-neutral">—</div></div><div class="stat-box"><div class="stat-value">0</div><div class="stat-label">Media Mentions</div><div class="stat-delta delta-neutral">—</div></div><div class="stat-box"><div class="stat-value">$19.9K</div><div class="stat-label">Q4 Raised</div><div class="stat-delta delta-neutral">—</div></div><div class="stat-box"><div class="stat-value">3</div><div class="stat-label">Posts / 7d</div><div class="stat-delta delta-neutral">—</div></div></div>
+        <div class="gate-more">
+          <span>+ Full dossier, platform analysis, social media activity &amp; endorsement tracking in subscriber briefing</span>
+          <a href="https://precinctintel.com/#pricing">Unlock →</a>
         </div>
       </div>
-
+      
       <div class="gate-block">
         <div class="gate-block-content">
           <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Complete candidate dossiers, week-over-week activity tracking, social media monitoring, and donor network analysis.</div>
+          <div class="gate-text">Complete candidate dossiers, week-over-week activity tracking, social media monitoring, and endorsement network analysis.</div>
         </div>
         <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- CAMPAIGN FINANCE                             -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- CAMPAIGN FINANCE -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">💰</span>
@@ -901,15 +887,30 @@
       <div class="gate-block">
         <div class="gate-block-content">
           <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Full campaign finance breakdown for all 3 candidates — receipts, cash on hand, expenditures, and race-tier benchmarking against comparable IL Senate primaries. Includes compliance flag analysis and donor network cross-referencing.</div>
+          <div class="gate-text">Full campaign finance breakdown for all 3 candidates — receipts, cash on hand, expenditures, burn rate analysis, anomaly flags, and independent expenditure tracking.</div>
         </div>
         <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- NATIONAL CLIMATE                             -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- WEEK-OVER-WEEK DELTAS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📈</span>
+        <span class="section-label">Week-over-Week Deltas</span>
+        <span class="section-line"></span>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);margin-bottom:12px;">6 changes tracked this week</div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Full change log with NEW / UNCHANGED / DECLINE tags across endorsements, media coverage, finance, and social media activity.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
+    </div>
+
+    <!-- NATIONAL POLITICAL CLIMATE -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">🌐</span>
@@ -920,36 +921,29 @@
         <div class="item-body">
           <div class="poll-row">
             <span class="poll-metric">Presidential Approval (RCP avg)</span>
-            <span class="poll-value">47.2% <span class="stat-delta delta-down">▼ 0.8</span></span>
-          </div>
-          <div class="poll-row">
-            <span class="poll-metric">Generic Congressional Ballot (R/D)</span>
-            <span class="poll-value">R+1.4 <span class="stat-delta delta-up">▲ 0.3</span></span>
-          </div>
-          <div class="poll-row">
+            <span class="poll-value">44.2% <span class="stat-delta delta-down">▼ 0.8</span></span>
+          </div><div class="poll-row">
+            <span class="poll-metric">Generic Congressional Ballot</span>
+            <span class="poll-value">D+2.8 <span class="stat-delta delta-neutral">— D+2.8, holding steady</span></span>
+          </div><div class="poll-row">
             <span class="poll-metric">Right Track / Wrong Track</span>
-            <span class="poll-value">32/61 <span class="stat-delta delta-neutral">—</span></span>
-          </div>
-          <div class="poll-row">
+            <span class="poll-value">28/64 <span class="stat-delta delta-down">▼ </span></span>
+          </div><div class="poll-row">
             <span class="poll-metric">IL Consumer Confidence Index</span>
-            <span class="poll-value">67.3 <span class="stat-delta delta-down">▼ 1.2</span></span>
+            <span class="poll-value">82.3 <span class="stat-delta delta-down">▼ 3.1</span></span>
           </div>
         </div>
-
-        <div class="gate-block" style="margin-top: 16px;">
-          <div class="gate-block-content">
-            <div class="gate-label">🔒 Subscriber Briefing</div>
-            <div class="gate-text">How these national numbers connect to SD33 specifically — historical margin analysis, suburban trend modeling, and which primary coalition the current environment favors on March 17.</div>
-          </div>
-          <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+        <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">How these national numbers connect to SD33 specifically — historical margin analysis, suburban trend modeling, and which primary coalition the current environment favors on March 17.</div>
         </div>
-
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- DISTRICT DEEP DIVE                           -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- DISTRICT DEEP DIVE -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">📊</span>
@@ -957,30 +951,28 @@
         <span class="section-line"></span>
       </div>
       <div class="item">
-        <div style="font-family: var(--font-mono); font-size: 9px; color: var(--purple); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;">Week 1 — District Profile</div>
+        <div style="font-family:var(--font-mono);font-size:9px;color:var(--purple);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px;">Week 9 — District Profile</div>
         <div class="item-body">
           <table class="dive-table">
-            <tr><td>District</td><td>Illinois Senate District 33 — spans parts of McHenry and Kane counties. Includes Crystal Lake, Lake in the Hills, Algonquin, portions of St. Charles and Geneva.</td></tr>
-            <tr><td>Incumbent</td><td>Sen. Don DeWitte (R) — not seeking reelection. Held seat since 2019. Won 2022 general with reduced margin vs. 2018.</td></tr>
-            <tr><td>Race Type</td><td>Open seat. Contested R primary (Mar 17), uncontested D primary. General election Nov 3.</td></tr>
-            <tr><td>Trend</td><td>Historically safe Republican. Suburban collar counties have trended toward increased competitiveness since 2018. The Illinoize rates SD33 among top-10 flip targets statewide.</td></tr>
-            <tr><td>Registration</td><td>Illinois does not register voters by party. Primary ballot pull history is used as partisan proxy. District-level pull data not yet compiled.</td></tr>
+            <tr><td>District</td><td>Spans McHenry and Kane counties in Chicago's northwest collar suburbs. Key cities include Crystal Lake, Lake in the Hills, Algonquin, St. Charles, and Geneva. The district stretches from McHenry County's southern tier through northern Kane County.</td></tr>
+            <tr><td>Incumbent</td><td>Sen. Don DeWitte (R) — announced prostate cancer diagnosis January 5, 2026; not seeking reelection. His departure creates the open-seat dynamic.</td></tr>
+            <tr><td>Race Type</td><td>Open seat — Republican primary (Breugelmans vs. Penman) and uncontested Democratic primary (Clark). General election matchup to be determined March 17.</td></tr>
+            <tr><td>Flip Rating</td><td>Top 10 most likely to flip (The Illinoize)</td></tr>
+            <tr><td>Trend</td><td>Historically safe Republican. Suburban collar counties have trended toward increased competitiveness since 2018. DeWitte won the 2022 general with a reduced margin versus 2018, consistent with the statewide pattern of suburban Republican erosion. Open-seat dynamics amplify vulnerability.</td></tr>
+            <tr><td>Registration</td><td>Illinois does not register voters by party. Primary ballot pull history serves as the partisan proxy. The district is historically Republican-leaning but the collar county suburban trend has made it increasingly competitive.</td></tr>
           </table>
         </div>
-
-        <div class="gate-block" style="margin-top: 16px;">
-          <div class="gate-block-content">
-            <div class="gate-label">🔒 Subscriber Briefing</div>
-            <div class="gate-text">Turnout modeling and vote-threshold analysis — how many votes win this primary, which precincts are highest-leverage, and precinct-level margin history from comparable cycles. Includes the strategic implication of early voting composition for each candidate's coalition.</div>
-          </div>
-          <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+        <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Turnout modeling and vote-threshold analysis — how many votes win this primary, which precincts are highest-leverage, and precinct-level margin history from comparable cycles.</div>
         </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- COUNTDOWN                                    -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- COUNTDOWN INTELLIGENCE -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">⏱</span>
@@ -988,23 +980,13 @@
         <span class="section-line"></span>
       </div>
       <div class="countdown-banner">
-        <div class="countdown-number">21</div>
-        <div class="countdown-detail"><strong>Days until Republican Primary</strong> (March 17, 2026). Early voting begins in 6 days (March 2).</div>
+        <div class="countdown-number">18</div>
+        <div class="countdown-detail"><strong>Days until Primary</strong> (March 17, 2026). Early voting now open.</div>
       </div>
-
-      <div class="milestone-track">
-        <span class="milestone done">Filing ✓</span>
-        <span class="milestone-arrow">→</span>
-        <span class="milestone done">Petition Period ✓</span>
-        <span class="milestone-arrow">→</span>
-        <span class="milestone current">Early Voting Mar 2</span>
-        <span class="milestone-arrow">→</span>
-        <span class="milestone">Primary Mar 17</span>
-        <span class="milestone-arrow">→</span>
-        <span class="milestone">General Nov 3</span>
+      <div class="milestone-track" style="margin-top:16px;">
+        <span class="milestone done">Filing ✓</span><span class="milestone-arrow">→</span><span class="milestone done">Petition Period ✓</span><span class="milestone-arrow">→</span><span class="milestone done">Early Voting Open (Limited) ✓</span><span class="milestone-arrow">→</span><span class="milestone upcoming">All Early Voting Locations Open — Mar 2</span><span class="milestone-arrow">→</span><span class="milestone upcoming">Last Day Online Voter Registration — Mar 10</span><span class="milestone-arrow">→</span><span class="milestone upcoming">Last Day Mail Ballot Applications — Mar 12</span><span class="milestone-arrow">→</span><span class="milestone upcoming">Primary Mar 17</span><span class="milestone-arrow">→</span><span class="milestone upcoming">General Nov 3</span>
       </div>
-
-      <div class="gate-block" style="margin-top: 16px;">
+      <div class="gate-block">
         <div class="gate-block-content">
           <div class="gate-label">🔒 Subscriber Briefing</div>
           <div class="gate-text">Week-over-week early vote tracking, historical milestone comparisons from 2022 and 2018 cycles, and analysis of which candidate's coalition benefits most from each remaining window.</div>
@@ -1013,9 +995,7 @@
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- EVENTS                                       -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- UPCOMING EVENTS & DEADLINES -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">📅</span>
@@ -1024,32 +1004,26 @@
       </div>
       <div class="events-container">
         <div class="event-row">
-          <div class="event-date">Mar 2, 2026</div>
-          <div class="event-desc event-urgent">Early voting begins — Kane and McHenry counties <span class="citation">(IL SBE)</span></div>
+          <div class="event-date">2026-03-02</div>
+          <div class="event-desc event-urgent">All early voting locations open across McHenry, Kane, and DuPage counties <span class="citation">(IL SBE, Facebook — Danielle Penman)</span></div>
         </div>
         <div class="event-row">
-          <div class="event-date">Mar 10, 2026</div>
-          <div class="event-desc">Last day for online voter registration <span class="citation">(IL SBE)</span></div>
+          <div class="event-date">2026-03-10</div>
+          <div class="event-desc event-urgent">Last day for online voter registration <span class="citation">(IL SBE)</span></div>
         </div>
         <div class="event-row">
-          <div class="event-date">Mar 12, 2026</div>
-          <div class="event-desc">Last day for mail ballot applications <span class="citation">(IL SBE)</span></div>
+          <div class="event-date">2026-03-12</div>
+          <div class="event-desc event-urgent">Last day for vote-by-mail ballot applications <span class="citation">(IL SBE)</span></div>
         </div>
         <div class="event-row">
-          <div class="event-date">Mar 17, 2026</div>
-          <div class="event-desc event-urgent">⚡ GENERAL PRIMARY — Breugelmans vs Penman (R); Clark uncontested (D) <span class="citation">(IL SBE)</span></div>
+          <div class="event-date">2026-03-17</div>
+          <div class="event-desc event-urgent">General Primary Election Day — Republican primary (Breugelmans vs. Penman) and Democratic primary (Clark, unopposed) <span class="citation">(IL SBE)</span></div>
         </div>
-        <div class="event-row">
-          <div class="event-date">Nov 3, 2026</div>
-          <div class="event-desc">General Election — R primary winner vs Michele Clark (D) <span class="citation">(IL SBE)</span></div>
-        </div>
+        
       </div>
-      <div class="section-hint">📎 Subscriber briefings include expanded analysis, additional sources, and week-over-week context for this section.</div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- INTELLIGENCE GAPS — Trimmed to 2             -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- INTELLIGENCE GAPS -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">🔍</span>
@@ -1058,37 +1032,35 @@
       </div>
       <div class="intel-gaps">
         <div class="intel-gaps-intro">Areas with insufficient public data this week</div>
-
         <div class="gap-item">
           <div class="gap-dot"></div>
-          <div class="gap-text"><strong>Campaign Finance:</strong> IL SBE campaign disclosure filings not yet retrieved for any candidate. Contribution amounts, spending patterns, and donor networks will be cross-referenced in next week's briefing.</div>
+          <div class="gap-text"><strong>Q1 2026 Campaign Finance:</strong> All current finance data reflects Q4 2025 (Oct–Dec). The critical primary sprint period — January through mid-March — is not yet disclosed. Independent expenditures from labor organizations endorsing Penman (IUOE Local 150, Bricklayers DC1, Illinois FOP) would appear in separate IE filings. These filings would reveal whether Penman's effective spending power exceeds her committee total. <span style="color:var(--green);font-family:var(--font-mono);font-size:10px;">When Q1 filings post, all three committees and any IE reports will parse within 24 hours.</span></div>
         </div>
-
-        <div class="gap-item">
-          <div class="gap-dot"></div>
-          <div class="gap-text"><strong>Michele Clark (D):</strong> No campaign website, social media, or public platform identified. Only confirmed via filing records. This gap will be monitored weekly through the general election.</div>
+      </div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">5 more intelligence gaps with automatic monitoring commitments — what's missing, why it matters, and what this briefing picks up within 24 hours when data becomes available.</div>
         </div>
-
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════ -->
-    <!-- SUBSCRIBE CTA — Enhanced                     -->
-    <!-- ═══════════════════════════════════════════ -->
+    <!-- SUBSCRIBE CTA -->
     <div class="subscribe-cta">
       <div class="subscribe-text">Want the full briefing?</div>
-      <div class="subscribe-price">Finance numbers. Turnout math. Full candidate dossiers.</div>
+      <div class="subscribe-price">Finance numbers. Candidate dossiers. Source convergence analysis.</div>
       <div class="subscribe-preview">Every Monday. Delivered before your week starts.</div>
       <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="subscribe-btn">Subscribe — $99/mo</a>
-      <div style="margin-top: 14px;">
-        <a href="https://buy.stripe.com/28EaEQ28rcwd7IiaGJdIA01" style="font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); padding: 11px 24px; border-radius: 4px; text-decoration: none;">Get a Single Briefing — $49</a>
+      <div style="margin-top:14px;">
+        <a href="https://buy.stripe.com/28EaEQ28rcwd7IiaGJdIA01" style="font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);padding:11px 24px;border-radius:4px;text-decoration:none;">Get a Single Briefing — $49</a>
       </div>
     </div>
 
   </div>
 
   <div class="footer">
-    <div class="next-briefing">Next Briefing: Monday, March 2, 2026</div>
+    <div class="next-briefing">Next Briefing: Monday, March 9, 2026</div>
     <div class="precision-policy">
       <em>Precision Policy</em><br>
       Every claim is cited. Every inference is labeled. If we can't verify it, we label it as a gap.
@@ -1111,6 +1083,5 @@
   </div>
 
 </div>
-
 </body>
 </html>
