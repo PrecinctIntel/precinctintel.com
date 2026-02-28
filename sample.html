@@ -709,24 +709,11 @@
   }
 </style>
 <style>
-  .signal-count {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--green);
-    background: rgba(78,230,154,0.08);
-    border: 1px solid rgba(78,230,154,0.25);
-    border-radius: 3px;
-    padding: 2px 8px;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-  }
   .exec-summary-block {
     background: rgba(78,230,154,0.05);
     border: 1px solid rgba(78,230,154,0.2);
     border-radius: 8px;
     padding: 22px 28px;
-    margin-bottom: 4px;
   }
   .exec-label {
     font-family: var(--font-mono);
@@ -743,28 +730,17 @@
     line-height: 1.7;
     font-weight: 400;
   }
-  .candidate-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: 6px;
-    margin-bottom: 6px;
-  }
-  .candidate-name-only {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-primary);
-    flex: 1;
-  }
-  .candidate-party-tag {
+  .signal-count {
+    display: inline-block;
     font-family: var(--font-mono);
     font-size: 10px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: var(--green);
+    background: rgba(78,230,154,0.08);
+    border: 1px solid rgba(78,230,154,0.25);
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
   }
   .meta-pill {
     display: inline-flex;
@@ -785,41 +761,58 @@
     font-size: 9px;
     letter-spacing: 1px;
   }
-  .countdown-teaser {
-    text-align: center;
-    padding: 24px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
+  .paywall-block {
+    background: #0d1410;
+    border: 1px solid rgba(78,230,154,0.2);
     border-radius: 8px;
+    padding: 24px 28px;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
   }
-  .countdown-number {
-    font-size: 48px;
+  .paywall-content { flex: 1; min-width: 200px; }
+  .paywall-icon {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .paywall-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+  .paywall-cta {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 10px;
     font-weight: 700;
-    color: var(--green);
-    font-family: var(--font-mono);
-    line-height: 1;
-  }
-  .countdown-sub {
-    font-size: 12px;
-    color: var(--text-dim);
-    font-family: var(--font-mono);
-    margin-top: 6px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    color: #0a0f0a;
+    background: var(--green);
+    padding: 11px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
   }
+  .paywall-cta:hover { opacity: 0.85; }
 </style>
 </head>
 <body>
 
 <div class="sample-banner">
-  <span class="sample-banner-text">Sample Briefing — Sections marked 🔒 are subscriber-only</span>
+  <span class="sample-banner-text">Sample Briefing — Illinois Senate District 33, Week 9</span>
   <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="sample-banner-cta">Subscribe to Unlock</a>
 </div>
 
 <div class="briefing-container">
 
-  <!-- HEADER -->
   <div class="header">
     <div class="header-top">
       <div class="logo-mark">
@@ -849,7 +842,7 @@
 
   <div class="content">
 
-    <!-- EXECUTIVE SUMMARY — full -->
+    <!-- EXECUTIVE SUMMARY — full, free -->
     <div class="section">
       <div class="exec-summary-block">
         <div class="exec-label">⚡ Executive Summary</div>
@@ -857,7 +850,7 @@
       </div>
     </div>
 
-    <!-- SIGNAL DETECTION — headline + badge only, analysis locked -->
+    <!-- SIGNAL DETECTION — headline + badge free, analysis locked -->
     <div class="section">
       <div class="section-header">
         <span class="section-emoji">🔬</span>
@@ -867,179 +860,48 @@
       <div class="item">
         <div class="signal-count">Four independent sources converged</div>
         <div class="item-headline">Breugelmans consolidates editorial endorsement lane; Penman counters with labor and institutional endorsements</div>
-        <div class="gate-block" style="margin-top:12px;">
-          <div class="gate-block-content">
-            <div class="gate-label">🔒 Intelligence Analysis</div>
-            <div class="gate-text">Cross-source pattern analysis, anomaly flags, and verified citations — what these signals mean for this race.</div>
-          </div>
-          <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
-        </div>
       </div>
-      <div class="gate-block">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 4 More Signals + Full Analysis</div>
-          <div class="gate-text">Tax policy battleground, education funding cross-candidate positioning, bilingual outreach intelligence, Clark digital gap assessment — all with source convergence mapping and verified citations.</div>
+      <div class="paywall-block">
+        <div class="paywall-content">
+          <div class="paywall-icon">🔒</div>
+          <div class="paywall-label">5 Signal Detection items with source convergence analysis, heat tracking, verified citations, and cross-source pattern mapping</div>
         </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
+        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="paywall-cta">Unlock — $99/mo</a>
       </div>
     </div>
 
-    <!-- LOCAL ISSUE PULSE — all locked -->
+    <!-- GATE BLOCK 1: Intel analysis -->
     <div class="section">
-      <div class="section-header">
-        <span class="section-emoji">📍</span>
-        <span class="section-label">Local Issue Pulse</span>
-        <span class="section-line"></span>
-      </div>
-      <div class="gate-block">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Issue heat tracking, cross-candidate position comparison, and specificity gaps across all active district issues — who has taken a position and who hasn't.</div>
+      <div class="paywall-block">
+        <div class="paywall-content">
+          <div class="paywall-icon">🔒</div>
+          <div class="paywall-label">Candidate dossiers with background, professional history, platform positions, endorsement timelines, campaign infrastructure, social media activity, and stat cards with week-over-week deltas</div>
         </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
+        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="paywall-cta">Unlock — $99/mo</a>
       </div>
     </div>
 
-    <!-- CANDIDATE ACTIVITY LOG — names + party only, everything else locked -->
-    <div class="section">
-      <div class="section-header">
-        <span class="section-emoji">👤</span>
-        <span class="section-label">Candidate Activity Log</span>
-        <span class="section-line"></span>
-      </div>
-      <div class="candidate-row">
-        <span class="candidate-name-only">Jessica Breugelmans</span>
-        <span class="candidate-party-tag">Republican</span>
-      </div><div class="candidate-row">
-        <span class="candidate-name-only">Danielle Penman</span>
-        <span class="candidate-party-tag">Republican</span>
-      </div><div class="candidate-row">
-        <span class="candidate-name-only">Michele Clark</span>
-        <span class="candidate-party-tag">Democrat</span>
-      </div>
-      <div class="gate-block" style="margin-top:8px;">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 Full Candidate Dossiers</div>
-          <div class="gate-text">Background, professional history, platform positions, endorsements with dates, campaign infrastructure, social media activity, and stat cards with week-over-week deltas.</div>
+    <!-- GATE BLOCK 2: Finance + everything else -->
+    <div class="section" style="border-bottom:none;">
+      <div class="paywall-block">
+        <div class="paywall-content">
+          <div class="paywall-icon">🔒</div>
+          <div class="paywall-label">Campaign finance breakdown with raised, spent, cash on hand, and anomaly flags — plus issue pulse, national climate, district deep dive, week-over-week deltas, countdown, and intelligence gaps</div>
         </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
+        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="paywall-cta">Unlock — $99/mo</a>
       </div>
     </div>
 
-    <!-- CAMPAIGN FINANCE — names only, all numbers locked -->
-    <div class="section">
-      <div class="section-header">
-        <span class="section-emoji">💰</span>
-        <span class="section-label">Campaign Finance</span>
-        <span class="section-line"></span>
-      </div>
-      <div class="candidate-row"><span class="candidate-name-only">Jessica Breugelmans</span><span class="candidate-party-tag">Republican</span></div><div class="candidate-row"><span class="candidate-name-only">Danielle Penman</span><span class="candidate-party-tag">Republican</span></div><div class="candidate-row"><span class="candidate-name-only">Michele Clark</span><span class="candidate-party-tag">Democrat</span></div>
-      <div class="gate-block" style="margin-top:8px;">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 Finance Data</div>
-          <div class="gate-text">Raised, spent, cash on hand, burn rate, Q1 projections, independent expenditure tracking, and anomaly flags for all 3 candidates.</div>
-        </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
-      </div>
-    </div>
+  </div>
 
-    <!-- WEEK-OVER-WEEK DELTAS — all locked -->
-    <div class="section">
-      <div class="section-header">
-        <span class="section-emoji">📈</span>
-        <span class="section-label">Week-over-Week Deltas</span>
-        <span class="section-line"></span>
-      </div>
-      <div class="gate-block">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Week-over-week changes across endorsements, media coverage, social activity, finance, and candidate positioning — momentum, not just snapshots.</div>
-        </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
-      </div>
-    </div>
-
-    <!-- NATIONAL POLITICAL CLIMATE — all locked -->
-    <div class="section">
-      <div class="section-header">
-        <span class="section-emoji">🌐</span>
-        <span class="section-label">National Political Climate</span>
-        <span class="section-line"></span>
-      </div>
-      <div class="gate-block">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Presidential approval, generic ballot, and right-track numbers — with district-specific analysis of what the national environment means for SD33 on March 17.</div>
-        </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
-      </div>
-    </div>
-
-    <!-- DISTRICT DEEP DIVE — all locked -->
-    <div class="section">
-      <div class="section-header">
-        <span class="section-emoji">🗺</span>
-        <span class="section-label">District Deep Dive</span>
-        <span class="section-line"></span>
-      </div>
-      <div class="gate-block">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Geography, registration trends, historical margins, race ratings, and why this district matters this specific week.</div>
-        </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
-      </div>
-    </div>
-
-    <!-- COUNTDOWN — 18 days only, rest locked -->
-    <div class="section">
-      <div class="section-header">
-        <span class="section-emoji">⏱</span>
-        <span class="section-label">Countdown Intelligence</span>
-        <span class="section-line"></span>
-      </div>
-      <div class="countdown-teaser">
-        <div class="countdown-number">18</div>
-        <div class="countdown-sub">days to primary</div>
-      </div>
-      <div class="gate-block">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 Milestone Tracker</div>
-          <div class="gate-text">Early voting windows, filing deadlines, petition status, and week-by-week milestone tracking through Election Day.</div>
-        </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
-      </div>
-    </div>
-
-    <!-- INTELLIGENCE GAPS — all locked -->
-    <div class="section">
-      <div class="section-header">
-        <span class="section-emoji">🔍</span>
-        <span class="section-label">Intelligence Gaps</span>
-        <span class="section-line"></span>
-      </div>
-      <div class="gate-block">
-        <div class="gate-block-content">
-          <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">6 identified data gaps — what's missing, why it matters, and what this briefing picks up automatically when it becomes available.</div>
-        </div>
-        <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="gate-cta">Unlock Full Briefing — $99/mo</a>
-      </div>
-    </div>
-
-  </div><!-- end .content -->
-
-  <!-- FOOTER -->
   <div class="footer">
     <div class="precision-policy">
       <em>Precision Policy</em><br>
       Every claim is cited. Every inference is labeled. If we can't verify it, we label it as a gap. All candidates in this race receive identical base intelligence.
     </div>
-    <div style="text-align:center;padding:28px 0 16px;">
-      <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" style="display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0a0f0a;background:#4ee69a;padding:14px 32px;border-radius:6px;text-decoration:none;">
-        Unlock Full Briefing — $99/month
-      </a>
-      <div style="margin-top:12px;font-family:var(--font-mono);font-size:10px;color:var(--text-dim);">or $49 for a single briefing · Cancel anytime</div>
+    <div style="text-align:center;padding:28px 0 20px;">
+      <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" style="display:inline-flex;align-items:center;font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#0a0f0a;background:#4ee69a;padding:14px 32px;border-radius:6px;text-decoration:none;">$99/month — Full Weekly Intelligence</a>
+      <div style="margin-top:12px;font-family:var(--font-mono);font-size:10px;color:var(--text-dim);">or <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" style="color:var(--green);text-decoration:none;">$49 for a single briefing</a> · Cancel anytime</div>
     </div>
     <div class="footer-disclaimer">
       All candidates in this race receive identical base intelligence. This briefing contains publicly available information only. Precinct does not provide strategic, campaign, or messaging advice.
