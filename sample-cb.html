@@ -3,143 +3,610 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Precinct Intelligence — Kane County Board District 13 · Sample Briefing</title>
+<title>Precinct Intelligence — Kane County Board · Sample Briefing</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link href="https://api.fontshare.com/v2/css?f[]=geist-mono@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ── Reset & Base ── */
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
   @page { size: A4; margin: 0; }
 
   :root {
-    --bg-deep:       #0c0f14;
-    --bg-surface:    #131720;
-    --bg-card:       #1a1f2a;
-    --border:        #222838;
+    --bg-deep: #0c0f14;
+    --bg-surface: #131720;
+    --bg-card: #1a1f2a;
+    --border: #222838;
     --border-subtle: #1c2130;
-    --green:         #4ee69a;
-    --green-dim:     #2a5e42;
-    --green-bg:      #122a1e;
-    --amber:         #f0a050;
-    --amber-bg:      #2a1e0a;
-    --red:           #f06050;
-    --red-bg:        #2a1010;
-    --blue:          #50a0f0;
-    --blue-bg:       #0a1a2a;
-    --purple:        #a78bfa;
-    --text-primary:  #ededeb;
-    --text-secondary:#a8a49c;
-    --text-muted:    #706c64;
-    --text-dim:      #4a4640;
-    --font-body:    'DM Sans', -apple-system, sans-serif;
+    --green: #4ee69a;
+    --green-dim: #2a5e42;
+    --green-bg: #122a1e;
+    --amber: #f0a050;
+    --red: #f06050;
+    --blue: #50a0f0;
+    --purple: #a78bfa;
+    --text-primary: #ededeb;
+    --text-secondary: #a8a49c;
+    --text-muted: #706c64;
+    --text-dim: #4a4640;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
     --font-display: 'Instrument Serif', Georgia, serif;
-    --font-mono:    'Geist Mono', 'SF Mono', monospace;
+    --font-mono: 'Geist Mono', 'SF Mono', monospace;
   }
 
-  body { font-family: var(--font-body); background: var(--bg-deep); color: var(--text-primary); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-  .briefing-container { max-width: 680px; margin: 0 auto; background: var(--bg-surface); min-height: 100vh; }
+  .briefing-container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--bg-surface);
+    min-height: 100vh;
+  }
 
-  /* ── Header ── */
-  .header { background: var(--bg-deep); padding: 44px 48px 40px; }
+  .header {
+    background: var(--bg-deep);
+    padding: 44px 48px 40px;
+  }
+
   .header-accent { height: 2px; background: var(--green); opacity: 0.5; }
 
-  .header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; }
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
   .logo-mark { width: 20px; height: 20px; flex-shrink: 0; }
   .logo-mark svg { width: 20px; height: 20px; }
-  .header-brand { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 3px; text-transform: uppercase; color: var(--green); font-weight: 500; }
 
-  /* County board type badge */
+  .header-brand {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
   .district-type-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--blue-bg); border: 1px solid #1a3050;
-    border-radius: 4px; padding: 3px 10px;
-    font-family: var(--font-mono); font-size: 9px; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--blue); font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(80,160,240,0.08);
+    border: 1px solid rgba(80,160,240,0.2);
+    border-radius: 4px;
+    padding: 3px 10px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 500;
     margin-bottom: 10px;
   }
 
-  .header-district { font-family: var(--font-display); font-size: 30px; font-weight: 400; letter-spacing: -0.3px; margin-bottom: 4px; color: var(--text-primary); line-height: 1.2; }
-  .header-subtitle { font-size: 14px; color: var(--text-muted); font-weight: 300; margin-bottom: 20px; font-family: var(--font-display); font-style: italic; }
-
-  .header-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
-  .meta-pill {
-    display: inline-flex; align-items: center; gap: 6px;
-    font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);
-    background: var(--bg-card); padding: 5px 12px;
-    border-radius: 4px; border: 1px solid var(--border); font-weight: 400;
+  .header-district {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+    line-height: 1.2;
   }
-  .meta-pill .label { color: var(--text-dim); text-transform: uppercase; font-size: 9px; letter-spacing: 1px; }
 
-  .coverage-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--green-bg); border: 1px solid var(--green-dim); border-radius: 4px; padding: 5px 12px 5px 6px; }
-  .coverage-grade { display: inline-flex; align-items: center; justify-content: center; background: var(--green); color: var(--bg-deep); width: 24px; height: 24px; border-radius: 3px; font-weight: 700; font-size: 12px; font-family: var(--font-mono); }
-  .coverage-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); font-weight: 500; }
+  .header-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: var(--font-display);
+    font-style: italic;
+  }
 
-  /* ── Sections ── */
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  .meta-pill .label {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .coverage-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 4px;
+    padding: 5px 12px 5px 6px;
+  }
+
+  .coverage-grade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    color: var(--bg-deep);
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: var(--font-mono);
+  }
+
+  .coverage-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
   .content { padding: 8px 48px 0; }
-  .section { padding: 28px 0 32px; border-bottom: 1px solid var(--border-subtle); }
+
+  .section {
+    padding: 28px 0 32px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
   .section:last-of-type { border-bottom: none; }
 
-  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
   .section-emoji { font-size: 15px; line-height: 1; width: 20px; text-align: center; }
-  .section-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); font-weight: 500; }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
   .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 6px; }
 
-  /* ── Items ── */
-  .item { background: var(--bg-card); border-radius: 8px; padding: 20px 24px; margin-bottom: 10px; border: 1px solid var(--border); }
+  .item {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+  }
   .item:last-child { margin-bottom: 0; }
 
-  .item-headline { font-family: var(--font-display); font-size: 16px; font-weight: 400; color: var(--text-primary); margin-bottom: 8px; line-height: 1.35; }
-  .item-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-  .item-tag { font-family: var(--font-mono); font-size: 10px; padding: 2px 8px; border-radius: 3px; font-weight: 500; letter-spacing: 0.5px; border: 1px solid; }
-  .tag-local { background: rgba(80,160,240,0.08); color: var(--blue); border-color: rgba(80,160,240,0.25); }
-  .tag-patch { background: rgba(167,139,250,0.08); color: var(--purple); border-color: rgba(167,139,250,0.25); }
-  .tag-board { background: rgba(240,160,80,0.08); color: var(--amber); border-color: rgba(240,160,80,0.25); }
-  .tag-social { background: rgba(78,230,154,0.08); color: var(--green); border-color: rgba(78,230,154,0.25); }
-  .tag-finance { background: rgba(240,96,80,0.08); color: var(--red); border-color: rgba(240,96,80,0.25); }
+  .item-headline {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
 
-  .item-body { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
-  .item-body .citation { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); display: block; margin-top: 8px; }
+  .item-body {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
+  }
 
-  .heat-signal { font-family: var(--font-mono); font-size: 10px; font-weight: 600; letter-spacing: 0.5px; }
-  .heat-hot     { color: var(--red); }
-  .heat-emerging{ color: var(--amber); }
-  .heat-monitor { color: var(--blue); }
+  .citation {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--green);
+    font-weight: 400;
+    opacity: 0.8;
+  }
 
-  /* ── Community Pulse ── */
-  .community-source { display: flex; gap: 12px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border-subtle); }
-  .community-source:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .source-icon { width: 32px; height: 32px; border-radius: 6px; background: var(--bg-deep); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
-  .source-body { flex: 1; }
-  .source-label { font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
-  .source-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .heat-high { color: var(--red); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
+  .heat-emerging { color: var(--amber); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
+  .heat-steady { color: var(--blue); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
 
-  /* ── Countdown bar ── */
-  .countdown-bar { display: flex; align-items: center; gap: 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin-bottom: 10px; }
-  .countdown-days { font-family: var(--font-display); font-size: 36px; color: var(--green); line-height: 1; min-width: 52px; }
-  .countdown-label { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 4px; }
-  .countdown-context { font-size: 13px; color: var(--text-secondary); }
+  .candidate-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+  }
+  .candidate-card:last-child { margin-bottom: 0; }
 
-  /* ── Events ── */
-  .event-row { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); align-items: flex-start; }
+  .candidate-name {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--green);
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+
+  .candidate-detail {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0 8px;
+    flex-wrap: wrap;
+  }
+
+  .stat-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    text-align: center;
+    min-width: 80px;
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .stat-delta {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 500;
+  }
+  .delta-up { color: var(--green); }
+  .delta-down { color: var(--red); }
+  .delta-neutral { color: var(--text-muted); }
+
+  .countdown-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .countdown-number {
+    font-family: var(--font-mono);
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--amber);
+    line-height: 1;
+  }
+
+  .countdown-detail {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .countdown-detail strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .milestone-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .milestone {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+  }
+
+  .milestone.done { color: var(--green); border-color: var(--green-dim); }
+  .milestone.current { color: var(--amber); border-color: var(--amber); background: rgba(240,160,80,0.08); }
+  .milestone-arrow { color: var(--text-dim); font-size: 10px; padding: 0 4px; }
+
+  .poll-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 13px;
+  }
+  .poll-row:last-child { border-bottom: none; }
+
+  .poll-metric { color: var(--text-secondary); font-weight: 400; }
+  .poll-value { font-family: var(--font-mono); font-size: 13px; color: var(--text-primary); font-weight: 500; }
+
+  .events-container {
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .event-row {
+    display: flex;
+    gap: 20px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: baseline;
+  }
   .event-row:last-child { border-bottom: none; }
-  .event-date { font-family: var(--font-mono); font-size: 11px; color: var(--green); min-width: 80px; margin-top: 2px; }
-  .event-body { flex: 1; }
-  .event-title { font-size: 14px; color: var(--text-primary); margin-bottom: 2px; }
-  .event-detail { font-size: 12px; color: var(--text-muted); }
 
-  /* ── Intelligence Gaps ── */
-  .gap-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border-subtle); }
-  .gap-item:last-child { border-bottom: none; }
-  .gap-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); margin-top: 6px; flex-shrink: 0; }
-  .gap-text { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+  .event-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--green);
+    white-space: nowrap;
+    min-width: 105px;
+    font-weight: 500;
+  }
 
-  /* Section hint — subtle subscriber-expansion note */
+  .event-desc {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .event-urgent {
+    color: var(--amber);
+    font-weight: 500;
+  }
+
+  .dive-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .dive-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: top;
+  }
+
+  .dive-table td:first-child {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    width: 140px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .dive-table td:last-child { color: var(--text-secondary); font-weight: 300; }
+  .dive-table tr:last-child td { border-bottom: none; }
+
+  .intel-gaps {
+    background: rgba(78, 230, 154, 0.03);
+    border: 1px solid var(--green-dim);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .intel-gaps-intro {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .gap-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .gap-item:last-child { margin-bottom: 0; }
+
+  .gap-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+    margin-top: 7px;
+    opacity: 0.4;
+  }
+
+  .gap-text strong {
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .subscribe-cta {
+    text-align: center;
+    padding: 32px 24px;
+    margin: 8px 0 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .subscribe-text {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+
+  .subscribe-price {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+  }
+
+  .subscribe-preview {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .subscribe-btn {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--bg-deep);
+    background: var(--green);
+    padding: 14px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .subscribe-btn:hover { opacity: 0.85; }
+
+  .next-briefing {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 14px 16px;
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .footer {
+    background: var(--bg-deep);
+    padding: 36px 48px 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .precision-policy {
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 24px;
+    line-height: 1.65;
+  }
+
+  .precision-policy em {
+    font-style: normal;
+    color: var(--green);
+    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .footer-disclaimer {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-brand a { color: var(--text-muted); text-decoration: none; }
+  .footer-logo { width: 14px; height: 14px; flex-shrink: 0; }
+
   .section-hint {
     font-family: var(--font-mono);
     font-size: 10px;
     color: var(--text-dim);
     letter-spacing: 0.3px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-subtle);
+    line-height: 1.6;
+  }
+
+  .gated-depth {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.5px;
     margin-top: 14px;
     padding-top: 12px;
     border-top: 1px solid var(--border-subtle);
@@ -243,20 +710,41 @@
     white-space: nowrap;
   }
 
-  /* ── Footer ── */
-  .footer { background: var(--bg-deep); padding: 32px 48px 40px; margin-top: 8px; }
-  .footer-brand { font-family: var(--font-mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); margin-bottom: 12px; }
-  .footer-note { font-size: 12px; color: var(--text-dim); line-height: 1.7; }
-  .footer-note a { color: var(--text-muted); text-decoration: none; }
-  .footer-divider { height: 1px; background: var(--border); margin: 16px 0; }
-  .footer-legal { font-family: var(--font-mono); font-size: 10px; color: var(--text-dim); letter-spacing: 0.3px; }
-
   @media (max-width: 600px) {
-    .header { padding: 32px 24px 28px; }
+    .header { padding: 28px 24px 28px; }
     .content { padding: 8px 24px 0; }
-    .sample-banner { padding: 10px 24px; }
-    .footer { padding: 24px 24px 32px; }
-    .gate-block { flex-direction: column; align-items: flex-start; }
+    .footer { padding: 28px 24px 32px; }
+    .header-district { font-size: 24px; }
+    .event-row { flex-direction: column; gap: 4px; }
+    .event-date { min-width: auto; display: inline-block; }
+    .header-meta { gap: 8px; }
+    .countdown-banner { flex-direction: column; gap: 12px; }
+    .stat-row { gap: 6px; }
+    .stat-box { min-width: 70px; }
+  }
+</style>
+<style>
+  /* Executive summary */
+  .exec-summary {
+    background: rgba(78,230,154,0.04);
+    border: 1px solid var(--green-dim);
+    border-radius: 8px;
+    padding: 20px 24px;
+  }
+  .exec-summary-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .exec-summary-body {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
   }
 </style>
 <!-- Privacy-friendly analytics by Plausible -->
@@ -267,438 +755,301 @@ plausible.init()
 </script>
 </head>
 <body>
+
 <div class="briefing-container">
 
-  <!-- ══ SAMPLE BANNER ════════════════════════════════════════════════════ -->
   <div class="sample-banner">
     <span class="sample-banner-text">Sample Briefing — Sections marked 🔒 are subscriber-only</span>
     <a href="https://precinctintel.com/#pricing" class="sample-banner-cta">Subscribe to Unlock</a>
   </div>
 
-  <!-- ══ HEADER ══════════════════════════════════════════════════════════════ -->
-  <header class="header">
-    <div class="header-top">
+  <div class="header">
+    <a href="https://precinctintel.com" style="text-decoration:none;display:flex;align-items:center;gap:12px;" class="header-top">
       <div class="logo-mark">
-        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="9" height="9" rx="1.5" fill="#4ee69a"/>
-          <rect x="11" y="0" width="9" height="9" rx="1.5" fill="#4ee69a" opacity="0.4"/>
-          <rect x="0" y="11" width="9" height="9" rx="1.5" fill="#4ee69a" opacity="0.4"/>
-          <rect x="11" y="11" width="9" height="9" rx="1.5" fill="#4ee69a"/>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="1"/>
+          <rect x="13" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.45"/>
+          <rect x="0" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.45"/>
+          <rect x="13" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.15"/>
         </svg>
       </div>
-      <span class="header-brand">Precinct Intelligence</span>
-    </div>
-
-    <div class="district-type-badge">County Board — District Level</div>
-
-    <div class="header-district">Kane County Board, District 13</div>
-    <div class="header-subtitle">Democratic Primary + Republican Primary · Week 10 Briefing</div>
-
+      <div class="header-brand">Precinct Intelligence</div>
+    </a>
+    <div class="district-type-badge">County Board — Multiple Districts</div>
+    <div class="header-district">Kane County Board</div>
+    <div class="header-subtitle">Democratic &amp; Republican Primaries · Weekly Intelligence Briefing</div>
     <div class="header-meta">
-      <div class="meta-pill">
-        <span class="label">Week</span>
-        10
-      </div>
-      <div class="meta-pill">
-        <span class="label">Delivered</span>
-        Mon, Mar 2, 2026
-      </div>
-      <div class="meta-pill">
-        <span class="label">Election</span>
-        March 17, 2026
-      </div>
+      <div class="meta-pill"><span class="label">Week</span> 10</div>
+      <div class="meta-pill"><span class="label">Period</span> Mar 2 – 8, 2026</div>
+      <div class="meta-pill"><span class="label">Scanned</span> 77 articles</div>
+      <div class="meta-pill"><span class="label">Signals</span> 5</div>
       <div class="coverage-badge">
-        <span class="coverage-grade">B</span>
-        <span class="coverage-label">Coverage Grade</span>
+        <span class="coverage-grade">A</span>
+        <span class="coverage-label">Coverage</span>
       </div>
     </div>
-  </header>
+  </div>
   <div class="header-accent"></div>
 
-  <!-- ══ CONTENT ════════════════════════════════════════════════════════════ -->
   <div class="content">
 
-    <!-- ── 1. What to Watch ─────────────────────────────────── [VISIBLE] -->
-    <section class="section" data-weight="primary">
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="section">
       <div class="section-header">
-        <span class="section-emoji">👁</span>
-        <span class="section-label">What to Watch</span>
-        <div class="section-line"></div>
+        <span class="section-emoji">⚡</span>
+        <span class="section-label">Executive Summary</span>
+        <span class="section-line"></span>
       </div>
-
-      <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-local">SHAW LOCAL</span>
-        </div>
-        <div class="item-headline">Fabyan Parkway Jail Site Debate Breaks into Public Coverage</div>
-        <div class="item-body">
-          <span class="heat-signal heat-hot">🔴 HOT</span> — Shaw Local / Kane County Chronicle published a candidate-facing story on February 25 specifically asking District 13 candidates to stake positions on the future of the former Fabyan Parkway jail site. Incumbent Linder is on record with a public position. Challenger Jimenez has not yet issued a public statement. In local races, candidates who respond to a named issue story within 72 hours typically own the narrative; candidates who don't respond cede the framing to their opponent.
-          <span class="citation">(Shaw Local / Kane County Chronicle, 2026-02-25)</span>
-        </div>
+      <div class="exec-summary">
+        <div class="exec-summary-label">This week at a glance</div>
+        <div class="exec-summary-body">The March 17 primary is 15 days away with early voting now expanding across Kane County. Multiple contested Kane County Board races are receiving substantial media scrutiny, with budget philosophy — whether to raise property taxes or cut programs — emerging as the sharpest dividing line across districts. The FY2027 budget planning process, the Fabyan jail site debate, and the Geneva police station referendum collectively define the fiscal environment every County Board candidate will face.</div>
       </div>
+    </div>
 
-      <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-finance">R PRIMARY</span>
-        </div>
-        <div class="item-headline">R Primary: No Incumbent — Both Candidates Running Lean</div>
-        <div class="item-body">
-          <span class="heat-signal heat-emerging">📊 EMERGING</span> — Neither Ryan Deniz nor Anthony Catella has an incumbent advantage in the Republican primary. Deniz has the stronger digital presence (campaign site, defined platform around fiscal conservatism and grocery tax elimination). Catella previously ran for Kane County Circuit Clerk in 2024 — his name recognition in the county may outperform his visible campaign footprint. Watch for a Kane County GOP endorsement or ward committee backing, which historically decides R-side county board primaries when no incumbent is running.
-          <span class="citation">(denizforkanecounty.com; ballotready.org/anthony-catella; Shaw Local 2026-02-07)</span>
-        </div>
-      </div>
-      <div class="section-hint">📎 Subscriber briefings include expanded analysis, additional sources, and week-over-week context for this section.</div>
-    </section>
-
-    <!-- ── 2. Ward / District Issue Pulse ──────────────────── [VISIBLE] -->
-    <section class="section" data-weight="primary">
+    <!-- SIGNAL DETECTION -->
+    <div class="section">
       <div class="section-header">
-        <span class="section-emoji">📍</span>
-        <span class="section-label">Ward / District Issue Pulse</span>
-        <div class="section-line"></div>
+        <span class="section-emoji">🔬</span>
+        <span class="section-label">Signal Detection</span>
+        <span class="section-line"></span>
       </div>
-
       <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-local">KANE COUNTY CHRONICLE</span>
-        </div>
-        <div class="item-headline">Fabyan Parkway Jail Redevelopment — District 13 Epicenter</div>
-        <div class="item-body">
-          <span class="heat-signal heat-hot">🔴 HOT</span> — The former Fabyan Parkway jail site sits within Kane County Board District 9 and District 13's overlapping service area and has become the defining local issue in both districts' primary races. The county board must vote on a redevelopment plan. Incumbent Linder's existing position creates a clear contrast opportunity for Jimenez. Property tax implications of any development decision affect ~28,000 District 13 residents. This issue has legs through the March 17 primary.
-          <span class="citation">(Kane County Chronicle, 2026-02-25)</span>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-board">COUNTY BUDGET</span>
-        </div>
-        <div class="item-headline">Property Tax Levy — Board Vote Expected Q2 2026</div>
-        <div class="item-body">
-          <span class="heat-signal heat-emerging">📊 EMERGING</span> — Kane County's FY2026 budget cycle includes a property tax levy discussion expected Q2. Both Deniz (R) and multiple D candidates have made property tax opposition central to their platforms. The board's current composition leans toward holding the levy flat, but infrastructure funding pressure from the county highway department may create a contested vote. Any candidate who can credibly claim credit for a tax hold will have a general election advantage.
-          <span class="citation">(Kane County Board FY2026 budget documents; candidate platforms)</span>
+        <div style="font-family:var(--font-mono);font-size:10px;color:var(--green);background:rgba(78,230,154,0.08);border:1px solid rgba(78,230,154,0.25);border-radius:3px;padding:2px 8px;display:inline-block;margin-bottom:8px;letter-spacing:0.5px;">Three independent sources converged</div>
+        <div class="item-headline">Budget Philosophy Emerges as Central Dividing Line Across County Board Races</div>
+        <div class="item-body"><span class="heat-high">🔥 HIGH HEAT</span> — Three independent source types — <strong>Shaw Local election questionnaires</strong>, <strong>Chicago Tribune candidate profiles</strong>, and <strong>Kane County Connects budget reporting</strong> — converge on the same pattern: Kane County Board candidates are splitting sharply on the tax-vs.-cuts question heading into the primary. Shaw Local reported that candidates offered 'starkly different solutions — from tax increases to spending cuts to alternative revenue sources' when asked about the property tax levy vs. program cuts trade-off.
+          <div class="gate-more" style="margin-top:10px;">
+            <span>Full convergence analysis locked — subscriber briefing includes source-by-source breakdown</span>
+            <a href="https://precinctintel.com/#pricing">Unlock →</a>
+          </div>
         </div>
       </div>
-      <div class="section-hint">📎 Subscriber briefings include expanded analysis, additional sources, and week-over-week context for this section.</div>
-    </section>
-
-    <!-- ── 3. Board Dynamics ────────────────────────────────── [GATED] -->
-    <section class="section" data-weight="primary">
-      <div class="section-header">
-        <span class="section-emoji">🏛</span>
-        <span class="section-label">Board Dynamics</span>
-        <div class="section-line"></div>
-      </div>
-
       <div class="gate-block">
         <div class="gate-block-content">
           <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Board voting patterns, committee assignments, and bloc loyalty analysis for District 13 and adjacent seats. Includes: recent vote table, Finance &amp; Budget Committee activity, and party-line break history — the record your opponents are running against.</div>
+          <div class="gate-text">4 more Signal Detection items with full source convergence analysis — Fabyan jail site policy split, Geneva police station referendum turnout impact, ICE/immigration governance signal, and early voting expansion intelligence.</div>
         </div>
         <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
-    </section>
+    </div>
 
-    <!-- ── 4. Candidate Activity Log ───────────────────────── [PARTIAL — 1 entry each, rest gated] -->
-    <section class="section" data-weight="primary">
+    <!-- LOCAL ISSUE PULSE -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📍</span>
+        <span class="section-label">Local Issue Pulse</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="item">
+        <div class="item-headline">Property Taxes and County Budget</div>
+      </div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Full issue analysis across 5 local topics — property tax levy positioning, Fabyan jail site disposition, election security, affordable housing, and the Geneva police station referendum — with candidate-by-candidate stance breakdowns and week-over-week heat tracking.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
+    </div>
+
+    <!-- CANDIDATE ACTIVITY LOG -->
+    <div class="section">
       <div class="section-header">
         <span class="section-emoji">👤</span>
         <span class="section-label">Candidate Activity Log</span>
-        <div class="section-line"></div>
+        <span class="section-line"></span>
       </div>
-
-      <!-- Mike Linder -->
-      <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-local">Mike Linder · D · INC</span>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Complete activity logs for all 10 candidates across Districts 9, 11, 13, and 17 — media appearances, public statements, digital footprint, endorsement tracking, and week-over-week activity scores. Includes both Democratic and Republican primaries.</div>
         </div>
-        <div class="item-headline">Incumbent · Democratic Primary</div>
-        <div class="item-body">
-          <ul style="list-style:none; padding:0; margin:0;">
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-25</span>
-              &nbsp;&nbsp;Shaw Local story — quoted on Fabyan jail site position
-            </li>
-          </ul>
-        </div>
-        <div class="gate-more">
-          <span>+ 2 more entries in subscriber briefing</span>
-          <a href="https://precinctintel.com/#pricing">Unlock →</a>
-        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
+    </div>
 
-      <!-- Nicolas Jimenez -->
-      <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-local">Nicolas Jimenez · D</span>
-        </div>
-        <div class="item-headline">Challenger · Democratic Primary</div>
-        <div class="item-body">
-          <ul style="list-style:none; padding:0; margin:0;">
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-25</span>
-              &nbsp;&nbsp;Shaw Local story published — no Jimenez quote captured
-            </li>
-          </ul>
-        </div>
-        <div class="gate-more">
-          <span>+ 1 more entry + digital footprint analysis in subscriber briefing</span>
-          <a href="https://precinctintel.com/#pricing">Unlock →</a>
-        </div>
-      </div>
-
-      <!-- Ryan Deniz -->
-      <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-finance">Ryan Deniz · R</span>
-        </div>
-        <div class="item-headline">Challenger · Republican Primary</div>
-        <div class="item-body">
-          <ul style="list-style:none; padding:0; margin:0;">
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-20</span>
-              &nbsp;&nbsp;Campaign site (denizforkanecounty.com) confirms 2-office practice in Geneva/Elburn — strong local business identity
-            </li>
-          </ul>
-        </div>
-        <div class="gate-more">
-          <span>+ 1 more entry + digital footprint analysis in subscriber briefing</span>
-          <a href="https://precinctintel.com/#pricing">Unlock →</a>
-        </div>
-      </div>
-
-      <!-- Anthony Catella -->
-      <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-finance">Anthony Catella · R</span>
-        </div>
-        <div class="item-headline">Challenger · Republican Primary</div>
-        <div class="item-body">
-          <ul style="list-style:none; padding:0; margin:0;">
-            <li style="padding: 4px 0; border-bottom: 1px solid var(--border-subtle); font-size:13px;">
-              <span style="font-family:var(--font-mono); font-size:10px; color:var(--text-dim);">2026-02-07</span>
-              &nbsp;&nbsp;Shaw Local election questionnaire published
-            </li>
-          </ul>
-        </div>
-        <div class="gate-more">
-          <span>+ 1 more entry + digital footprint analysis in subscriber briefing</span>
-          <a href="https://precinctintel.com/#pricing">Unlock →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── 5. Local Coverage ───────────────────────────────── [VISIBLE] -->
-    <section class="section" data-weight="secondary">
+    <!-- MEDIA MENTIONS -->
+    <div class="section">
       <div class="section-header">
         <span class="section-emoji">📰</span>
-        <span class="section-label">Local Coverage</span>
-        <div class="section-line"></div>
+        <span class="section-label">Media Mentions</span>
+        <span class="section-line"></span>
       </div>
-
-      <div class="item">
-        <div class="item-meta">
-          <span class="item-tag tag-local">SHAW LOCAL</span>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Full media coverage log from Shaw Local / Kane County Chronicle, Chicago Tribune, Daily Herald, Patch, NBC 5, and Capitol News Illinois — candidate-by-candidate mention counts, sentiment tagging, and coverage gap flags.</div>
         </div>
-        <div class="item-headline">Kane County Board candidates differ over future of former Fabyan Parkway jail site</div>
-        <div class="item-body">Shaw Local / Kane County Chronicle published a direct-question story asking D13 and D9 candidates to take positions on the jail site redevelopment. Linder is quoted. Jimenez position not captured. Both R candidates addressed through their questionnaires.
-          <span class="citation">(Kane County Chronicle, 2026-02-25)</span>
-        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
-      <div class="section-hint">📎 Subscriber briefings include expanded analysis, additional sources, and week-over-week context for this section.</div>
-    </section>
+    </div>
 
-    <!-- ── 6. Community Pulse ──────────────────────────────── [VISIBLE] -->
-    <section class="section" data-weight="secondary">
-      <div class="section-header">
-        <span class="section-emoji">💬</span>
-        <span class="section-label">Community Pulse</span>
-        <div class="section-line"></div>
-      </div>
-
-      <div class="community-source">
-        <div class="source-icon">🏛</div>
-        <div class="source-body">
-          <div class="source-label">COUNTY BOARD MINUTES · countyofkane.org</div>
-          <div class="source-text">February board meeting minutes pending publication. Last published minutes (January) show Finance Committee activity on FY2026 levy discussion. Linder listed as committee member present.</div>
-        </div>
-      </div>
-
-      <div class="community-source">
-        <div class="source-icon">📍</div>
-        <div class="source-body">
-          <div class="source-label">LOCAL FACEBOOK · Kane County Community Groups</div>
-          <div class="source-text">Property tax and Fabyan jail site discussions active in St. Charles/Geneva community groups. No candidate-specific posts detected this week, but issue-level engagement is high — candidates who post on the jail site topic are likely to receive organic engagement.</div>
-        </div>
-      </div>
-      <div class="section-hint">📎 Subscriber briefings include expanded analysis, additional sources, and week-over-week context for this section.</div>
-    </section>
-
-    <!-- ── 7. Campaign Finance ─────────────────────────────── [GATED] -->
-    <section class="section" data-weight="primary">
+    <!-- CAMPAIGN FINANCE -->
+    <div class="section">
       <div class="section-header">
         <span class="section-emoji">💰</span>
         <span class="section-label">Campaign Finance</span>
-        <div class="section-line"></div>
+        <span class="section-line"></span>
       </div>
-
       <div class="gate-block">
         <div class="gate-block-content">
           <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Full campaign finance breakdown for all 4 candidates — Q4 receipts, cash on hand, expenditures, and race-tier benchmarking. Flags low fundraising, outlier cash positions, and late-cycle PAC signals. This week: one candidate's cash position is low enough to flag a structural campaign risk.</div>
+          <div class="gate-text">Full campaign finance breakdown for all 10 candidates — Q4 receipts, cash on hand, burn rate, expenditure analysis, and anomaly flags. This week: one candidate's cash position is low enough to flag a structural campaign risk.</div>
         </div>
         <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
-    </section>
+    </div>
 
-    <!-- ── 8. District Profile ─────────────────────────────── [PARTIAL — demographics visible, rest gated] -->
-    <section class="section" data-weight="secondary">
+    <!-- WEEK-OVER-WEEK DELTAS -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📈</span>
+        <span class="section-label">Week-over-Week Deltas</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Full change log with NEW / UNCHANGED / DECLINE tags across all candidates — endorsements, media coverage, finance, digital activity, and issue positioning shifts from Week 9 to Week 10.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
+    </div>
+
+    <!-- NATIONAL POLITICAL CLIMATE -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">🌐</span>
+        <span class="section-label">National Political Climate</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">National and Illinois-specific political climate indicators — presidential approval, generic ballot, right track/wrong track, and IL consumer confidence — with analysis of how these macro signals affect Kane County Board primary dynamics and which coalition benefits most from the current environment.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
+      </div>
+    </div>
+
+    <!-- DISTRICT DEEP DIVE -->
+    <div class="section">
       <div class="section-header">
         <span class="section-emoji">📊</span>
-        <span class="section-label">District Profile</span>
-        <div class="section-line"></div>
+        <span class="section-label">District Deep Dive</span>
+        <span class="section-line"></span>
       </div>
-
-      <div class="item">
-        <div class="item-meta"><span class="item-tag tag-local">Demographics</span></div>
-        <div class="item-headline">District 13 Overview — Geneva / St. Charles / Elburn Corridor</div>
-        <div class="item-body">Kane County Board District 13 covers portions of Geneva, St. Charles, and Elburn — a predominantly suburban/exurban corridor. Median household income ~$92K (above Kane County average of $83K). Owner-occupied housing rate ~78%. Property tax is structurally the dominant voter issue. Registered voters: approximately 18,000.
-          <span class="citation">(U.S. Census ACS 2020; Kane County Clerk voter registration data)</span>
-        </div>
-      </div>
-
       <div class="gate-block">
         <div class="gate-block-content">
           <div class="gate-label">🔒 Subscriber Briefing</div>
-          <div class="gate-text">Turnout modeling, vote thresholds, and issue-credibility analysis — including the exact number of votes likely to decide this race, precinct-level turnout patterns from comparable primaries, and which candidate positioning is most credible to the D13 tax-voter.</div>
+          <div class="gate-text">District-level profiles for D9, D11, D13, and D17 — demographics, registered voter counts, precinct-level turnout patterns from comparable primaries, vote threshold modeling, and which candidate positioning is most credible to each district's primary electorate.</div>
         </div>
         <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
-    </section>
+    </div>
 
-    <!-- ── 9. Countdown Intelligence ──────────────────────── [VISIBLE] -->
-    <section class="section" data-weight="primary">
+    <!-- COUNTDOWN INTELLIGENCE -->
+    <div class="section">
       <div class="section-header">
         <span class="section-emoji">⏱</span>
         <span class="section-label">Countdown Intelligence</span>
-        <div class="section-line"></div>
+        <span class="section-line"></span>
       </div>
-
-      <div class="countdown-bar">
-        <div class="countdown-days">19</div>
-        <div>
-          <div class="countdown-label">Days to Primary Election</div>
-          <div class="countdown-context">March 17, 2026 · Kane County, IL</div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Week-over-week early vote tracking, Kane County turnout modeling, historical milestone comparisons from comparable primaries, and analysis of which candidate coalitions benefit most from each remaining window before March 17.</div>
         </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
+    </div>
 
-      <div class="item">
-        <div class="item-body">
-          <span class="heat-signal heat-hot">🔴 19 DAYS</span> — Final 3-week window opens. The Fabyan jail site story is this week's catalyst — candidates who respond publicly this week can set the final narrative. Linder's incumbency advantage peaks in the next 10 days; after that, late undecideds typically break toward change.
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-body">
-          <span class="heat-signal heat-emerging">📊 WATCH</span> — Kane County early voting is open through March 16. Early voting patterns in suburban IL tend to favor incumbents and organized campaigns. Jimenez's door-knocking operation, if active, should be generating early votes now.
-          <span class="citation">(Kane County Clerk early voting schedule)</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── 10. Upcoming Events & Deadlines ─────────────────── [VISIBLE] -->
-    <section class="section" data-weight="secondary">
+    <!-- UPCOMING EVENTS & DEADLINES -->
+    <div class="section">
       <div class="section-header">
         <span class="section-emoji">📅</span>
         <span class="section-label">Upcoming Events &amp; Deadlines</span>
-        <div class="section-line"></div>
+        <span class="section-line"></span>
       </div>
-
-      <div class="event-row">
-        <div class="event-date">Mar 11, 2026</div>
-        <div class="event-body">
-          <div class="event-title">Kane County Board Meeting</div>
-          <div class="event-detail">Next scheduled full board meeting — potential Fabyan jail site agenda item</div>
+      <div class="events-container">
+        <div class="event-row">
+          <div class="event-date">2026-03-09</div>
+          <div class="event-desc">Next Precinct Intelligence briefing delivered — Week 11</div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">2026-03-10</div>
+          <div class="event-desc event-urgent">Last day for online voter registration <span class="citation">(IL SBE)</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">2026-03-11</div>
+          <div class="event-desc event-urgent">Kane County Board meeting — potential Fabyan jail site agenda item <span class="citation">(Kane County Board)</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">2026-03-12</div>
+          <div class="event-desc event-urgent">Last day for vote-by-mail ballot applications <span class="citation">(IL SBE)</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">2026-03-16</div>
+          <div class="event-desc event-urgent">Last day of early voting — all Kane County sites <span class="citation">(Kane County Clerk)</span></div>
+        </div>
+        <div class="event-row">
+          <div class="event-date">2026-03-17</div>
+          <div class="event-desc event-urgent">General Primary Election Day — Kane County Board D9, D11, D13, D17 primaries <span class="citation">(IL SBE)</span></div>
         </div>
       </div>
+    </div>
 
-      <div class="event-row">
-        <div class="event-date">Mar 16, 2026</div>
-        <div class="event-body">
-          <div class="event-title">Last day of early voting</div>
-          <div class="event-detail">All Kane County early voting sites</div>
-        </div>
-      </div>
-
-      <div class="event-row">
-        <div class="event-date">Mar 17, 2026</div>
-        <div class="event-body">
-          <div class="event-title">PRIMARY ELECTION DAY</div>
-          <div class="event-detail">Kane County Board District 13 — all 4 candidates on ballot</div>
-        </div>
-      </div>
-      <div class="section-hint">📎 Subscriber briefings include expanded analysis, additional sources, and week-over-week context for this section.</div>
-    </section>
-
-    <!-- ── 11. Intelligence Gaps ───────────────────────────── [VISIBLE] -->
-    <section class="section" data-weight="tertiary">
+    <!-- INTELLIGENCE GAPS -->
+    <div class="section">
       <div class="section-header">
         <span class="section-emoji">🔍</span>
         <span class="section-label">Intelligence Gaps</span>
-        <div class="section-line"></div>
+        <span class="section-line"></span>
       </div>
-
-      <div class="gap-item">
-        <div class="gap-dot"></div>
-        <div class="gap-text">IL SBE campaign finance site is returning server errors — finance data is estimated from committee registration records and partial Q4 filings only. Full finance picture unavailable until site restores.</div>
+      <div class="gate-block">
+        <div class="gate-block-content">
+          <div class="gate-label">🔒 Subscriber Briefing</div>
+          <div class="gate-text">Full intelligence gap log — what's missing across finance, candidate digital footprints, endorsement networks, and board meeting records; why each gap matters; and what this briefing picks up within 24 hours when data becomes available.</div>
+        </div>
+        <a href="https://precinctintel.com/#pricing" class="gate-cta">Subscribe to Unlock</a>
       </div>
+    </div>
 
-      <div class="gap-item">
-        <div class="gap-dot"></div>
-        <div class="gap-text">No Jimenez campaign website or social media detected. His ground campaign operation and volunteer base are unknown — cannot assess GOTV strength.</div>
+    <!-- SUBSCRIBE CTA -->
+    <div class="subscribe-cta">
+      <div class="subscribe-text">Want the full briefing?</div>
+      <div class="subscribe-price">Finance numbers. Candidate dossiers. Source convergence analysis.</div>
+      <div class="subscribe-preview">Every Monday. Delivered before your week starts.</div>
+      <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" class="subscribe-btn">Subscribe — $99/mo</a>
+      <div style="margin-top:14px;">
+        <a href="https://buy.stripe.com/28EaEQ28rcwd7IiaGJdIA01" style="font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);padding:11px 24px;border-radius:4px;text-decoration:none;">Get a Single Briefing — $49</a>
       </div>
+    </div>
 
-      <div class="gap-item">
-        <div class="gap-dot"></div>
-        <div class="gap-text">Anthony Catella's finance committee data not confirmed — SBE outage prevents full lookup.</div>
-      </div>
-
-      <div class="gap-item">
-        <div class="gap-dot"></div>
-        <div class="gap-text">Kane County GOP endorsement status unknown. A ward committee endorsement for Deniz or Catella would be a significant signal.</div>
-      </div>
-
-      <div class="gap-item">
-        <div class="gap-dot"></div>
-        <div class="gap-text">Village board meeting minutes for Geneva and St. Charles not yet digitized for current cycle — community issue temperature estimated from news coverage only.</div>
-      </div>
-    </section>
-
-  </div><!-- /content -->
-
-  <!-- ══ SUBSCRIBE CTA ════════════════════════════════════════════════════ -->
-  <div style="background: var(--green-bg); border-top: 1px solid var(--green-dim); border-bottom: 1px solid var(--green-dim); padding: 32px 48px; text-align: center; margin-top: 8px;">
-    <div style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 10px;">Want the full briefing?</div>
-    <div style="font-family: var(--font-display); font-size: 22px; color: var(--text-primary); margin-bottom: 8px;">Board dynamics. Finance numbers. Turnout math.</div>
-    <div style="font-size: 13px; color: var(--text-secondary); font-weight: 300; margin-bottom: 20px;">Every Monday. Delivered before your week starts. $99/mo — cancel anytime.</div>
-    <a href="https://buy.stripe.com/3cIdR23cv53L1jU4ildIA00" style="display: inline-flex; align-items: center; font-family: var(--font-mono); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--bg-deep); background: var(--green); padding: 14px 32px; border-radius: 4px; text-decoration: none; margin-right: 12px;">Subscribe — $99/mo</a>
-    <a href="https://buy.stripe.com/28EaEQ28rcwd7IiaGJdIA01" style="display: inline-flex; align-items: center; font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-secondary); border: 1px solid var(--border); padding: 13px 24px; border-radius: 4px; text-decoration: none;">Get a Single Briefing — $49</a>
   </div>
 
-  <!-- ══ FOOTER ════════════════════════════════════════════════════════════ -->
-  <footer class="footer">
-    <div class="footer-brand">Precinct Intelligence</div>
-    <div class="footer-note">
-      This is a sample briefing. Subscriber briefings include full campaign finance breakdowns, board voting analysis, turnout modeling, and complete candidate activity logs — delivered every Monday at 7:00 AM CT.
-      Questions? <a href="mailto:hello@precinctintel.com">hello@precinctintel.com</a>
+  <div class="footer">
+    <div class="next-briefing">Next Briefing: Monday, March 9, 2026</div>
+    <div class="precision-policy">
+      <em>Precision Policy</em><br>
+      Every claim is cited. Every inference is labeled. If we can't verify it, we label it as a gap.
     </div>
-    <div class="footer-divider"></div>
-    <div class="footer-legal">
-      Token: SAMPLE-KANE-CB13-GATED-2026
-      <br>© 2026 Precinct Intelligence · precinctintel.com
+    <div class="footer-disclaimer">
+      All candidates in this race receive identical base intelligence. This briefing contains
+      publicly available information only. Precinct does not provide strategic, campaign, or messaging advice.
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <svg class="footer-logo" viewBox="0 0 24 24" fill="none">
+          <rect x="0" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.6"/>
+          <rect x="13" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.3"/>
+          <rect x="0" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.2"/>
+          <rect x="13" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.1"/>
+        </svg>
+        Precinct · <a href="https://precinctintel.com">precinctintel.com</a>
+      </div>
+    </div>
+  </div>
 
-</div><!-- /briefing-container -->
+</div>
 </body>
 </html>
