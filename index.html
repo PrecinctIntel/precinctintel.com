@@ -198,6 +198,108 @@
   }
   .btn-secondary:hover { border-color: var(--text-muted); color: var(--text-primary); }
 
+  /* ── Hero preview card ───────────────────────────────────────────────────── */
+  .hero-preview-card {
+    max-width: 520px;
+    margin: 48px auto 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px 22px;
+    text-align: left;
+    opacity: 0;
+    animation: hero-card-fade 0.4s ease 0.2s forwards;
+  }
+
+  @keyframes hero-card-fade {
+    to { opacity: 1; }
+  }
+
+  .hero-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+
+  .hero-card-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    font-weight: 500;
+  }
+
+  .hero-card-grade {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .hero-card-grade-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    color: var(--bg-deep);
+    width: 22px;
+    height: 22px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 11px;
+    font-family: var(--font-mono);
+  }
+
+  .hero-card-district {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.2px;
+  }
+
+  .hero-card-stats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .hero-card-stat {
+    flex: 1;
+    min-width: 90px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 10px 14px;
+  }
+
+  .hero-card-stat-value {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .hero-card-stat-label {
+    font-family: var(--font-mono);
+    font-size: 8.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    line-height: 1.4;
+  }
+
+
   /* ── Social proof bar ──────────────────────────────────────────────────────── */
   .proof-bar {
     border-top: 1px solid var(--border);
@@ -238,7 +340,7 @@
 
   .section-label {
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: 14px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
     color: var(--green);
@@ -273,7 +375,7 @@
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 24px 24px 20px;
+    padding: 24px;
   }
 
   .card-icon {
@@ -382,8 +484,8 @@
   }
 
   .pricing-card.featured {
-    border-color: var(--green-dim);
-    background: linear-gradient(135deg, var(--green-bg) 0%, var(--bg-card) 100%);
+    border: 2px solid rgba(78, 230, 154, 0.28);
+    background: linear-gradient(160deg, #1b3326 0%, var(--bg-card) 65%);
     position: relative;
   }
 
@@ -612,7 +714,7 @@ plausible.init()
   <ul class="nav-links">
     <li><a href="/sample">Sample Briefing</a></li>
     <li><a href="/pricing">Pricing</a></li>
-    <li><a href="https://buy.stripe.com/14A5kw5kD7bT7Ii9CFdIA03" class="nav-cta">Subscribe</a></li>
+    <li><a href="/#pricing" class="nav-cta">Subscribe</a></li>
   </ul>
 </nav>
 
@@ -625,6 +727,32 @@ plausible.init()
     <a href="/sample" class="btn-primary">View Sample Briefing</a>
     <a href="/pricing" class="btn-secondary">See Pricing</a>
   </div>
+
+  <div class="hero-preview-card">
+    <div class="hero-card-top">
+      <span class="hero-card-label">Briefing Preview</span>
+      <span class="hero-card-grade">
+        Coverage
+        <span class="hero-card-grade-badge">B+</span>
+      </span>
+    </div>
+    <div class="hero-card-district">Illinois Senate District 33</div>
+    <div class="hero-card-stats">
+      <div class="hero-card-stat">
+        <div class="hero-card-stat-value">269</div>
+        <div class="hero-card-stat-label">Articles<br>Scanned</div>
+      </div>
+      <div class="hero-card-stat">
+        <div class="hero-card-stat-value">8</div>
+        <div class="hero-card-stat-label">Signals<br>Detected</div>
+      </div>
+      <div class="hero-card-stat">
+        <div class="hero-card-stat-value" style="font-size:13px;padding-top:2px;">1st of each month</div>
+        <div class="hero-card-stat-label">Next<br>Delivery</div>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ── Proof bar ─────────────────────────────────────────────────────────────── -->
@@ -638,43 +766,43 @@ plausible.init()
 <section class="section">
   <div class="section-label">What Precinct Does</div>
   <h2 class="section-headline">An intelligence operation.</h2>
-  <p class="section-body">Not a press clipping service. Every month, Precinct tracks candidates, entities, endorsements, and media coverage across your race. Then it finds the patterns — endorsement anomalies, timing signals, financial infrastructure gaps — that don't show up in any single article.</p>
+  <p class="section-body">Not a press clipping service. Every month, Precinct tracks candidates, endorsements, entities, and media coverage across your race — then finds the patterns, anomalies, and infrastructure gaps no single article reveals.</p>
 
   <div class="cards">
     <div class="card">
       <span class="card-icon">🔗</span>
       <div class="card-title">Cross-Source Connections</div>
-      <p class="card-body">Endorsement gaps, financial anomalies, and messaging patterns that only appear when you read everything at once. Invisible in any single article. Obvious when you read them all.</p>
+      <p class="card-body">Patterns that only appear when you read everything at once — invisible in any single article.</p>
     </div>
     <div class="card">
       <span class="card-icon">📊</span>
       <div class="card-title">Month-Over-Month Deltas</div>
-      <p class="card-body">Per-candidate deltas on endorsements, media mentions, and finance position. Directional signals every month — so you see the trajectory, not just the snapshot.</p>
+      <p class="card-body">Per-candidate deltas on endorsements, media, and finance — so you see the trajectory, not just the snapshot.</p>
     </div>
     <div class="card">
       <span class="card-icon">⚠️</span>
       <div class="card-title">Anomaly Detection</div>
-      <p class="card-body">Campaign infrastructure without financial disclosure. Domain squatting on your name. Institutional endorsements without matching financial infrastructure. Timing patterns that suggest coordinated opposition.</p>
+      <p class="card-body">Flags unusual signals like domain squatting, institutional endorsements without matching infrastructure, and campaign activity that doesn't fit the public story.</p>
     </div>
     <div class="card">
       <span class="card-icon">✅</span>
       <div class="card-title">Every Claim Cited</div>
-      <p class="card-body">Every insight links to its source. Precision Policy: if we can't verify it, we call it a gap — not a fact.</p>
+      <p class="card-body">Every insight links to its source. If we can't verify it, we call it a gap.</p>
     </div>
     <div class="card">
       <span class="card-icon">🏅</span>
       <div class="card-title">Coverage Grade</div>
-      <p class="card-body">Every briefing is graded A–F based on source availability for your race. You always know how much we know — and how much we don't.</p>
+      <p class="card-body">Every briefing is graded A–F. You always know how much we know — and how much we don't.</p>
     </div>
   </div>
   <p style="margin-top: 20px; font-size: 12px; color: var(--text-dim); font-weight: 300; font-style: italic; line-height: 1.7;"><em>Sources include but are not limited to: IL SBE Campaign Disclosure, Shaw Local, Patch, Chicago Tribune, The Illinoize, county clerk records, and candidate websites. County board briefings add village board minutes, local Facebook groups, and NextDoor.</em></p>
 </section>
 
 <!-- ── What's in a briefing ─────────────────────────────────────────────────── -->
-<section class="section" style="padding-top: 0;">
+<section class="section" style="padding-top: 0; border-top: 1px solid var(--border);">
   <div class="section-label">The Briefing</div>
-  <h2 class="section-headline">Hours of context, compressed into five minutes.</h2>
-  <p class="section-body">Up to eleven sections, depending on your race type. Thin months get shorter briefings — we never pad.</p>
+  <h2 class="section-headline">Hours of context, compressed into one briefing.</h2>
+  <p class="section-body">Multiple sections, scaled to your race type. Briefing depth matches available intelligence — we never pad.</p>
 
   <div class="briefing-preview">
     <div class="briefing-preview-header">
@@ -685,7 +813,7 @@ plausible.init()
       <li class="section-row">
         <span class="row-emoji">👁</span>
         <span class="row-label">What to Watch</span>
-        <span class="row-desc">Cross-source connection insights. The things you didn't know and couldn't have found on your own.</span>
+        <span class="row-desc">Cross-source patterns you couldn't find on your own.</span>
       </li>
       <li class="section-row">
         <span class="row-emoji">📍</span>
@@ -695,7 +823,7 @@ plausible.init()
       <li class="section-row">
         <span class="row-emoji">🏛</span>
         <span class="row-label">Board Dynamics</span>
-        <span class="row-desc">Who votes with whom. Committee assignments, recent resolutions, and bloc analysis. <em>(county board races)</em></span>
+        <span class="row-desc">Voting blocs, committee assignments, resolution history. <em>(county board)</em></span>
       </li>
       <li class="section-row">
         <span class="row-emoji">👤</span>
@@ -705,12 +833,12 @@ plausible.init()
       <li class="section-row">
         <span class="row-emoji">📰</span>
         <span class="row-label">Media Mentions</span>
-        <span class="row-desc">Coverage volume, tone signals, and outlet tier. Who's getting covered, where it ran, and whether it's likely to move anything.</span>
+        <span class="row-desc">Coverage volume, outlet tier, and whether it's likely to move anything.</span>
       </li>
       <li class="section-row">
         <span class="row-emoji">💬</span>
         <span class="row-label">Community Pulse</span>
-        <span class="row-desc">Local Facebook groups, NextDoor, and village board minutes — the sources that matter when there's no press coverage. <em>(county board races)</em></span>
+        <span class="row-desc">Local Facebook, NextDoor, and village minutes — when there's no press coverage. <em>(county board)</em></span>
       </li>
       <li class="section-row">
         <span class="row-emoji">🌐</span>
@@ -750,16 +878,15 @@ plausible.init()
     </div>
     <div class="neutrality-body">
       <p>Every source is cited. Every gap is labeled. We don't editorialize, frame, or filter intelligence around a candidate's interests. You get what we found — nothing added, nothing removed.</p>
-      <p>Every subscriber in the same race receives identical base intelligence. We don't advise. We don't strategize. The moment we start shaping intel around a candidate's needs, we become a campaign consultant. That's a different business with different ethics. We're not that.</p>
-      <p>Your opponent could subscribe tomorrow and get the same briefing. The value isn't exclusivity. It's accuracy, consistency, and the hours you get back every month.</p>
+      <p>Every subscriber in the same race gets identical intelligence. We don't advise or strategize — that's a different business with different ethics. Your opponent could subscribe tomorrow and get the same briefing. The value is accuracy, consistency, and the hours you get back.</p>
     </div>
   </div>
 </div>
 
 <!-- ── Pricing ────────────────────────────────────────────────────────────────── -->
-<section class="section" id="pricing">
+<section class="section" id="pricing" style="border-top: 1px solid var(--border);">
   <div class="section-label">Pricing</div>
-  <h2 class="section-headline">Stay covered every month. Escalate when the race gets hot.</h2>
+  <h2 class="section-headline">One plan for steady coverage. One for when it matters most.</h2>
   <p class="section-body">No contracts. No setup fees. Cancel anytime.</p>
 
   <div class="pricing-grid">
@@ -787,8 +914,8 @@ plausible.init()
         <li>Month-over-month delta tracking</li>
         <li>Entity network builds over time</li>
         <li>Finance intel benchmarked to your race tier — what's typical for your level of office, flagged in the briefing</li>
-        <li>Social media monitoring</li>
-        <li>All intelligence gap items filled as data arrives</li>
+        <li>Social media tracking (where available)</li>
+        <li>Intelligence gaps tracked and filled in subsequent briefings</li>
       </ul>
       <a href="https://buy.stripe.com/14A5kw5kD7bT7Ii9CFdIA03" class="pricing-cta">Subscribe — $149/mo</a>
     </div>
