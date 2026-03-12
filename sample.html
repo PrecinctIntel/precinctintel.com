@@ -731,6 +731,14 @@
     line-height: 1.75;
     font-weight: 300;
   }
+  /* Sample banner intro block */
+  .sample-banner-intro { display: flex; flex-direction: column; gap: 3px; }
+  .sample-banner-intro-headline { font-family: var(--font-display); font-size: 13px; color: var(--text-primary); }
+  .sample-banner-intro-sub { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.5px; color: var(--text-secondary); }
+  /* Conversion CTA button group */
+  .subscribe-btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
+  .subscribe-btn-outline { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); padding: 11px 24px; border-radius: 4px; text-decoration: none; transition: opacity 0.2s; }
+  .subscribe-btn-outline:hover { opacity: 0.85; }
 </style>
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-2Y4jRthof2Q0cTIJAX-v_.js"></script>
@@ -744,8 +752,11 @@ plausible.init()
 <div class="briefing-container">
 
   <div class="sample-banner">
-    <span class="sample-banner-text">Sample Briefing — Sections marked 🔒 are subscriber-only</span>
-    <a href="https://buy.stripe.com/14A5kw5kD7bT7Ii9CFdIA03" class="sample-banner-cta">Subscribe to Unlock</a>
+    <div class="sample-banner-intro">
+      <span class="sample-banner-intro-headline"><strong>This is a real Precinct intelligence briefing.</strong></span>
+      <span class="sample-banner-intro-sub">Generated for Illinois Senate District 33.</span>
+      <span class="sample-banner-intro-sub">Sections marked <span style="letter-spacing:1px;text-transform:uppercase;font-weight:600;">Subscriber-Only</span> unlock with any paid plan.</span>
+    </div>
   </div>
 
   <div class="header">
@@ -1046,14 +1057,13 @@ plausible.init()
       </div>
     </div>
 
-    <!-- SUBSCRIBE CTA -->
+    <!-- CONVERSION CTA -->
     <div class="subscribe-cta">
-      <div class="subscribe-text">Want the full briefing?</div>
-      <div class="subscribe-price">Finance numbers. Candidate dossiers. Source convergence analysis.</div>
-      <div class="subscribe-preview">Stay covered every month. Escalate when the race gets hot.</div>
-      <a href="https://buy.stripe.com/14A5kw5kD7bT7Ii9CFdIA03" class="subscribe-btn">Subscribe — $149/mo</a>
-      <div style="margin-top:14px;">
-        <a href="https://buy.stripe.com/8x2eV6cN53ZHaUu7uxdIA02" style="font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);padding:11px 24px;border-radius:4px;text-decoration:none;">Get a Surge Briefing — $99</a>
+      <div class="subscribe-text">Want this intelligence for your race?</div>
+      <div class="subscribe-price">Precinct delivers this same intelligence format monthly for every district we monitor.</div>
+      <div class="subscribe-btn-group">
+        <a href="/pricing" class="subscribe-btn">View Pricing</a>
+        <a href="mailto:hello@precinctintel.com" class="subscribe-btn-outline">Get Coverage</a>
       </div>
     </div>
 
