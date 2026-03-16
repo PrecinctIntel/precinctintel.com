@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precinct Intelligence — Illinois Senate District 33 Week 11</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=geist-mono@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  @page { size: A4; margin: 0; }
+
+  :root {
+    --bg-deep: #0c0f14;
+    --bg-surface: #131720;
+    --bg-card: #1a1f2a;
+    --border: #222838;
+    --border-subtle: #1c2130;
+    --green: #4ee69a;
+    --green-dim: #2a5e42;
+    --green-bg: #122a1e;
+    --amber: #f0a050;
+    --red: #f06050;
+    --blue: #50a0f0;
+    --purple: #a78bfa;
+    --text-primary: #ededeb;
+    --text-secondary: #a8a49c;
+    --text-muted: #706c64;
+    --text-dim: #4a4640;
+    --font-body: 'DM Sans', -apple-system, sans-serif;
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-mono: 'Geist Mono', 'SF Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .briefing-container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--bg-surface);
+    min-height: 100vh;
+  }
+
+  .header {
+    background: var(--bg-deep);
+    padding: 44px 48px 40px;
+  }
+
+  .header-accent { height: 2px; background: var(--green); opacity: 0.5; }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .logo-mark { width: 20px; height: 20px; flex-shrink: 0; }
+  .logo-mark svg { width: 20px; height: 20px; }
+
+  .header-brand {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .header-district {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    margin-bottom: 6px;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .header-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: var(--font-display);
+    font-style: italic;
+  }
+
+  .header-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--bg-card);
+    padding: 5px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    font-weight: 400;
+  }
+
+  .meta-pill .label {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .coverage-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 4px;
+    padding: 5px 12px 5px 6px;
+  }
+
+  .coverage-grade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green);
+    color: var(--bg-deep);
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: var(--font-mono);
+  }
+
+  .coverage-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .content { padding: 8px 48px 0; }
+
+  .section {
+    padding: 28px 0 32px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .section:last-of-type { border-bottom: none; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .section-emoji { font-size: 15px; line-height: 1; width: 20px; text-align: center; }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  .section-line { flex: 1; height: 1px; background: var(--border); margin-left: 6px; }
+
+  .item {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+  }
+  .item:last-child { margin-bottom: 0; }
+
+  .item-headline {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.35;
+  }
+
+  .item-body {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .citation {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--green);
+    font-weight: 400;
+    opacity: 0.8;
+  }
+
+  .heat-high { color: var(--red); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
+  .heat-emerging { color: var(--amber); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
+  .heat-steady { color: var(--blue); font-family: var(--font-mono); font-size: 10px; font-weight: 500; }
+
+  .candidate-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--green);
+  }
+  .candidate-card:last-child { margin-bottom: 0; }
+
+  .candidate-name {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--green);
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
+
+  .candidate-detail {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0 8px;
+    flex-wrap: wrap;
+  }
+
+  .stat-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 12px;
+    text-align: center;
+    min-width: 80px;
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  .stat-delta {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 500;
+  }
+  .delta-up { color: var(--green); }
+  .delta-down { color: var(--red); }
+  .delta-neutral { color: var(--text-muted); }
+
+  .activity-dots {
+    display: inline-flex;
+    gap: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .activity-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+  .activity-dot.active { background: var(--green); }
+
+  .countdown-banner {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--amber);
+    border-radius: 8px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .countdown-number {
+    font-family: var(--font-mono);
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--amber);
+    line-height: 1;
+  }
+
+  .countdown-detail {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .countdown-detail strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .milestone-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .milestone {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+  }
+
+  .milestone.done { color: var(--green); border-color: var(--green-dim); }
+  .milestone.current { color: var(--amber); border-color: var(--amber); background: rgba(240,160,80,0.08); }
+  .milestone-arrow { color: var(--text-dim); font-size: 10px; padding: 0 4px; }
+
+  .poll-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 13px;
+  }
+  .poll-row:last-child { border-bottom: none; }
+
+  .poll-metric { color: var(--text-secondary); font-weight: 400; }
+  .poll-value { font-family: var(--font-mono); font-size: 13px; color: var(--text-primary); font-weight: 500; }
+
+  .events-container {
+    background: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .event-row {
+    display: flex;
+    gap: 20px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: baseline;
+  }
+  .event-row:last-child { border-bottom: none; }
+
+  .event-date {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--green);
+    white-space: nowrap;
+    min-width: 105px;
+    font-weight: 500;
+  }
+
+  .event-desc {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  .event-urgent {
+    color: var(--amber);
+    font-weight: 500;
+  }
+
+  .dive-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+
+  .dive-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: top;
+  }
+
+  .dive-table td:first-child {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    width: 140px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .dive-table td:last-child { color: var(--text-secondary); font-weight: 300; }
+  .dive-table tr:last-child td { border-bottom: none; }
+
+  .intel-gaps {
+    background: rgba(78, 230, 154, 0.03);
+    border: 1px solid var(--green-dim);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .intel-gaps-intro {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .gap-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .gap-item:last-child { margin-bottom: 0; }
+
+  .gap-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+    margin-top: 7px;
+    opacity: 0.4;
+  }
+
+  .gap-text strong {
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .next-briefing {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 14px 16px;
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .archive-link {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .archive-link a {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+  }
+
+  .footer {
+    background: var(--bg-deep);
+    padding: 36px 48px 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .precision-policy {
+    background: var(--green-bg);
+    border: 1px solid var(--green-dim);
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-bottom: 24px;
+    line-height: 1.65;
+  }
+
+  .precision-policy em {
+    font-style: normal;
+    color: var(--green);
+    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .footer-disclaimer {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.65;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-brand a { color: var(--text-muted); text-decoration: none; }
+  .footer-logo { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .finance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .finance-card {
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+
+  .finance-card.finance-lead {
+    border-color: var(--green-dim);
+    background: var(--green-bg);
+  }
+
+  .finance-card.finance-anomaly {
+    border-color: #5a3a1a;
+    background: #1a1200;
+  }
+
+  .finance-candidate {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 2px;
+  }
+
+  .finance-party-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .finance-metric-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+  }
+
+  .finance-metric-value {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+
+  .finance-card.finance-lead .finance-metric-value { color: var(--green); }
+  .finance-card.finance-anomaly .finance-metric-value { color: var(--amber); }
+
+  .finance-metric-secondary {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .finance-period-tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-subtle);
+    letter-spacing: 0.5px;
+  }
+
+  .finance-flag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--amber);
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .finance-context {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  /* Week-over-week deltas */
+  .delta-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+  }
+  .delta-tag-new { background: rgba(78,230,154,0.15); color: var(--green); }
+  .delta-tag-unchanged { background: var(--bg-card); color: var(--text-muted); border: 1px solid var(--border); }
+  .delta-tag-decline { background: rgba(240,96,80,0.12); color: var(--red); }
+
+  @media (max-width: 600px) {
+    .header { padding: 28px 24px 28px; }
+    .content { padding: 8px 24px 0; }
+    .footer { padding: 28px 24px 32px; }
+    .header-district { font-size: 24px; }
+    .event-row { flex-direction: column; gap: 4px; }
+    .event-date { min-width: auto; display: inline-block; }
+    .header-meta { gap: 8px; }
+    .countdown-banner { flex-direction: column; gap: 12px; }
+    .stat-row { gap: 6px; }
+    .stat-box { min-width: 70px; }
+    .finance-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── SIGNAL CONVERGENCE BADGE ── */
+  .signal-count {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--green);
+    background: rgba(78,230,154,0.08);
+    border: 1px solid rgba(78,230,154,0.25);
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── EXECUTIVE SUMMARY ── */
+  .executive-summary {
+    background: rgba(78,230,154,0.05);
+    border: 1px solid rgba(78,230,154,0.2);
+    border-radius: 8px;
+    padding: 22px 28px;
+    margin-bottom: 8px;
+  }
+  .exec-label {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .exec-body {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+</style>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-2Y4jRthof2Q0cTIJAX-v_.js"></script>
+<script>
+window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+plausible.init()
+</script>
+</head>
+<body>
+
+<div class="briefing-container">
+
+  
+  
+  
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="1"/>
+          <rect x="13" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.45"/>
+          <rect x="0" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.45"/>
+          <rect x="13" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.15"/>
+        </svg>
+      </div>
+      <div class="header-brand">Precinct Intelligence</div>
+    </div>
+    <div class="header-district">Illinois Senate District 33</div>
+    <div class="header-subtitle">Weekly Political Intelligence Briefing</div>
+    <div class="header-meta">
+      <div class="meta-pill"><span class="label">Week</span> 11</div>
+      <div class="meta-pill"><span class="label">Period</span> Mar 9 – 15, 2026</div>
+      <div class="meta-pill"><span class="label">Scanned</span> 203 articles</div>
+      <div class="meta-pill"><span class="label">Signals</span> 8</div>
+      <div class="coverage-badge">
+        <span class="coverage-grade">B</span>
+        <span class="coverage-label">Coverage</span>
+      </div>
+    </div>
+  </div>
+  <div class="header-accent"></div>
+
+  <div class="content">
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="executive-summary">
+        <div class="exec-label">⚡ Executive Summary</div>
+        <div class="exec-body">With the primary 2 days away, the Chicago Tribune published a head-to-head profile of Penman and Breugelmans and a broader General Assembly preview flagging outside money flowing into legislative races. Both Republican candidates went silent on Facebook during the final two weeks — a striking absence during the closing stretch — while Michele Clark remains virtually invisible across all tracked channels. Early voting ends Monday; Election Day is Tuesday, March 17.</div>
+      </div>
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">🔬</span>
+        <span class="section-label">Signal Detection</span>
+        <span class="section-line"></span>
+      </div>
+
+      
+      <div class="item">
+        <div class="signal-count">Two independent sources converged</div>
+        <div class="item-headline">Both GOP candidates went dark on social media during the final push to primary day</div>
+        <div class="item-body">
+          <span class="heat-high">🔥 HIGH HEAT</span> — Two independent source types — Facebook campaign activity tracking and news coverage patterns — converge on the same anomaly. <strong>Neither Jessica Breugelmans nor Danielle Penman posted any Facebook content during the reporting period</strong>, despite each having maintained prolific posting cadences throughout January and February (43+ posts each historically). This silence spans the final two weeks before a contested primary. Breugelmans' last tracked post was Feb. 25; Penman's was Feb. 27. Possible explanations include a shift to paid advertising, door-knocking operations, or direct-mail surges that are invisible to social media monitors — but the simultaneous blackout from both campaigns is notable. The Chicago Tribune published a head-to-head piece on Mar. 9, suggesting earned media attention continued even as owned-channel activity stopped. <span class="citation">(Facebook campaign activity data; Chicago Tribune)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="signal-count">Three independent sources converged</div>
+        <div class="item-headline">Outside campaign cash flagged as factor in Illinois legislative primaries including SD-33</div>
+        <div class="item-body">
+          <span class="heat-high">🔥 HIGH HEAT</span> — Three independent source types — the Chicago Tribune's General Assembly analysis, Breugelmans' own Facebook posts (prior weeks), and campaign finance filings — point to outside spending as a live issue in this race. The Tribune's March 15 overview of legislative primaries explicitly notes that 'outside campaign cash has infiltrated a string of races for the Illinois House and Senate.' Breugelmans has repeatedly accused Penman of being 'bought and paid for by Democrat Unions,' specifically referencing union endorsements Penman has received (International Union of Operating Engineers Local 150, Bricklayers & Allied Craftworkers District Council 1 Illinois). Penman's Q4 receipts of $12,010 are less than half of Breugelmans' $28,645, raising the question of whether independent expenditure committees — which do not appear in candidate committee filings — are supplementing Penman's campaign. <strong>Q1 2026 filings and independent expenditure reports will be critical to understanding the full financial picture.</strong> <span class="citation">(Chicago Tribune; Facebook campaign activity data; IL SBE CampaignDisclosure)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="signal-count">Two independent sources converged</div>
+        <div class="item-headline">Michele Clark remains a near-total intelligence gap heading into an uncontested Democratic primary</div>
+        <div class="item-body">
+          <span class="heat-emerging">📊 EMERGING</span> — Two source types — Facebook monitoring and campaign finance filings — produce contradictory signals. Clark has an active campaign committee with $19,855 in Q4 receipts (second-highest in the race) and $4,714 in expenditures, yet she has zero tracked Facebook posts and no media mentions across any outlet this week or last. She is running unopposed in the Democratic primary, which reduces the urgency for earned media, but her digital absence is total. ANALYSIS: Clark's fundraising — which outpaces Penman's — combined with her endorsement list (AFL-CIO, Sierra Club, Personal PAC, Ironworkers Local 63, IL Senate President Don Harmon, among others) suggests a serious general-election apparatus being assembled quietly. The contrast between financial activity and public visibility is itself a data point worth tracking into the general. <span class="citation">(IL SBE CampaignDisclosure; Facebook campaign activity data)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="signal-count">Three independent sources converged</div>
+        <div class="item-headline">Endorsement gap between Breugelmans and Penman reveals distinct coalition strategies</div>
+        <div class="item-body">
+          <span class="heat-high">🔥 HIGH HEAT</span> — Three source types — editorial board endorsements, organizational endorsements via Facebook, and candidate website data — show a clear divergence. <strong>Breugelmans holds endorsements from both the Chicago Tribune and Daily Herald editorial boards</strong>, plus ABATE of Illinois and local elected officials like Elburn Trustee Chris Hansen. <strong>Penman holds endorsements from the Illinois Fraternal Order of Police, International Union of Operating Engineers Local 150, Bricklayers & Allied Craftworkers District Council 1 Illinois, ANA-Illinois, and United for Freedom Coalition PAC.</strong> Breugelmans' coalition leans media-institutional and grassroots-conservative; Penman's leans labor-trade and law enforcement. Breugelmans has framed Penman's labor endorsements as evidence of Democratic infiltration. This endorsement split may map onto different geographic and demographic segments within the tri-county district. <span class="citation">(Chicago Tribune; Daily Herald; Facebook campaign activity data)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="signal-count">Two independent sources converged</div>
+        <div class="item-headline">Last day of early voting is Monday — final window before Tuesday primary</div>
+        <div class="item-body">
+          <span class="heat-high">🔥 HIGH HEAT</span> — Two source types — the Patch election guide and IL SBE calendar data — confirm that early voting closes Monday, March 16, with the general primary on Tuesday, March 17. Early voting sites are available across Lake, McHenry, Kane, and DuPage counties. Voters can cast ballots at any early voting site within their county regardless of precinct. Grace Period Registration remains open through Election Day, allowing same-day registration and voting. <span class="citation">(Patch; IL SBE)</span>
+        </div>
+      </div>
+      
+
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📍</span>
+        <span class="section-label">Local Issue Pulse</span>
+        <span class="section-line"></span>
+      </div>
+
+      
+      <div class="item">
+        <div class="item-headline">Property Taxes and State Spending</div>
+        <div class="item-body">
+          <span class="heat-high">🔥 HIGH HEAT</span> — All three candidates have addressed taxes, but with different specificity. Breugelmans has made anti-tax messaging her central theme, pledging she will 'NEVER vote for a tax hike' and attacking the October 2025 legislative session for passing utility rate and tax increases (Facebook, Oct. 31). She specifically targets the 'billion dollar Chicago bailout' and frames suburban taxpayers as victims of Chicago-centric fiscal policy. Penman echoes the tax-reduction message — 'lowering taxes' is listed as her top priority — but has not made specific pledges or identified specific legislation. Clark's website frames her approach as 'responsible leadership and practical solutions' without specific tax pledges. ANALYSIS: In a collar-county district where property tax burden is a perennial top concern, the specificity gap between candidates on this issue is notable. Breugelmans' explicit 'no tax hike' pledge creates a clear accountability marker that neither opponent has matched. <span class="citation">(Facebook campaign activity data; jessicaforillinois.com; daniellepenman.com; micheleforilsenate.com)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">Education Policy and Parental Rights</div>
+        <div class="item-body">
+          <span class="heat-high">🔥 HIGH HEAT</span> — Breugelmans and Penman diverge significantly on education framing. Breugelmans — a former teacher, homeschool parent, and former school board candidate — centers parental rights, education transparency, protection of girls' sports, and school choice. She endorsed Dan Ugaste's position on federal school choice opt-in programs and opposes homeschool regulation legislation. Penman emphasizes career pathways and trades education, citing her visit to the Bricklayers training center and advocating for apprenticeships as alternatives to four-year degrees. Clark's website mentions 'good schools' and her experience running an early childhood learning center, but no specific education policy positions are documented. ANALYSIS: Breugelmans' education platform is the most detailed and ideologically specific in the field, drawing on personal experience as a homeschool parent and former school board candidate. Penman's trades-pathway emphasis appeals to a different constituency and aligns with her labor endorsements. <span class="citation">(Facebook campaign activity data; jessicaforillinois.com; daniellepenman.com; micheleforilsenate.com)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">Public Safety and Law Enforcement</div>
+        <div class="item-body">
+          <span class="heat-steady">✅ STEADY</span> — Both Republican candidates have expressed support for law enforcement on National Law Enforcement Appreciation Day (Jan. 9). Penman holds the endorsement of the Illinois Fraternal Order of Police, giving her a concrete institutional credential on the issue. Breugelmans has posted 'Back the blue' content but has not secured a comparable law enforcement endorsement. Clark lists no law enforcement endorsements; her endorsed organizations are primarily labor, environmental (Sierra Club), and reproductive rights (Personal PAC). Penman additionally organized a Veterans Suicide Prevention & Policy Solutions Townhall in Crystal Lake on Jan. 12, broadening her public safety profile to include veterans' mental health. <span class="citation">(Facebook campaign activity data; daniellepenman.com; micheleforilsenate.com)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">Healthcare</div>
+        <div class="item-body">
+          <span class="heat-emerging">📊 EMERGING</span> — Penman is the only candidate with a professional healthcare background (20+ years as a Labor and Delivery nurse, Master's in Executive Nurse Leadership). She lists healthcare as a key issue and holds the ANA-Illinois endorsement. Breugelmans has not addressed healthcare policy in tracked posts or on her campaign website. Clark's website mentions her experience running an early childhood learning center and her role at D300 Food Pantry but does not articulate specific healthcare positions. ANALYSIS: In a general election, healthcare access in suburban communities could become a differentiator. Penman's professional credential is unique in the field. <span class="citation">(daniellepenman.com; Facebook campaign activity data; micheleforilsenate.com)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">Bilingual Outreach / Latino Engagement</div>
+        <div class="item-body">
+          <span class="heat-emerging">📊 EMERGING</span> — Penman is the only candidate systematically posting bilingual (English/Spanish) content on Facebook, with nearly every post including a Spanish translation. In a district that includes Elgin and portions of Kane County with growing Latino populations, this is a distinctive outreach strategy. Neither Breugelmans nor Clark has posted bilingual content in tracked data. ANALYSIS: Bilingual outreach in a Republican primary is unusual and may signal general-election positioning. It also aligns with Penman's fundraiser at El Santo Mexican Grill & Cantina and her stated goal of broadening the party's reach. <span class="citation">(Facebook campaign activity data)</span>
+        </div>
+      </div>
+      
+
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">👤</span>
+        <span class="section-label">Candidate Activity Log</span>
+        <span class="section-line"></span>
+      </div>
+
+      
+      <div class="candidate-card">
+        <div class="candidate-name">Jessica Breugelmans (R) — Geneva</div>
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Background &amp; Identity</span>
+          Lifelong resident of the Fox Valley area. Mother, homeschool parent, and self-described political outsider. Raised in a manufacturing family. Describes herself as a 'mom on a mission.' Former USA Gymnastics coach and competitor. Attended the Concerned Parents Gala featuring Riley Gains. Active in her Geneva community and member of local Republican organizations.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Professional History</span>
+          Former teacher, small business owner, and philanthropist. Background in education and manufacturing. Specific employers and business details not disclosed in available data. Campaign website describes a 'manufacturing upbringing' suggesting family business ties.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Political History</span>
+          Filed to run for the Geneva school board on December 10, 2018 (per her own Facebook post). No record of winning that race in available data. Filed paperwork in Springfield on October 27, 2025 to run for State Senate District 33. No prior elected office confirmed. Active in Kane County GOP, Western Kane County Republican Organization, and CRO (Conservative Republican Organization) events.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Platform</span>
+          <ol style="margin: 0; padding-left: 18px; line-height: 1.8;">
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Taxes</strong> — Pledges to never vote for a tax hike. Opposes the October 2025 legislative package she characterizes as a 'billion dollar Chicago bailout.' Attacks shell bills used to pass tax increases after midnight.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Education / Parental Rights</strong> — Supports school choice programs, including federal opt-in programs. Opposes homeschool regulation legislation. Advocates education transparency and parental control over curriculum. Supports protection of girls' sports.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Government Reform</strong> — Opposes shell bills and late-night legislative maneuvers. Calls for accountability in Springfield spending.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Public Safety</strong> — Expresses support for law enforcement. No specific policy proposals documented.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Small Government</strong> — General opposition to government growth. Cites 40% growth in state budget under Pritzker.</li>
+            
+          </ol>
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Endorsements</span>
+          <span style="color: var(--text-primary); font-weight: 500;">Chicago Tribune Editorial Board</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-02-12)</span> — <span style="font-size: 12.5px;">Cited her 'energy and ground game' and 'distinct advantage' in education focus.</span><br><span style="color: var(--text-primary); font-weight: 500;">Daily Herald Editorial Board</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-02-25)</span> — <span style="font-size: 12.5px;">Cited 'most passion and strongest energy in pursuit of policy goals.'</span><br><span style="color: var(--text-primary); font-weight: 500;">ABATE of Illinois, Inc.</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-01-20)</span> — <span style="font-size: 12.5px;">Motorcyclist and off-road advocacy organization.</span><br><span style="color: var(--text-primary); font-weight: 500;">Elburn Trustee Chris Hansen</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-01-23)</span> — <span style="font-size: 12.5px;">Local elected official endorsement.</span><br><span style="color: var(--text-primary); font-weight: 500;">Gary Franchi</span> <span style="color: var(--text-muted); font-size: 12px;">(2025-10-03)</span> — <span style="font-size: 12.5px;">Conservative media figure.</span>
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Campaign Infrastructure</span>
+          Active WinRed fundraising page. Multiple fundraiser events held (Feb. 11 at Joe and Leanne Klein's). Yard signs distributed since January 2026. Petition signatures collected at 2x minimum requirement. Campaign kickoff held November 5, 2025 at The Office in St. Charles. Appears to have a ground-game operation with door-knocking and petition drives through CRO.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Social Media</span>
+          <strong style="color: var(--text-primary); font-weight: 500;">0</strong> posts/7d · <span style="color: var(--amber);">Zero posts during final two weeks before primary — last post Feb. 25</span>
+        </div>
+        
+
+        
+        
+        <div style="margin-top: 4px;">
+          <span class="citation">(Chicago Tribune; Daily Herald; Facebook campaign activity data; IL SBE CampaignDisclosure; jessicaforillinois.com)</span>
+        </div>
+        
+
+        
+        
+        <div class="stat-row">
+          
+          <div class="stat-box">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Endorsements</div>
+            <div class="stat-delta delta-neutral">No new endorsements this week</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">3</div>
+            <div class="stat-label">Media Mentions</div>
+            <div class="stat-delta delta-up">Chicago Tribune head-to-head + GA overview pieces this week</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">$28.6K</div>
+            <div class="stat-label">Q4 Raised</div>
+            <div class="stat-delta delta-neutral">Leads field in Q4 receipts</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">~$23.6K</div>
+            <div class="stat-label">Cash on Hand</div>
+            <div class="stat-delta delta-neutral">Estimated from Q4 receipts minus expenditures</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Posts/7d</div>
+            <div class="stat-delta delta-down">Down from active posting in prior weeks</div>
+          </div>
+          
+        </div>
+        
+
+        
+        
+        <div style="margin-top: 8px; font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.5px;">
+          ACTIVITY
+          <span class="activity-dots">
+            <span class="activity-dot active"></span><span class="activity-dot"></span><span class="activity-dot"></span><span class="activity-dot"></span><span class="activity-dot"></span>
+          </span>
+        </div>
+        
+      </div>
+      
+      <div class="candidate-card">
+        <div class="candidate-name">Danielle Penman (R)</div>
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Background &amp; Identity</span>
+          Describes herself as a community volunteer and dedicated Republican. Emphasizes compassion combined with common sense. Champions fundraising for perinatal bereavement services and advocates for families coping with pregnancy loss and infant death. Co-chair of a systemwide council guiding bereavement care initiatives. Instructor for Stop The Bleed program training community members to act in emergencies. Posts bilingual English/Spanish content on social media. Attended the 2024 Republican National Convention.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Professional History</span>
+          Over 20 years as a Labor and Delivery nurse. Holds a Master's degree in Executive Nurse Leadership. Recognized nurse leader and dedicated mentor. Specific hospital or health system employers not disclosed in available data.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Political History</span>
+          Longtime Republican Party member. Serves on the party's fundraising committee. Worked as a Precinct Committeeman assistant. No prior races for public office documented. Attended the 2024 Republican National Convention as a party delegate or attendee (specific role not confirmed).
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Platform</span>
+          <ol style="margin: 0; padding-left: 18px; line-height: 1.8;">
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Taxes</strong> — Pledges to lower taxes and rein in wasteful spending. No specific legislation or tax pledges identified.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Education / Career Pathways</strong> — Advocates expanding educational and career pathways for students. Supports apprenticeships and trades training as alternatives to four-year college degrees. Visited Bricklayers & Allied Craftworkers training center.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Healthcare</strong> — Lists improving access to healthcare for families as a key issue. Specific proposals not documented. Professional nursing background informs position.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Public Safety</strong> — Supports law enforcement and first responders. Organized Veterans Suicide Prevention & Policy Solutions Townhall on Jan. 12 in Crystal Lake. Endorsed by Illinois Fraternal Order of Police.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Community Safety</strong> — Supports Second Amendment rights. Hosted fundraiser at Fox Valley Shooting Range. Spoke at GAT Guns Governor Candidate Forum.</li>
+            
+          </ol>
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Endorsements</span>
+          <span style="color: var(--text-primary); font-weight: 500;">Illinois Fraternal Order of Police</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-02-02)</span> — <span style="font-size: 12.5px;">Statewide law enforcement organization.</span><br><span style="color: var(--text-primary); font-weight: 500;">International Union of Operating Engineers, Local 150</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-02-05)</span> — <span style="font-size: 12.5px;">Major construction trades union. Breugelmans has attacked this endorsement as evidence of Democratic influence.</span><br><span style="color: var(--text-primary); font-weight: 500;">Bricklayers & Allied Craftworkers, District Council 1 Illinois</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-01-21)</span> — <span style="font-size: 12.5px;">Skilled trades union.</span><br><span style="color: var(--text-primary); font-weight: 500;">ANA-Illinois</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-02-02)</span> — <span style="font-size: 12.5px;">State nursing association.</span><br><span style="color: var(--text-primary); font-weight: 500;">United for Freedom Coalition PAC</span> <span style="color: var(--text-muted); font-size: 12px;">(2026-02-05)</span> — <span style="font-size: 12.5px;">Details on PAC not available in current data.</span>
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Campaign Infrastructure</span>
+          Campaign website at daniellepenman.com. Campaign email at DaniellePenman4Senator@gmail.com. Hosted meet-and-greet at El Santo Mexican Grill & Cantina in St. Charles (Jan. 27). Fundraiser at Fox Valley Shooting Range (Feb. 12). Phone banking operations with volunteers using Numinator app. Yard sign distribution underway. Appeared on WRMN Radio with Dave Tease. Spoke at League of Women Voters forum (Feb. 12).
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Social Media</span>
+          <strong style="color: var(--text-primary); font-weight: 500;">0</strong> posts/7d · <span style="color: var(--amber);">Zero posts during final two weeks before primary — last post Feb. 27</span>
+        </div>
+        
+
+        
+        
+        <div style="margin-top: 4px;">
+          <span class="citation">(Chicago Tribune; Facebook campaign activity data; IL SBE CampaignDisclosure; daniellepenman.com)</span>
+        </div>
+        
+
+        
+        
+        <div class="stat-row">
+          
+          <div class="stat-box">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Endorsements</div>
+            <div class="stat-delta delta-neutral">No new endorsements this week</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">1</div>
+            <div class="stat-label">Media Mentions</div>
+            <div class="stat-delta delta-up">Chicago Tribune head-to-head piece this week</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">$12.0K</div>
+            <div class="stat-label">Q4 Raised</div>
+            <div class="stat-delta delta-neutral">Lowest in field by Q4 receipts</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">~$8.8K</div>
+            <div class="stat-label">Cash on Hand</div>
+            <div class="stat-delta delta-neutral">Estimated from Q4 receipts minus expenditures</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Posts/7d</div>
+            <div class="stat-delta delta-down">Down from active posting in prior weeks</div>
+          </div>
+          
+        </div>
+        
+
+        
+        
+        <div style="margin-top: 8px; font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.5px;">
+          ACTIVITY
+          <span class="activity-dots">
+            <span class="activity-dot active"></span><span class="activity-dot"></span><span class="activity-dot"></span><span class="activity-dot"></span><span class="activity-dot"></span>
+          </span>
+        </div>
+        
+      </div>
+      
+      <div class="candidate-card">
+        <div class="candidate-name">Michele Clark (D) — Algonquin</div>
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Background &amp; Identity</span>
+          Grew up in Kildeer, Illinois. Lives in Algonquin with husband Daryl, a commercial airline pilot. Two daughters — one studying Aerospace Engineering, one studying Political Science. Parents grew up on farms in northern Wisconsin with limited means. Father was a Marine veteran and former military police officer who built a small business (Paradise Swimming Pools). Mother managed the business office. First in family to attend college. Active member of First Congregational Church of Dundee. Board member of the Elgin Symphony Orchestra. Tennis player at Crystal Lake Racket Club.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Professional History</span>
+          Started career in sales. Built and operated a large early childhood learning center while raising children. Served as Chief Operating Officer of the Boys and Girls Club of Dundee Township during the COVID-19 pandemic, overseeing a multimillion-dollar budget. Currently serves as Director of Development at the D300 Food Pantry, ensuring no child in the district goes hungry. Consults with women-owned small businesses and nonprofits.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Political History</span>
+          No prior races for public office documented. No party committee roles documented. Running unopposed in the Democratic primary for IL Senate District 33.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Platform</span>
+          <ol style="margin: 0; padding-left: 18px; line-height: 1.8;">
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Working Families / Economic Security</strong> — Central theme of campaign. Emphasizes 'real-world experience' and practical solutions.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Education / Schools</strong> — Lists 'good schools' as core priority. Professional background in early childhood education. No specific policy proposals documented.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Women's Rights</strong> — Lists women's rights and equal opportunity as a key issue. Endorsed by Personal PAC (reproductive rights organization).</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Food Security / Nonprofits</strong> — Current role at D300 Food Pantry. Experience managing nonprofit budgets.</li>
+            
+            <li><strong style="color: var(--text-primary); font-weight: 500;">Community Safety</strong> — Lists 'safe place to raise their family' as a priority. No specific public safety policy proposals documented.</li>
+            
+          </ol>
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Endorsements</span>
+          <span style="color: var(--text-primary); font-weight: 500;">AFL-CIO</span> — <span style="font-size: 12.5px;">Major national labor federation.</span><br><span style="color: var(--text-primary); font-weight: 500;">AFFI (American Federation of Fire Investigators)</span> — <span style="font-size: 12.5px;">Fire service organization.</span><br><span style="color: var(--text-primary); font-weight: 500;">Sierra Club</span> — <span style="font-size: 12.5px;">Environmental organization.</span><br><span style="color: var(--text-primary); font-weight: 500;">Personal PAC</span> — <span style="font-size: 12.5px;">Illinois reproductive rights political action committee.</span><br><span style="color: var(--text-primary); font-weight: 500;">Ironworkers Local 63</span> — <span style="font-size: 12.5px;">Skilled trades union.</span><br><span style="color: var(--text-primary); font-weight: 500;">Chicago Cook County Teachers Union (CCCTU)</span> — <span style="font-size: 12.5px;">Teachers union.</span><br><span style="color: var(--text-primary); font-weight: 500;">Elgin Building and Construction Trades Council</span> — <span style="font-size: 12.5px;">Regional trades council.</span><br><span style="color: var(--text-primary); font-weight: 500;">IL Senate President Don Harmon</span> — <span style="font-size: 12.5px;">Senior Democratic legislative leader.</span><br><span style="color: var(--text-primary); font-weight: 500;">State Senator Patrick Joyce</span> — <span style="font-size: 12.5px;">Democratic state senator.</span><br><span style="color: var(--text-primary); font-weight: 500;">State Senator Meg Cappel</span> — <span style="font-size: 12.5px;">Democratic state senator.</span><br><span style="color: var(--text-primary); font-weight: 500;">State Senator Mary Eddly Allen</span> — <span style="font-size: 12.5px;">Democratic state senator.</span>
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Campaign Infrastructure</span>
+          Campaign website at micheleforilsenate.com. Active campaign committee (Friends of Michele Clark) with IL SBE. No tracked Facebook posts. No tracked campaign events in reporting period. Endorsement list suggests organized party and labor support infrastructure.
+        </div>
+        
+
+        
+        
+        <div class="candidate-detail" style="margin-bottom: 10px;">
+          <span style="font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Social Media</span>
+          <strong style="color: var(--text-primary); font-weight: 500;">0</strong> posts/7d · <span style="color: var(--amber);">Zero Facebook posts tracked across entire monitoring period — complete digital absence</span>
+        </div>
+        
+
+        
+        
+        <div style="margin-top: 4px;">
+          <span class="citation">(IL SBE CampaignDisclosure; micheleforilsenate.com)</span>
+        </div>
+        
+
+        
+        
+        <div class="stat-row">
+          
+          <div class="stat-box">
+            <div class="stat-value">11</div>
+            <div class="stat-label">Endorsements</div>
+            <div class="stat-delta delta-neutral">Leads field in total endorsements</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Media Mentions</div>
+            <div class="stat-delta delta-neutral">No media mentions tracked this week</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">$19.9K</div>
+            <div class="stat-label">Q4 Raised</div>
+            <div class="stat-delta delta-neutral">Second in field by Q4 receipts</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">~$15.1K</div>
+            <div class="stat-label">Cash on Hand</div>
+            <div class="stat-delta delta-neutral">Estimated from Q4 receipts minus expenditures</div>
+          </div>
+          
+          
+          <div class="stat-box">
+            <div class="stat-value">0</div>
+            <div class="stat-label">Posts/7d</div>
+            <div class="stat-delta delta-neutral">No tracked social media presence</div>
+          </div>
+          
+        </div>
+        
+
+        
+        
+        <div style="margin-top: 8px; font-family: var(--font-mono); font-size: 9px; color: var(--text-dim); letter-spacing: 0.5px;">
+          ACTIVITY
+          <span class="activity-dots">
+            <span class="activity-dot"></span><span class="activity-dot"></span><span class="activity-dot"></span><span class="activity-dot"></span><span class="activity-dot"></span>
+          </span>
+        </div>
+        
+      </div>
+      
+
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📰</span>
+        <span class="section-label">Media Mentions</span>
+        <span class="section-line"></span>
+      </div>
+
+      
+      <div class="item">
+        <div class="item-headline">"Penman, Breugelmans square off in GOP primary in Illinois Senate District 33"</div>
+        <div class="item-body">
+          Chicago Tribune, 2026-03-09.
+           Head-to-head profile of the two Republican primary candidates. Full article text not available in data feed (paywalled), but headline confirms direct comparative coverage of Penman and Breugelmans in the final week before the primary.
+           Candidates mentioned: Danielle Penman, Jessica Breugelmans.
+           Not mentioned: Michele Clark.
+           <span class="citation">(Chicago Tribune)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">"Illinois General Assembly races feature open seats, big bucks and a reelection bid after corruption mistrial"</div>
+        <div class="item-body">
+          Chicago Tribune, 2026-03-15.
+           Broad overview of competitive Illinois General Assembly primaries. Notes 'fresh faces are vying to replace experienced lawmakers and outside campaign cash has infiltrated a string of races.' The piece covers multiple House and Senate races statewide. SD-33 is not confirmed as specifically named in the available excerpt, but the district matches the profile described (open seat with outside money).
+          
+           Not mentioned: Jessica Breugelmans, Danielle Penman, Michele Clark.
+           <span class="citation">(Chicago Tribune)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">"Jessica Breugelmans: 2026 candidate for Illinois Senate District 33"</div>
+        <div class="item-body">
+          Daily Herald, 2026-02-28.
+           Candidate profile published by the Daily Herald. Full text not available in feed. Published three days after the Daily Herald endorsed Breugelmans (Feb. 25).
+           Candidates mentioned: Jessica Breugelmans.
+           Not mentioned: Danielle Penman, Michele Clark.
+           <span class="citation">(Daily Herald)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">"Endorsement: Breugelmans for GOP in Illinois Senate Dist. 33"</div>
+        <div class="item-body">
+          Daily Herald, 2026-02-25.
+           Editorial board endorsement of Breugelmans in the Republican primary. Published in the prior reporting period but relevant to current race dynamics.
+           Candidates mentioned: Jessica Breugelmans.
+           Not mentioned: Danielle Penman, Michele Clark.
+           <span class="citation">(Daily Herald)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">"Grayslake Election Guide: March Primary 2026"</div>
+        <div class="item-body">
+          Patch, 2026-03-13.
+           General election guide for Grayslake-area voters covering early voting logistics, registration deadlines, and primary information. Does not specifically mention SD-33 candidates but provides voting infrastructure context for Lake County voters.
+          
+           Not mentioned: Jessica Breugelmans, Danielle Penman, Michele Clark.
+           <span class="citation">(Patch)</span>
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-headline">"Matt Robinson for Senate District 33"</div>
+        <div class="item-body">
+          thegazette.com, 2026-02-26.
+           ANALYSIS: This headline from thegazette.com references a 'Matt Robinson' for Senate District 33, but no candidate by this name appears in any other data source for IL-SD33. This may reference a different state's Senate District 33 (e.g., Iowa, given thegazette.com is a Cedar Rapids outlet). Flagged as potential data noise.
+          
+           Not mentioned: Jessica Breugelmans, Danielle Penman, Michele Clark.
+           <span class="citation">(thegazette.com)</span>
+        </div>
+      </div>
+      
+
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">💰</span>
+        <span class="section-label">Campaign Finance</span>
+        <span class="section-line"></span>
+      </div>
+
+      <div class="item">
+        
+        <div style="font-family: var(--font-mono); font-size: 9px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px;">Q4 2025 (Oct 1 – Dec 31, 2025)</div>
+        
+
+        <div class="finance-grid">
+          
+          <div class="finance-card finance-lead">
+            <div class="finance-candidate">Jessica Breugelmans</div>
+            <div class="finance-party-tag">R · "Jessica for Illinois"</div>
+            <div class="finance-metric-label">Raised</div>
+            <div class="finance-metric-value">$28,645</div>
+            <div class="finance-metric-label">Spent</div>
+            <div class="finance-metric-secondary">$5,036</div>
+            <div class="finance-metric-label">Cash on Hand</div>
+            <div class="finance-metric-secondary">~$23,609</div>
+            <div class="finance-period-tag">Period: 10/1/2025 to 12/31/2025</div>
+            
+          </div>
+          
+          <div class="finance-card">
+            <div class="finance-candidate">Michele Clark</div>
+            <div class="finance-party-tag">D · "Friends of Michele Clark"</div>
+            <div class="finance-metric-label">Raised</div>
+            <div class="finance-metric-value">$19,855</div>
+            <div class="finance-metric-label">Spent</div>
+            <div class="finance-metric-secondary">$4,715</div>
+            <div class="finance-metric-label">Cash on Hand</div>
+            <div class="finance-metric-secondary">~$15,140</div>
+            <div class="finance-period-tag">Period: 10/1/2025 to 12/31/2025</div>
+            
+          </div>
+          
+          <div class="finance-card finance-anomaly">
+            <div class="finance-candidate">Danielle Penman</div>
+            <div class="finance-party-tag">R · "Friends of Danielle Penman"</div>
+            <div class="finance-metric-label">Raised</div>
+            <div class="finance-metric-value">$12,011</div>
+            <div class="finance-metric-label">Spent</div>
+            <div class="finance-metric-secondary">$3,210</div>
+            <div class="finance-metric-label">Cash on Hand</div>
+            <div class="finance-metric-secondary">~$8,801</div>
+            <div class="finance-period-tag">Period: 10/1/2025 to 12/31/2025</div>
+            <div class="finance-flag">⚠ Penman's Q4 receipts ($12,011) are 58% less than Breugelmans' ($28,645), yet Penman holds five organizational endorsements including three labor unions — a fundraising-endorsement mismatch that may indicate independent expenditure support not reflected in candidate committee filings. Breugelmans has explicitly alleged Democratic union spending on Penman's behalf.</div>
+          </div>
+          
+        </div>
+
+        
+        <div class="finance-context">
+          The Q4 2025 filings reveal a three-tier financial picture. Breugelmans leads with $28,645 in receipts and an estimated $23,609 cash on hand — a 2.4:1 fundraising advantage over Penman <span class='citation'>(IL SBE)</span>. Clark, running unopposed in the Democratic primary, raised $19,855 — outpacing Penman and positioning herself as financially competitive for the general election. All three candidates show conservative burn rates (17-27% of receipts spent), suggesting war-chest building rather than aggressive Q4 spending. The critical unknown is independent expenditure activity: Breugelmans' repeated allegations of union spending on Penman's behalf, combined with Penman's labor endorsements and lower direct fundraising, strongly suggest that the candidate committee filings alone do not capture the full spending picture in the GOP primary. Q1 2026 filings — which will cover the primary election period — will be essential.
+        </div>
+        
+      </div>
+
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📈</span>
+        <span class="section-label">Week-over-Week Deltas</span>
+        <span class="section-line"></span>
+      </div>
+
+      
+      <div class="item">
+        <div class="item-body">
+          <span class="delta-tag delta-tag-new">NEW ▲</span><strong style="color: var(--text-primary);">Chicago Tribune head-to-head coverage</strong> — First direct comparative profile of Penman vs. Breugelmans published March 9 by the Chicago Tribune.
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-body">
+          <span class="delta-tag delta-tag-new">NEW ▲</span><strong style="color: var(--text-primary);">Chicago Tribune General Assembly overview</strong> — March 15 Tribune piece flags outside money in legislative races statewide, contextualizing SD-33 dynamics.
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-body">
+          <span class="delta-tag delta-tag-decline">▼ DECLINE</span><strong style="color: var(--text-primary);">Breugelmans Facebook activity</strong> — Zero posts in reporting period, down from consistent multi-weekly posting through February 25.
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-body">
+          <span class="delta-tag delta-tag-decline">▼ DECLINE</span><strong style="color: var(--text-primary);">Penman Facebook activity</strong> — Zero posts in reporting period, down from consistent multi-weekly posting through February 27.
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-body">
+          <span class="delta-tag delta-tag-unchanged">— UNCHANGED</span><strong style="color: var(--text-primary);">Clark public visibility</strong> — Remains at zero across all tracked public channels — no Facebook posts, no media mentions.
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-body">
+          <span class="delta-tag delta-tag-unchanged">— UNCHANGED</span><strong style="color: var(--text-primary);">New endorsements</strong> — No new endorsements announced by any candidate during the reporting period.
+        </div>
+      </div>
+      
+      <div class="item">
+        <div class="item-body">
+          <span class="delta-tag delta-tag-unchanged">— UNCHANGED</span><strong style="color: var(--text-primary);">Campaign finance filings</strong> — No new filings; Q4 2025 remains the most recent available data.
+        </div>
+      </div>
+      
+
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">🌐</span>
+        <span class="section-label">National Political Climate</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="item">
+        <div class="item-body">
+          
+          <div class="poll-row">
+            <span class="poll-metric">Presidential Approval (RCP avg)</span>
+            <span class="poll-value">43.3% <span class="stat-delta delta-down">▼ 0.9</span></span>
+          </div>
+          
+          
+          <div class="poll-row">
+            <span class="poll-metric">Generic Congressional Ballot (R/D)</span>
+            <span class="poll-value">D+4.4 <span class="stat-delta delta-up">D+4.4</span></span>
+          </div>
+          
+          
+          <div class="poll-row">
+            <span class="poll-metric">Right Track / Wrong Track</span>
+            <span class="poll-value">36/58 <span class="stat-delta delta-down">▼</span></span>
+          </div>
+          
+          
+          <div class="poll-row">
+            <span class="poll-metric">U of M Consumer Sentiment</span>
+            <span class="poll-value">56.6 <span class="stat-delta delta-up">▲ 0.2</span></span>
+          </div>
+          
+        </div>
+
+        
+        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+          <div style="font-family: var(--font-mono); font-size: 9px; color: var(--amber); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Local Connection</div>
+          <div class="item-body">The national environment presents a mixed signal for IL-SD33. Presidential approval at 43.3% (down 0.9 points) and the generic ballot at D+4.4 create headwinds for Republicans in suburban districts that have trended competitive since 2018. However, this is a Republican primary — national climate affects general-election positioning more than primary outcomes. The more immediate relevance is strategic: whichever Republican emerges on March 17 will face Michele Clark in November in a district rated among the top 10 most likely to flip (The Illinoize). Consumer confidence at 56.6 remains subdued, which historically benefits challengers and anti-incumbent messaging — a dynamic that could cut both ways in the general, benefiting Clark's challenge to Republican control of the seat or benefiting the Republican nominee's anti-Pritzker messaging. The wrong-track number at 57.8% (up 6.3 points) is particularly relevant in a district where Breugelmans has made Illinois 'wrong direction' a central campaign theme.</div>
+        </div>
+        
+
+      </div>
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📊</span>
+        <span class="section-label">District Deep Dive</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="item">
+        
+        <div style="font-family: var(--font-mono); font-size: 9px; color: var(--purple); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 14px;">Week 11 — District Profile</div>
+        
+        <div class="item-body">
+          <table class="dive-table">
+            <tr><td>District</td><td>Illinois Senate District 33 spans portions of McHenry, Kane, and DuPage counties in the northwest Chicago suburbs, including Crystal Lake, Lake in the Hills, Algonquin, St. Charles, and Geneva.</td></tr>
+            <tr><td>Incumbent</td><td>Sen. Don DeWitte (R) — not seeking reelection. Announced prostate cancer diagnosis in January 2026, with an early detection and positive prognosis (Daily Herald, Jan. 5, 2026, referenced by Penman on Facebook).</td></tr>
+            <tr><td>Race Type</td><td>Open seat — no incumbent running</td></tr>
+            <tr><td>Flip Rating</td><td>Top 10 most likely to flip (The Illinoize)</td></tr>
+            <tr><td>Trend</td><td>Historically safe Republican. Suburban collar counties have trended toward increased competitiveness since 2018. DeWitte won 2022 general with reduced margin vs. 2018, consistent with statewide pattern of suburban Republican erosion. Illinois does not register voters by party; primary ballot pull history is used as a partisan proxy.</td></tr>
+            <tr><td>Registration</td><td>Illinois does not register voters by party. The district is historically Republican-leaning but trending competitive. Open-seat dynamics amplify vulnerability in the general election.</td></tr>
+          </table>
+        </div>
+
+        
+        <div style="margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+          <div style="font-family: var(--font-mono); font-size: 9px; color: var(--purple); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px;">Why This Matters This Week</div>
+          <div class="item-body">This is the final briefing before the March 17 primary. The Republican primary between Breugelmans and Penman will determine who faces Clark in what is rated as one of Illinois' most flippable Senate seats. The stakes extend beyond the district: control of the Illinois Senate could hinge on a handful of suburban seats like this one. The contrast between the two Republican candidates — Breugelmans' editorial-board-endorsed, anti-tax, parental-rights coalition vs. Penman's labor-endorsed, healthcare-credentialed, bilingual-outreach coalition — represents a genuine strategic choice for Republican primary voters about which profile is better suited to hold a seat that Democrats are explicitly targeting. Clark's 11 endorsements, $19.9K in Q4 fundraising, and total public silence suggest a general-election machine being built while the Republican candidates expend resources against each other. <span class="citation">(The Illinoize, IL SBE CampaignDisclosure, Chicago Tribune, Facebook campaign activity data)</span></div>
+        </div>
+        
+
+      </div>
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">⏱</span>
+        <span class="section-label">Countdown Intelligence</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="countdown-banner">
+        <div class="countdown-number">2</div>
+        <div class="countdown-detail"><strong>Days until Republican Primary / Democratic Primary (Clark unopposed)</strong> (March 17, 2026). Early voting is open and ends Monday, March 16. Voters may cast ballots at any early voting site within their county. Grace Period Registration allows same-day registration and voting through Election Day. <span class="citation">(IL SBE)</span></div>
+      </div>
+
+      
+      <div class="milestone-track">
+        
+        <span class="milestone done">Filing ✓</span>
+        <span class="milestone-arrow">→</span>
+        
+        <span class="milestone done">Petition Period ✓</span>
+        <span class="milestone-arrow">→</span>
+        
+        <span class="milestone current">Early Voting Open</span>
+        <span class="milestone-arrow">→</span>
+        
+        <span class="milestone">Primary Mar 17</span>
+        <span class="milestone-arrow">→</span>
+        
+        <span class="milestone">General Nov 3</span>
+        
+        
+      </div>
+      
+
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">📅</span>
+        <span class="section-label">Upcoming Events &amp; Deadlines</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="events-container">
+        
+        <div class="event-row">
+          <div class="event-date">Mar 16, 2026</div>
+          <div class="event-desc event-urgent">Last day of early voting across McHenry, Kane, and DuPage counties <span class="citation">(IL SBE)</span></div>
+        </div>
+        
+        <div class="event-row">
+          <div class="event-date">Mar 17, 2026</div>
+          <div class="event-desc event-urgent">Illinois General Primary — Election Day. Polls open 6:00 AM to 7:00 PM. Republican primary: Breugelmans vs. Penman. Democratic primary: Clark (unopposed). <span class="citation">(IL SBE)</span></div>
+        </div>
+        
+      </div>
+    </div>
+    
+
+    
+    
+    
+    
+    <div class="section">
+      <div class="section-header">
+        <span class="section-emoji">🔍</span>
+        <span class="section-label">Intelligence Gaps</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="intel-gaps">
+        <div class="intel-gaps-intro">Areas with insufficient public data this week</div>
+        
+        <div class="gap-item">
+          <div class="gap-dot"></div>
+          <div class="gap-text"><strong>Q1 2026 Campaign Finance Filings:</strong> The most recent available filings cover Q4 2025 (Oct–Dec). The Q1 2026 filing period — covering the entire primary campaign stretch from January through March — will reveal the true scale of direct fundraising, spending on advertising, and cash positions at the moment of the primary. This is the single most important upcoming data release for understanding this race. <span style="color:var(--green);font-size:11px;">When Q1 filings post with IL SBE, all three committees will parse within 24 hours.</span></div>
+        </div>
+        
+        <div class="gap-item">
+          <div class="gap-dot"></div>
+          <div class="gap-text"><strong>Independent Expenditure Reports:</strong> Breugelmans has alleged significant Democratic union spending on Penman's behalf. Independent expenditure committees file separately from candidate committees with the IL SBE. These filings are not currently captured in the data pipeline. Without them, the true financial picture of the GOP primary is incomplete — potentially dramatically so. <span style="color:var(--green);font-size:11px;">IE committee tracking is queued for next pipeline expansion; SD-33 committees will be priority targets.</span></div>
+        </div>
+        
+        <div class="gap-item">
+          <div class="gap-dot"></div>
+          <div class="gap-text"><strong>Michele Clark Digital Presence:</strong> Clark has zero tracked Facebook posts and no media mentions despite an active campaign committee, 11 endorsements, and $19.9K in Q4 fundraising. Her campaign may be active on platforms not currently monitored (Instagram, email, direct mail) or may be deliberately operating below radar during the uncontested primary. This gap makes it impossible to assess her campaign's messaging, ground-game readiness, or general-election posture. <span style="color:var(--green);font-size:11px;">Additional platform monitoring (Instagram, campaign email captures) is in development for general-election phase.</span></div>
+        </div>
+        
+        <div class="gap-item">
+          <div class="gap-dot"></div>
+          <div class="gap-text"><strong>Chicago Tribune Paywalled Content:</strong> The March 9 Chicago Tribune head-to-head article on Penman vs. Breugelmans is paywalled, and only the headline was captured. This article likely contains substantive policy comparisons, endorsement context, and reporter observations that would significantly enrich this briefing. The March 15 General Assembly overview is similarly truncated. <span style="color:var(--green);font-size:11px;">Full-text extraction from paywalled sources is a known pipeline limitation under active review.</span></div>
+        </div>
+        
+        <div class="gap-item">
+          <div class="gap-dot"></div>
+          <div class="gap-text"><strong>Polling Data:</strong> No public polling data exists for IL-SD33. In a low-profile state legislative primary, polling is rarely conducted independently. Internal campaign polls, if they exist, are not publicly available. The absence of polling makes the primary outcome genuinely unpredictable based on available data alone.</div>
+        </div>
+        
+        <div class="gap-item">
+          <div class="gap-dot"></div>
+          <div class="gap-text"><strong>thegazette.com Matt Robinson Reference:</strong> A headline referencing 'Matt Robinson for Senate District 33' from thegazette.com (Cedar Rapids, Iowa-based outlet) appeared in data feeds. No candidate by this name appears in IL-SD33 data. This likely refers to an Iowa Senate District 33 race and represents data noise in the collection pipeline. <span style="color:var(--green);font-size:11px;">Geographic filtering refinement is queued to reduce cross-state false matches.</span></div>
+        </div>
+        
+      </div>
+    </div>
+    
+
+  </div>
+
+  
+  
+  
+  <div class="footer">
+
+    
+    <div class="next-briefing">Next Briefing: 2026-03-23</div>
+    
+
+    
+    <div class="archive-link"><a href="#">View Briefing Archive →</a></div>
+    
+
+    <div class="precision-policy">
+      <em>Precision Policy</em><br>
+      Every claim is cited. Every inference is labeled. If we can't verify it, we label it as a gap.
+    </div>
+    <div class="footer-disclaimer">
+      All candidates in this race receive identical base intelligence. This briefing contains
+      publicly available information only. Precinct does not provide strategic, campaign, or messaging advice.
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <svg class="footer-logo" viewBox="0 0 24 24" fill="none">
+          <rect x="0" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.6"/>
+          <rect x="13" y="0" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.3"/>
+          <rect x="0" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.2"/>
+          <rect x="13" y="13" width="11" height="11" rx="2" fill="#4ee69a" opacity="0.1"/>
+        </svg>
+        Precinct · <a href="https://precinctintel.com">precinctintel.com</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
